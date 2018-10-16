@@ -1,0 +1,51 @@
+import React from "react";
+import API from "../../utils/API";
+import ArticleCard from "../../components/News/Article";
+var tweets = [];
+
+class News extends React.Component {
+
+    state = {
+        tweets: [],
+        articles: [],
+        combinedAggregates: []
+    }
+
+
+    componentWillMount() {
+        API.getArticles()
+            .then(res => {
+                this.setState({ articles: res.data });   
+                console.log(this.state.articles);           
+            })
+            .catch(err => console.log(err));
+    }
+
+
+
+    render() {
+
+        if (this.state.articles.length > 0) {
+            console.log(this.state.articles);
+            
+            return (
+                <div className="container">
+                    <div className="row">
+                        {/* {this.state.tweets.map(tweet => 
+                            <TweetCard tweet = {tweet} key = {tweet.twitterId}/>          
+                        )} */}
+                        {
+                            this.state.articles.map((article, index) => 
+                            <ArticleCard article = {article} key = {index}> </ArticleCard> )
+                            
+                        }
+                    </div>
+                </div>
+            )
+        }
+
+        else return null;
+    }
+}
+
+export default News;
