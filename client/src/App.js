@@ -11,22 +11,33 @@ import News from "./pages/News/News";
 class App extends Component {
   state = {
     result: {},
+    current_page: "home"
   }
+
+  handlePageChange = page => {
+    this.setState({ current_page: page });
+  };
+
+  renderPage = () => {
+    if (this.state.current_page === "home") 
+      return <CoinTracker />;
+    else (this.state.current_page === "news")
+      return <News />;
+    
+  };
 
   render() {
     return (
 
-      <Router>
+      
         <div className="App">
-          <Navbar />
-          <Switch>
-            <Route exact path="/" component={CoinTracker} />
-            <Route exact path="/tracker" component={CoinTracker} />
-            <Route exact path="/aggregator" component={News} />
-          </Switch>
+          <Navbar
+            currentPage = {this.state.current_page} 
+            handlePageChange = {this.handlePageChange}/>
+          {this.renderPage()}
           <Coinbar />
         </div>
-      </Router>
+      
     );
   }
 

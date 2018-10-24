@@ -27,8 +27,8 @@ class Scroller extends React.Component{
 
 	//Sets barlength to actual width of list, and starting location offset
 	init(){
-		this.barlength = (document.getElementsByTagName("UL")[0].getBoundingClientRect().width);
-
+		this.barlength = (document.getElementsByClassName("scroller")[0].getBoundingClientRect().width);
+		console.log("barlength " + this.barlength);
 		this.setState({
 			inited: "true",
 			barposition: (this.props.offset * this.barlength)
@@ -37,7 +37,7 @@ class Scroller extends React.Component{
 
 	tick() {
 		
-		if(this.props.coins.length > 0){
+		if(this.props.coins.length >= 25){
 			if(this.state.inited == "false"){
 				this.init();
 			}
@@ -92,10 +92,10 @@ class Scroller extends React.Component{
     	clearInterval(this.timerID);
   	}
 
-  	//li's will be replaced with coin components
+  	
   	render(){
   		return(
-  			 <ul className="" style={this.state.bar_one_style}>
+  			 <ul className="scroller" style={this.state.bar_one_style}>
 	    		{this.addCoin()}
 	   	 	</ul>
   			

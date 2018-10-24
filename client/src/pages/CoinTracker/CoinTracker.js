@@ -25,6 +25,8 @@ class CoinTracker extends React.Component{
 	render(){
 		return(
 			<div>
+			<br/>
+			<br/>
 			<div className="container">
 				<p>AD SPACE</p>
 				<p>AD SPACE</p>

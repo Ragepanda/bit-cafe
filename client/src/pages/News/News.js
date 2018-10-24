@@ -29,8 +29,15 @@ class News extends React.Component {
             console.log(this.state.articles);
             
             return (
+                <div>
+                <br/>
+                <br/>
+                <div>
+                AD SPACE
+                AD SPACE
+                </div>
                 <div className="container">
-                    <div className="row">
+                    <div className="row justify-content-center">
                         {/* {this.state.tweets.map(tweet => 
                             <TweetCard tweet = {tweet} key = {tweet.twitterId}/>          
                         )} */}
@@ -40,6 +47,13 @@ class News extends React.Component {
                             
                         }
                     </div>
+                </div>
+                <div>
+                AD SPACE
+                AD SPACE
+                </div>
+                <br/>
+                <br/>
                 </div>
             )
         }
