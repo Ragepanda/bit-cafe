@@ -16,7 +16,10 @@ class News extends React.Component {
         API.getArticles()
             .then(res => {
                 this.setState({ articles: res.data });   
-                console.log(this.state.articles);           
+                API.getArticleBody(this.state.articles[1].source, this.state.articles[1].articleUrl)
+                .then(response => {
+                    console.log(response.data)
+                })           
             })
             .catch(err => console.log(err));
     }
@@ -26,7 +29,7 @@ class News extends React.Component {
     render() {
 
         if (this.state.articles.length > 0) {
-            console.log(this.state.articles);
+           // console.log(this.state.articles);
             
             return (
                 <div>

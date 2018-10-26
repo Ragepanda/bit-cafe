@@ -4,7 +4,8 @@ var axios = require("axios");
 module.exports = {
 
         coinTelegraph: function (req, res){
-          axios.get("https://cointelegraph.com/news/swiss-financial-association-publishes-anti-money-laundering-standards-for-digital-assets")
+
+          axios.get(req.query.url)
           .then(function(response){
             var fullDocument = [];
             var $ = cheerio.load(response.data);
@@ -22,7 +23,8 @@ module.exports = {
         },
 
         ccn: function (req, res){
-          axios.get("https://www.ccn.com/tesla-ceo-elon-musk-jokes-about-bitcoin-on-twitter-with-23-million-followers/")
+
+          axios.get(req.query.url)
           .then(function(response){
             var fullDocument = [];
             var $ = cheerio.load(response.data);
@@ -40,7 +42,8 @@ module.exports = {
         },
 
         bitcoinMagazine: function (req, res){
-          axios.get("https://bitcoinmagazine.com/articles/coinbase-just-added-its-first-stablecoin/#1540314888")
+
+          axios.get(req.query.url)
           .then(function(response){
             var fullDocument = [];
             var $ = cheerio.load(response.data);
@@ -59,7 +62,8 @@ module.exports = {
         },
 
         coindesk: function (req, res){
-          axios.get("https://www.coindesk.com/coinbase-adds-its-first-stablecoin-tied-to-the-us-dollar/")
+
+          axios.get(req.query.url)
           .then(function(response){
             var fullDocument = [];
             var $ = cheerio.load(response.data);
@@ -78,7 +82,7 @@ module.exports = {
         },
 
         bitcoinNews: function (req, res){
-          axios.get("https://news.bitcoin.com/cointext-launches-sms-bitcoin-cash-wallet-in-four-new-markets/")
+          axios.get(req.query.url)
           .then(function(response){
            
             var fullDocument = [];
@@ -97,7 +101,7 @@ module.exports = {
         },
 
         bitcoinist: function (req, res){
-          axios.get("https://bitcoinist.com/square-subzero-bitcoin-cold-storage/")
+          axios.get(req.query.url)
           .then(function(response){
             var fullDocument = [];
             var $ = cheerio.load(response.data);
@@ -109,7 +113,6 @@ module.exports = {
                 fullDocument.push({p: $(element).text()})
               }
             });
-            console.log(fullDocument);
             res.send({articleBody: fullDocument});
           })
         },
