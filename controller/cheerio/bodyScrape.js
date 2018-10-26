@@ -10,10 +10,10 @@ module.exports = {
             var fullDocument = [];
             var $ = cheerio.load(response.data);
             text = $(".post-full-text").children("p, h2").each(function(i, element){
-              if($(element).is("h2")){
+              if($(element).is("h2") && $(element).text()!=""){
                 fullDocument.push({h2: $(element).text()})
               }
-              if($(element).is("p")){
+              if($(element).is("p") && $(element).text()!=""){
                 fullDocument.push({p: $(element).text()})
               }
             });
@@ -29,10 +29,10 @@ module.exports = {
             var fullDocument = [];
             var $ = cheerio.load(response.data);
             text = $(".entry-content").children("p, h2").each(function(i, element){
-              if($(element).is("h2")){
+              if($(element).is("h2") && $(element).text()!=""){
                 fullDocument.push({h2: $(element).text()})
               }
-              if($(element).is("p")){
+              if($(element).is("p") && $(element).text()!=""){
                 fullDocument.push({p: $(element).text()})
               }
             });
@@ -48,10 +48,10 @@ module.exports = {
             var fullDocument = [];
             var $ = cheerio.load(response.data);
             text = $(".rich-text").children("p, h2").each(function(i, element){
-              if($(element).is("h2")){
+              if($(element).is("h2") && $(element).text()!=""){
                 fullDocument.push({h2: $(element).text()})
               }
-              if($(element).is("p")){
+              if($(element).is("p") && $(element).text()!=""){
                 fullDocument.push({p: $(element).text()})
               }
             });
@@ -68,10 +68,10 @@ module.exports = {
             var fullDocument = [];
             var $ = cheerio.load(response.data);
             text = $(".article-content-container").children("p, h2").each(function(i, element){
-              if($(element).is("h2")){
+              if($(element).is("h2") && $(element).text()!=""){
                 fullDocument.push({h2: $(element).text()})
               }
-              if($(element).is("p")){
+              if($(element).is("p") && $(element).text()!=""){
                 fullDocument.push({p: $(element).text()})
               }
             });
@@ -88,10 +88,10 @@ module.exports = {
             var fullDocument = [];
             var $ = cheerio.load(response.data);
             text = $(".td-post-content").children("p, h2").each(function(i, element){
-              if($(element).is("h2")){
+              if($(element).is("h2") && $(element).text()!=""){
                 fullDocument.push({h2: $(element).text()})
               }
-              if($(element).is("p")){
+              if($(element).is("p") && $(element).text()!=""){
                 fullDocument.push({p: $(element).text()})
               }
             });
@@ -106,10 +106,10 @@ module.exports = {
             var fullDocument = [];
             var $ = cheerio.load(response.data);
             text = $(".article-content").children("p, h2").each(function(i, element){
-              if($(element).is("h2")){
+              if($(element).is("h2") && $(element).text()!=""){
                 fullDocument.push({h2: $(element).text()})
               }
-              if($(element).is("p")){
+              if($(element).is("p") && $(element).text()!=""){
                 fullDocument.push({p: $(element).text()})
               }
             });
