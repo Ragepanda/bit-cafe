@@ -19,12 +19,12 @@ class ListItem extends React.Component{
 				<tr>
 					<th scope="row">{this.props.coins.rank}</th>
 					<td>{this.props.coins.name} (  {this.props.coins.symbol}  )</td>
-					<td>{this.props.coins.market_cap_usd}</td>
-					<td>{this.props.coins.price_usd}</td>
-					<td>{this.props.coins["24h_volume_usd"]}</td>
-					<td>{this.props.coins.total_supply}</td>
+					<td>${Math.round(this.props.coins.market_cap_usd)}</td>
+					<td>${Math.round(this.props.coins.price_usd*100)/100}</td>
+					<td>${Math.round(this.props.coins["24h_volume_usd"])}</td>
+					<td>{Math.round(this.props.coins.total_supply)}</td>
 
-					<td className={this.state.color}>{this.props.coins.percent_change_24h}</td>
+					<td className={this.state.color}>{this.props.coins.percent_change_24h}%</td>
 									
 				</tr>
 	)}
