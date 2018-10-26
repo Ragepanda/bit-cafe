@@ -1,15 +1,26 @@
 import React from "react"
+import API from "../../utils/API"
 
 class Article extends React.Component {
-	state = {
-		articles: []
+	constructor(props) {
+		super(props);
+		this.state = {
+			article: []
+		}
+		this.retriveBody = this.retriveBody.bind(this);
+		//console.log(this.state);
+	}
+	
+	componentDidMount() {
+		//console.log(this.props.article);
 	}
 
-	
-
-
-	componentDidMount() {
-		console.log(this.props.article);
+	retriveBody(){
+		
+		API.getArticleBody(this.props.article.source, this.props.article.articleUrl)
+		.then(response =>{
+			console.log(response.data);
+		})
 	}
 
 	render() {
@@ -21,7 +32,7 @@ class Article extends React.Component {
 					<h6 className="card-subtitle mb-2 text-muted"> Source: {this.props.article.source}</h6>
 					<img src={this.props.article.imageUrl}></img>
 					<p className="card-text mt-3">{this.props.article.body}</p>
-					<button ><a href={this.props.article.articleUrl} className="btn-dark">Embedded Link</a></button>
+					<button onClick={this.retriveBody}>Embedded Link</button>
 				</div>
 			</div>
 		);
