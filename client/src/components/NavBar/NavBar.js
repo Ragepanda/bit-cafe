@@ -12,10 +12,10 @@ const Navbar = props => (
        <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#" onClick={() => props.handlePageChange("home")}>Tracker</a>
+        <a class="nav-link" href="#" onClick={() => props.handlePageChange("news")}>News</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" onClick={() => props.handlePageChange("news")}>News</a>
+        <a class="nav-link" href="#" onClick={() => props.handlePageChange("tracker")}>Tracker</a>
       </li>
     </ul>
   </div>
