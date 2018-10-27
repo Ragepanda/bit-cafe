@@ -1,5 +1,7 @@
 import React from "react"
+import ReactDOM from "react-dom"
 import API from "../../utils/API"
+import ModalFiller from "./ModalFiller"
 
 class Article extends React.Component {
 	constructor(props) {
@@ -12,7 +14,7 @@ class Article extends React.Component {
 	}
 	
 	componentDidMount() {
-		//console.log(this.props.article);
+		console.log(this.props.article);
 	}
 
 	retriveBody(){
@@ -20,6 +22,9 @@ class Article extends React.Component {
 		API.getArticleBody(this.props.article.source, this.props.article.articleUrl)
 		.then(response =>{
 			console.log(response.data);
+			const articleText = <ModalFiller></ModalFiller>;
+			ReactDOM.render(articleText, document.getElementById(this.props.article.id));
+			
 		})
 	}
 
@@ -32,9 +37,13 @@ class Article extends React.Component {
 					<h6 className="card-subtitle mb-2 text-muted"> Source: {this.props.article.source}</h6>
 					<img src={this.props.article.imageUrl}></img>
 					<p className="card-text mt-3">{this.props.article.body}</p>
-					<a onClick={this.retriveBody} className="btn btn-dark" role="button">Embedded Link</a>
+					<a onClick={this.retriveBody} className="btn btn-dark" role="button">Embedded Link</a>					
+				</div>
+
+				<div id = {this.props.article.id} >
 					
 				</div>
+
 			</div>
 		);
 
