@@ -15,11 +15,7 @@ class News extends React.Component {
     componentWillMount() {
         API.getArticles()
             .then(res => {
-                this.setState({ articles: res.data });   
-                API.getArticleBody(this.state.articles[1].source, this.state.articles[1].articleUrl)
-                .then(response => {
-                    console.log(response.data)
-                })           
+                this.setState({ articles: res.data });           
             })
             .catch(err => console.log(err));
     }

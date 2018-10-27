@@ -14,7 +14,7 @@ class Article extends React.Component {
 	}
 
 	componentDidMount() {
-		console.log(this.props.article);
+		// console.log(this.props.article);
 	}
 
 	retriveBody() {
@@ -22,7 +22,7 @@ class Article extends React.Component {
 		API.getArticleBody(this.props.article.source, this.props.article.articleUrl)
 			.then(response => {
 				console.log(response.data);
-				const articleText = <ModalFiller></ModalFiller>;
+				const articleText = <ModalFiller text = {response.data} article = {this.props.article}></ModalFiller>;
 				ReactDOM.render(this.props.article.title, document.getElementById("title-"+this.props.article.id));
 				ReactDOM.render(articleText, document.getElementById(this.props.article.id));
 

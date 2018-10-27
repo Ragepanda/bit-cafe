@@ -4,10 +4,19 @@ class ModalFiller extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            elements: null
+            article: this.props.article,
+            text: this.props.text
         }
-        
+        this.formatText = this.formatText.bind(this);
 
+    }
+    formatText(){
+       var htmlText = [];
+        console.log(this.state.text);
+    }
+
+    componentWillMount(){
+        this.formatText();
     }
 
 
