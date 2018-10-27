@@ -11,7 +11,7 @@ import News from "./pages/News/News";
 class App extends Component {
   state = {
     result: {},
-    current_page: "home"
+    current_page: "news"
   }
 
   handlePageChange = page => {
@@ -19,7 +19,7 @@ class App extends Component {
   };
 
   renderPage = () => {
-    if (this.state.current_page === "home") 
+    if (this.state.current_page === "tracker") 
       return <CoinTracker />;
     else (this.state.current_page === "news")
       return <News />;
