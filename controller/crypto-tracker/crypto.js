@@ -9,7 +9,7 @@ module.exports = {
     fullData: function (req, res){
         rapid.call('CoinMarketCap', 'getCryptocurrenciesList', { 
         }).on('success', (payload)=>{
-            res.send(payload.slice(0,25));
+            res.send(payload.slice(0,100));
         }).on('error', (payload)=>{
              console.log(payload)
         });
