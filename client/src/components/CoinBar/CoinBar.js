@@ -17,20 +17,20 @@ class Coinbar extends React.Component {
 	}
 
 	componentDidMount(){
-		API.getCoins()
+		API.getMarketCapData()
       .then(res => {
-        console.log(res.data[0].symbol);
+		  console.log(res.data);
         this.setState({coins: res.data});
       })
       .catch(err => console.log(err));
 
 	}
 
-	testRender(){
-		if (this.state.coins.length > 0) {
-  			return this.state.coins[0].id;
-		}
-	}
+	// testRender(){
+	// 	if (this.state.coins.length > 0) {
+  	// 		return this.state.coins[0].id;
+	// 	}
+	// }
 
 	render(){
 		

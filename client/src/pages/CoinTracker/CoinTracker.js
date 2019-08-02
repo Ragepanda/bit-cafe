@@ -11,10 +11,10 @@ class CoinTracker extends React.Component{
 
 
 	componentDidMount(){
-		API.getCoins()
+		API.getMarketCapData()
       .then(res => {
-        this.setState({coins: res.data});
-        console.log(this.state.coins[0]["24h_volume_usd"])
+		this.setState({coins: res.data});
+        console.log(this.state.coins);
       })
       .catch(err => console.log(err));
 
@@ -50,15 +50,15 @@ class CoinTracker extends React.Component{
 				</tr>
 				</thead>
 				<tbody>
-					{
-						this.state.coins.map(coins =>
+					 {
+						this.state.coins.map((coins, index) =>
 							(
 								<ListItem 
-									coins = {coins}
+									coins = {coins} key = {index} rank = {index}
 								/>
 							)
 						) 
-		    		}
+		    		} 
 				</tbody>
 				</table>
 				<div className="col-sm">

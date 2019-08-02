@@ -11,8 +11,18 @@ module.exports = {
         }).on('success', (payload)=>{
             res.send(payload.slice(0,100));
         }).on('error', (payload)=>{
-             console.log(payload)
+             res.send(payload);
         });
+    },
+
+    dataByMarketCap: function(req, res){
+        axios.get("https://min-api.cryptocompare.com/data/top/mktcapfull?limit=25&tsym=USD")
+        .then(response =>{
+            console.log(response.data.Data);
+            res.send(response.data.Data);
+        }).catch((error) => {
+            res.send(error);
+        })
     },
 
     partialData: function (req, res){

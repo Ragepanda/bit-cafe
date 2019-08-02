@@ -6,6 +6,10 @@ router
 .get(cryptoService.fullData);
 
 router
+.route("/dataByMarketCap")
+.get(cryptoService.dataByMarketCap);
+
+router
 .route("/partialData")
 .get(cryptoService.partialData);
 

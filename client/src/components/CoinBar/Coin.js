@@ -13,7 +13,7 @@ class Coin extends React.Component{
 	}
 
 	componentDidMount(){
-		if(this.props.coin.percent_change_24h < 0){
+		if(this.props.coin.RAW.USD.CHANGEPCT24HOUR < 0){
 			this.setState({
 				color: "text-danger"
 			})
@@ -23,7 +23,7 @@ class Coin extends React.Component{
 	render(){
 		return(
 		<li className="" style={this.itemStyle}>
-	    	<span className="text-light">| {this.props.coin.symbol} ${Math.round(this.props.coin.price_usd*100)/100}</span><span className={this.state.color}> {this.props.coin.percent_change_24h}% </span>
+	    	<span className="text-light">| {this.props.coin.CoinInfo.Internal} {this.props.coin.DISPLAY.USD.PRICE}</span><span className={this.state.color}> {this.props.coin.DISPLAY.USD.CHANGEPCT24HOUR}% </span>
 		</li>
 	)}
 }
