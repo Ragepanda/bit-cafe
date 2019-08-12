@@ -2,6 +2,18 @@ var axios = require("axios");
 var db = require("../../../models");
 module.exports = {
 
+    getNewsArticlesBySymbol: function(req, res){
+        
+
+        axios.get("https://min-api.cryptocompare.com/data/v2/news/?lang=EN&categories=ETH")
+        .then(response =>{
+            res.send(response.data.Data);
+        })
+        .catch(error =>{
+            res.send(error);
+        })
+    },
+
     getNewArticles: function (req, res) {
 
         db.articles.findAll({ where: {}, order: [['publishedOn', 'DESC']] })

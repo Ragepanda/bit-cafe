@@ -25,6 +25,41 @@ module.exports = {
         })
     },
 
+    dailyHistory: function(req, res){
+        var symbol = req.query.symbol;
+        axios.get("https://min-api.cryptocompare.com/data/histoday?fsym="+symbol+"&tsym=USD&limit=10")
+        .then(response =>{
+            console.log(response.data.Data);
+            res.send(response.data.Data);
+        }).catch((error) =>{
+            res.send(error);
+        } )
+    },
+
+    hourlyHistory: function(req, res){
+        var symbol = req.query.symbol;
+        axios.get("https://min-api.cryptocompare.com/data/histohour?fsym="+symbol+"&tsym=USD&limit=10")
+        .then(response =>{
+            console.log(response.data.Data);
+            res.send(response.data.Data);
+        }).catch((error) =>{
+            res.send(error);
+        } )
+    },
+
+    minuteHistory: function(req, res){
+        var symbol = req.query.symbol;
+        axios.get("https://min-api.cryptocompare.com/data/histominute?fsym="+symbol+"&tsym=GBP&limit=10")
+        .then(response =>{
+            console.log(response.data.Data);
+            res.send(response.data.Data);
+        }).catch((error) =>{
+            res.send(error);
+        } )
+    },
+
+    
+
     partialData: function (req, res){
         res.send({test: "test of partials"});
     }

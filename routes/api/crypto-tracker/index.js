@@ -13,5 +13,16 @@ router
 .route("/partialData")
 .get(cryptoService.partialData);
 
+router
+.route("/dailyHistoryBySymbol")
+.get(cryptoService.dailyHistory);
+
+router
+.route("/hourlyHistoryBySymbol")
+.get(cryptoService.hourlyHistory);
+
+router
+.route("/minuteHistoryBySymbol")
+.get(cryptoService.minuteHistory);
 
 module.exports = router;

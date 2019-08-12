@@ -8,23 +8,35 @@ export default {
 	getTweets: function(){
 		return axios.get("/api/news/twitter/aggregated");
 	},
-	
-	getCoins: function(){
-		return axios.get("/api/tracker/fulldata");
-  },
+	//Defunct
+	// getCoins: function(){
+	// 	return axios.get("/api/tracker/fulldata");
+  // },
   
   getMarketCapData: function(){
     return axios.get("/api/tracker/dataByMarketCap");
+  },
+
+  getHourlyHistoryBySymbol: function(symbol){
+    return axios.get("/api/tracker/hourlyHistoryBySymbol", {params: {symbol: symbol}});
+  },
+
+  getDailyHistoryBySymbol: function(symbol){
+    return axios.get("/api/tracker/dailyHistoryBySymbol", {params: {symbol: symbol}});
+  },
+
+  getMinuteHistoryBySymbol: function(symbol){
+    return axios.get("/api/tracker/minuteHistoryBySymbol", {params: {symbol: symbol}});
   },
 
 	getArticleBody: function(publication, url){
 		switch(publication) {
 
             case "ccn":
-            return axios.get("/api/scrape/ccn", {params: {url: url}})
+            return axios.get("/api/scrape/ccn", {params: {url: url}});
            
             case "bitcoin.com":
-            return axios.get("/api/scrape/bitcoinNews", {params: {url: url}})
+            return axios.get("/api/scrape/bitcoinNews", {params: {url: url}});
 
             case "cointelegraph":
             return axios.get("/api/scrape/coinTelegraph", {params: {url: url}});
