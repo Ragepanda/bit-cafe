@@ -5,21 +5,11 @@ import "./CoinTracker.css";
 
 class CoinTracker extends React.Component{
 
-	state ={
-    	coins: []
-  	}
-
-
-
-	componentDidMount(){
-		API.getMarketCapData()
-      .then(res => {
-		this.setState({coins: res.data});
-      })
-      .catch(err => console.log(err));
-
-
-
+	constructor(props){
+        super(props);
+		this.state = {
+			coins: this.props.coins
+		}
 	}
 
 	render(){

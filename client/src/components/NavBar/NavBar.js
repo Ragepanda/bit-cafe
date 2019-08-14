@@ -25,16 +25,25 @@ class Navbar extends React.Component{
        <div className="collapse navbar-collapse" id="navbarNav">
     <ul className="navbar-nav mr-auto">
       <li className="nav-item">
-        <NavLink className="nav-link" to="/">Tracker</NavLink>
+        <NavLink className="nav-link" to="/">Home</NavLink>
       </li>
       <li className="nav-item">
-          <NavLink className="nav-link" to="/news">News</NavLink>
+        <NavLink className="nav-link" to="/chart">{this.props.symbol} Chart</NavLink>
       </li>
       <li className="nav-item">
-        <NavLink className="nav-link" to="/chart">Chart</NavLink>
+        <NavLink className="nav-link" to="/exchange">{this.props.symbol} Exchange</NavLink>
       </li>
-      <li>
-        <SearchBar classname="nav-link" coins = {this.props.coins} changeSymbol = {this.props.changeSymbol}> </SearchBar>
+      <li className="nav-item">
+          <NavLink className="nav-link" to="/news">{this.props.symbol} News</NavLink>
+      </li>
+      <li className="nav-item">
+          <NavLink className="nav-link" to="/calculator">{this.props.symbol} Calculator</NavLink>
+      </li>
+      <li className="nav-item">
+          <NavLink className="nav-link" to="/about">About {this.props.symbol}</NavLink>
+      </li>
+     <li className="nav-item">
+        <SearchBar classname="nav-link" symbol={this.props.symbol} coins = {this.props.coins} changeSymbol = {this.props.changeSymbol}> </SearchBar>
       </li>
     </ul>
   </div>
