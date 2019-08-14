@@ -11,7 +11,7 @@ class Chart extends React.Component{
 
 
 	componentDidMount(){
-		API.getHourlyHistoryBySymbol("BTC")
+		API.getHourlyHistoryBySymbol(this.props.symbol)
       .then(res => {
 		this.setState({coins: res.data});
         console.log(this.state.coins);
