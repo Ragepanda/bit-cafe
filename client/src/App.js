@@ -23,9 +23,8 @@ class App extends Component {
   }
 
   changeSymbol = (newSymbol)=>{
-    console.log(newSymbol);
     this.setState({symbol: newSymbol});
-    console.log(this.state.symbol);
+
   }
 
   componentDidMount(){
@@ -39,13 +38,13 @@ class App extends Component {
   }
 
   render() {
-
+    console.log(this.state.symbol);
     return (
-
+  
       <Router>
         <div className="App">
           <Navbar
-            coins = {this.state.coins} changeSymbol = {this.changeSymbol}/>
+            symbol = {this.state.symbol} coins = {this.state.coins} changeSymbol = {this.changeSymbol}/>
           <Switch>
             <Route
               exact
