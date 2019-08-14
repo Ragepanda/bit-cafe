@@ -1,6 +1,7 @@
 import React from "react";
 import {NavLink } from 'react-router-dom'
 import SearchBar from './SearchBar'
+import './NavBar.css';
 class Navbar extends React.Component{
 
   state = {
@@ -13,8 +14,8 @@ class Navbar extends React.Component{
 
   render(){
     return(
-  <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a className="navbar-brand" href="/">
+  <nav className="navbar navbar-expand-lg fixed-top navbar-dark" id="navyBar">
+    <a className="navbar-brand" id="navyBar" href="/">
       BitCafe
      </a>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
