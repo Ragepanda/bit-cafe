@@ -37,8 +37,9 @@ class Scroller extends React.Component{
 
 	tick() {
 		
-		if(this.props.coins.length >= 25){
+		if(this.props.coins.length >= 20){
 			if(this.state.inited === "false"){
+
 				this.init();
 			}
 		}
