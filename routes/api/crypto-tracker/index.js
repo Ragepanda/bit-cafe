@@ -1,13 +1,13 @@
 const router = require("express").Router();
-const cryptoService = require("../../../controller/crypto-tracker/crypto")
-
-router
-.route("/fullData")
-.get(cryptoService.fullData);
+const cryptoService = require("../../../controller/crypto-tracker/crypto");
 
 router
 .route("/dataByMarketCap")
 .get(cryptoService.dataByMarketCap);
+
+router
+.route("/marketDataBySymbol")
+.get(cryptoService.fullDataBySymbol);
 
 router
 .route("/partialData")

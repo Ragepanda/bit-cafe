@@ -6,15 +6,6 @@ const rapid = new RapidAPI('coin-tracker-wooski', '16435b4e-7bdb-435b-a75a-3c346
 
 module.exports = {
 
-    fullData: function (req, res){
-        rapid.call('CoinMarketCap', 'getCryptocurrenciesList', { 
-        }).on('success', (payload)=>{
-            res.send(payload.slice(0,100));
-        }).on('error', (payload)=>{
-             res.send(payload);
-        });
-    },
-
     dataByMarketCap: function(req, res){
         axios.get("https://min-api.cryptocompare.com/data/top/mktcapfull?limit=25&tsym=USD")
         .then(response =>{
@@ -23,6 +14,17 @@ module.exports = {
         }).catch((error) => {
             res.send(error);
         })
+    },
+
+    fullDataBySymbol: function(req, res){
+        var symbol = req.query.symbol;
+        axios.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms="+symbol+"&tsyms=USD").
+            then(response =>{
+                console.log(response.data.Data);
+                res.send(response.data.Data);
+            }).catch((error) =>{
+                res.send(error);
+            })
     },
 
     dailyHistory: function(req, res){

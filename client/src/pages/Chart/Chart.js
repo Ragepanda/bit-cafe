@@ -5,16 +5,15 @@ import API from "../../utils/API";
 class Chart extends React.Component{
 
 	state ={
-    	coins: []
+    	hourlyData: []
   	}
 
 
 
 	componentDidMount(){
-		API.getHourlyHistoryBySymbol("BTC")
+		API.getHourlyHistoryBySymbol(this.props.symbol)
       .then(res => {
-		this.setState({coins: res.data});
-        console.log(this.state.coins);
+		console.log(res.data);
       })
       .catch(err => console.log(err));
 	}

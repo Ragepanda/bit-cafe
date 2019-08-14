@@ -17,6 +17,10 @@ export default {
     return axios.get("/api/tracker/dataByMarketCap");
   },
 
+  getMarketCapDataBySymbol: function(symbol){
+    return axios.get("api/tracker/marketDataBySymbol", {params: {symbol: symbol}})
+  },
+
   getHourlyHistoryBySymbol: function(symbol){
     return axios.get("/api/tracker/hourlyHistoryBySymbol", {params: {symbol: symbol}});
   },
