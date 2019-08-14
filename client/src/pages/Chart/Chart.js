@@ -36,13 +36,7 @@ class Chart extends React.Component{
 					AD SPACE
 					AD SPACE
 				</div>
-<<<<<<< HEAD
-				<h1> Lots of things go here </h1>
-				
-
-=======
 				<h1> This page will reflect our {this.props.symbol} information! </h1>
->>>>>>> e76fc14048a9f7ed53f6f36a2f0bd2889cefeb9a
 				<div className="col-sm">
 					AD SPACE
 					AD SPACE
