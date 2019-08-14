@@ -35,7 +35,7 @@ class About extends React.Component{
 					AD SPACE
 					AD SPACE
 				</div>
-				<h1> This page will host our "About [COIN] Information!"</h1>
+				<h1> This page will host our "About {this.props.symbol} Information!"</h1>
 				<div className="col-sm">
 					AD SPACE
 					AD SPACE

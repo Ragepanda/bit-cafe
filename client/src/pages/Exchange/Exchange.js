@@ -35,7 +35,7 @@ class Exchange extends React.Component{
 					AD SPACE
 					AD SPACE
 				</div>
-				<h1> This page will reflect our [COIN] Exchange rate and Exchange trading info</h1>
+				<h1> This page will reflect our {this.props.symbol} Exchange rate and Exchange trading info</h1>
 				<div className="col-sm">
 					AD SPACE
 					AD SPACE

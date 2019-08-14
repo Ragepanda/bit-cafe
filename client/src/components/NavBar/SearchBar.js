@@ -19,7 +19,7 @@ class SearchBar extends React.Component {
 		return (
 			<div className="dropdown">
 				<a className="nav-link btn dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Coin to View
+					Viewing {this.props.symbol} Information
             </a>
 				<div className="dropdown-menu" aria-labelledby="dropdownMenu2">
 

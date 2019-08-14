@@ -35,7 +35,7 @@ class Calculator extends React.Component{
 					AD SPACE
 					AD SPACE
 				</div>
-				<h1> Calculator things go here </h1>
+				<h1> {this.props.symbol} Calculator things go here </h1>
 				<div className="col-sm">
 					AD SPACE
 					AD SPACE
