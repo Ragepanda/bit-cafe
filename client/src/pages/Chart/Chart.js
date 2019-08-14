@@ -17,10 +17,9 @@ class Chart extends React.Component{
         console.log(this.state.coins);
       })
       .catch(err => console.log(err));
-
-
-
 	}
+
+
 
 	render(){
 		return(
@@ -38,12 +37,19 @@ class Chart extends React.Component{
 					AD SPACE
 				</div>
 				<h1> Lots of things go here </h1>
+				
+
 				<div className="col-sm">
 					AD SPACE
 					AD SPACE
 				</div>
 			</div>
 			</div>
+
+			<div>	
+				<canvas id="myCanvas" />
+			</div>
+			
 			<div className="container">
 				<p>AD SPACE</p>
 				<p>AD SPACE</p>
