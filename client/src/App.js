@@ -24,19 +24,37 @@ class App extends Component {
     super(props);
     this.state = {
       coins: [],
-      symbol: "BTC"
+      symbol: "BTC",
+      symbolCoin: []
     }
   }
 
   changeSymbol = (newSymbol) => {
     this.setState({ symbol: newSymbol });
 
+    var coin = {};
+        
+    this.state.coins.forEach(coinData => {
+      if (coinData.CoinInfo.Internal === newSymbol) {
+        coin = coinData;
+      }
+    });
+    console.log(coin);
+    this.setState({ coin: coin });
   }
 
   componentDidMount() {
     API.getMarketCapData()
       .then(res => {
         this.setState({ coins: res.data });
+        var coin = {};
+        
+        this.state.coins.forEach(coinData => {
+          if (coinData.CoinInfo.Internal === this.state.symbol) {
+            coin = coinData;
+          }
+        });
+        this.setState({ coin: coin });
       })
       .catch(err => {
         console.log(err);
@@ -47,7 +65,7 @@ class App extends Component {
     if (this.state.coins.length === 0) {
       return <div />
     }
-    console.log(this.state.symbol);
+
     return (
 
       <Router>
@@ -68,7 +86,7 @@ class App extends Component {
             <Route
               exact
               path="/chart"
-              component={(props) => <Chart {...props} symbol={this.state.symbol} />} />
+              component={(props) => <Chart {...props} coin={this.state.coin}  symbol={this.state.symbol} />} />
 
             <Route
               exact
