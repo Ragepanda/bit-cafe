@@ -14,7 +14,6 @@ class CoinTracker extends React.Component{
 		API.getMarketCapData()
       .then(res => {
 		this.setState({coins: res.data});
-        console.log(this.state.coins);
       })
       .catch(err => console.log(err));
 
@@ -31,8 +30,8 @@ class CoinTracker extends React.Component{
 				<p>AD SPACE</p>
 				<p>AD SPACE</p>
 			</div>
-			<div class="container-fluid">
-			<div class="row">
+			<div className="container-fluid">
+			<div className="row">
 				<div className="col-sm">
 					AD SPACE
 					AD SPACE

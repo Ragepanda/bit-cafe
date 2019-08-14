@@ -38,7 +38,7 @@ class Scroller extends React.Component{
 	tick() {
 		
 		if(this.props.coins.length >= 25){
-			if(this.state.inited == "false"){
+			if(this.state.inited === "false"){
 				this.init();
 			}
 		}
@@ -70,8 +70,9 @@ class Scroller extends React.Component{
 
   	addCoin(){
   		if(this.props.coins.length > 0){
-  			return this.props.coins.map(coins => 
-	    		<Coin 
+  			return this.props.coins.map((coins, index) => 
+				<Coin 
+				key = {index}
 	    		style = {this.itemStyle}
 	    		coin = {coins}
 	    		/>)

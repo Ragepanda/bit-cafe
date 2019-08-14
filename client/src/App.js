@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import {BrowserRouter as
   Router,
   Route,
-  Redirect,
   Switch
   // BrowserRouter
   // Switch
 } from 'react-router-dom';
-import logo from './logo.svg';
 import './App.css';
 import API from "./utils/API";
 import Navbar from "./components/NavBar/NavBar";
@@ -15,57 +13,54 @@ import Coinbar from "./components/CoinBar/CoinBar";
 import CoinTracker from "./pages/CoinTracker/CoinTracker";
 import News from "./pages/News/News";
 import Chart from "./pages/Chart/Chart";
-import { BrowserRouter } from 'react-router-dom';
+
 
 class App extends Component {
   state = {
     result: {},
-    current_page: "news"
+    coins: [],
+    symbol: "BTC"
   }
 
-  handlePageChange = page => {
-    this.setState({ current_page: page });
-  };
+  changeSymbol = (newSymbol)=>{
+    console.log(newSymbol);
+    this.setState({symbol: newSymbol});
+    console.log(this.state.symbol);
+  }
 
-  // renderPage = () => {
-  //   return (
-   
-      
-    
-  //   );
-
-  //   {/* // if (this.state.current_page === "tracker") 
-  //   //   return <CoinTracker />;
-  //   // else if (this.state.current_page === "news")
-  //   //   return <News />;
-  //   // else if (this.state.current_page === "chart")
-  //   //   return <Chart />; */}
-
-  // }
+  componentDidMount(){
+    API.getMarketCapData()
+    .then(res =>{
+      this.setState({coins: res.data});
+    })
+    .catch(err =>{
+      console.log(err);
+    })
+  }
 
   render() {
+
     return (
 
       <Router>
         <div className="App">
           <Navbar
-            currentPage={this.state.current_page}
-            handlePageChange={this.handlePageChange} />
+            coins = {this.state.coins} changeSymbol = {this.changeSymbol}/>
           <Switch>
             <Route
               exact
               path="/"
-              component={CoinTracker} />
+              component={ (props) => <CoinTracker {...props} symbol = {this.state.symbol} changeSymbol = {this.changeSymbol}/>} />
 
             <Route
               exact
               path="/news"
-              component={News} />
+              component={ (props) => <News {...props} symbol = {this.state.symbol} changeSymbol = {this.changeSymbol}/>} /> 
 
             <Route
               exact
               path="/chart"
-              component={Chart} />
+              component={ (props) => <Chart {...props} symbol = {this.state.symbol} changeSymbol = {this.changeSymbol}/>} /> 
 
           </Switch>
           <Coinbar />

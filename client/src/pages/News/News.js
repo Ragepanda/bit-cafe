@@ -1,7 +1,7 @@
 import React from "react";
 import API from "../../utils/API";
 import ArticleCard from "../../components/News/Article";
-var tweets = [];
+
 
 class News extends React.Component {
 

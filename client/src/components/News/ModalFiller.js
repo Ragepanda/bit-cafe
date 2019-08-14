@@ -1,5 +1,4 @@
 import React from "react"
-import ReactDOM from"react-dom"
 
 class ModalFiller extends React.Component {
     constructor(props) {

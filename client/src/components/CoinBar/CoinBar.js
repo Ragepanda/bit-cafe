@@ -19,7 +19,6 @@ class Coinbar extends React.Component {
 	componentDidMount(){
 		API.getMarketCapData()
       .then(res => {
-		  console.log(res.data);
         this.setState({coins: res.data});
       })
       .catch(err => console.log(err));
