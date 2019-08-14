@@ -13,7 +13,8 @@ class Chart extends React.Component{
 	componentDidMount(){
 		API.getHourlyHistoryBySymbol(this.props.symbol)
       .then(res => {
-		console.log(res.data);
+		//console.log(res.data);
+		console.log(res.data[0].high);
       })
       .catch(err => console.log(err));
 	}
