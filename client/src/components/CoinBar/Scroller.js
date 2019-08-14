@@ -22,7 +22,8 @@ class Scroller extends React.Component{
 	itemStyle ={
 		float: "left",
 		textAlign: 'center',
-	    padding: "8px"
+	    padding: "8px",
+	    backgroundColor: "#2C2640"
 	}
 
 	//Sets barlength to actual width of list, and starting location offset
