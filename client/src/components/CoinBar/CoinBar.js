@@ -11,8 +11,8 @@ class Coinbar extends React.Component {
 	navStyle = {
 		height: '40px',
 		minWidth: '100000000px',
-		color: 'white'
-		
+		color: 'white',
+		backgroundColor: "#2C2640"
 
 	}
 
@@ -34,7 +34,7 @@ class Coinbar extends React.Component {
 	render(){
 		
 		return(
-	  		<div className="navbar-dark bg-dark fixed-bottom" style={this.navStyle}>
+	  		<div className="fixed-bottom" style={this.navStyle}>
 	   			<Scroller offset="0"
 	   				coins = {this.state.coins}
 	   			/>
