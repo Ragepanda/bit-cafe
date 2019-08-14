@@ -16,7 +16,8 @@ class Chart extends React.Component{
 		//console.log(res.data);
 		console.log(res.data[0].high);
       })
-      .catch(err => console.log(err));
+	  .catch(err => console.log(err));
+	  console.log(this.props.coin);
 	}
 
 
