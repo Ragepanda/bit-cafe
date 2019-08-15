@@ -23,7 +23,7 @@ class SearchBarItem extends React.Component {
 	render() {
 		
 		return (								
-			<button onClick={()=>{this.test();}} className="dropdown-item" type="button"> <img height="15px" width="15px" alt={this.props.coin.CoinInfo.Internal}src={"https://www.cryptocompare.com"+this.props.coin.CoinInfo.ImageUrl}></img>{this.props.coin.CoinInfo.FullName}</button>						
+			<li><button onClick={()=>{this.test();}} className="dropdown-item" type="button"> <img height="15px" width="15px" alt={this.props.coin.CoinInfo.Internal}src={"https://www.cryptocompare.com"+this.props.coin.CoinInfo.ImageUrl}></img>{this.props.coin.CoinInfo.FullName}</button></li>				
 		);
 	}
 }
