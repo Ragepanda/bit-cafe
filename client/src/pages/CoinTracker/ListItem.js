@@ -16,7 +16,7 @@ class ListItem extends React.Component{
 	
 	render(){
 		return(
-				<tr>
+				<tr className="rowHover">
 					<th scope="row">{this.props.rank+1}</th>
 					<td><img alt="" height="15px" width="15px" src={"https://www.cryptocompare.com"+this.props.coins.CoinInfo.ImageUrl}/> {this.props.coins.CoinInfo.FullName} ({this.props.coins.CoinInfo.Name})</td>
 					<td>{this.props.coins.DISPLAY.USD.MKTCAP.replace(/\s/g,'')}</td>

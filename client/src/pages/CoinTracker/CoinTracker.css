@@ -8,4 +8,7 @@
 }
 
 
-
+.rowHover:hover td, .rowHover:hover th{
+	background-color:#9593A0;
+	color: #E5E4E7;
+}
