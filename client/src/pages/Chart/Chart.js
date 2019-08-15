@@ -1,5 +1,6 @@
 import React from "react";
 import API from "../../utils/API";
+import Graph from "./Graph";
 
 
 class Chart extends React.Component{
@@ -11,14 +12,23 @@ class Chart extends React.Component{
 
 
 	componentDidMount(){
-		API.getHourlyHistoryBySymbol(this.props.symbol)
+			API.getHourlyHistoryBySymbol(this.props.symbol)
       .then(res => {
 		//console.log(res.data);
-		console.log(res.data[0].high);
-      })
-	  .catch(err => console.log(err));
-	  console.log(this.props.coin);
+		this.setState({hourlyData: res.data}, function(){
+			console.log(this.state.hourlyData);
+		});
+		//console.log(test);
+     	 })
+	  	.catch(err => console.log(err));
+		
 	}
+
+	addGraph(){
+		if(this.state.hourlyData.length > 0){
+  			return(<Graph data = {this.state.hourlyData}/>)
+		}
+  	}
 
 
 
@@ -46,7 +56,7 @@ class Chart extends React.Component{
 			</div>
 
 			<div>	
-				<canvas id="myCanvas" />
+				{this.addGraph()}
 			</div>
 			
 			<div className="container">
