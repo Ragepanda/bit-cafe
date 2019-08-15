@@ -24,7 +24,7 @@ class ListItem extends React.Component{
 					<td>{this.props.coins.DISPLAY.USD.VOLUME24HOURTO.replace(/\s/g,'')}</td>
 					<td>{this.props.coins.DISPLAY.USD.SUPPLY}</td>
 
-					<td className={this.state.color}>{this.props.coins.RAW.USD.CHANGEPCT24HOUR}</td>
+					<td className={this.state.color}>{Math.round(100*this.props.coins.RAW.USD.CHANGEPCT24HOUR)/100 + "%"}</td>
 									
 				</tr>
 	)}
