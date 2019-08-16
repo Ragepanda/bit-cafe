@@ -59,7 +59,7 @@ class News extends React.Component {
                                       <div className="article__body">
                                         <p>This is our bitcoin news aggregator. Here you can find recent bitcoin news that can help you understand bitcoin trends and possibly provide insight into bitcoin price trends. This bitcoin news page is updated constantly. Please enjoy using our bitcoin news aggregator.</p><br />
                                         <h3>Current Bitcoin News</h3>
-                                                            <div className="col-10">
+                    <div className="col-12">
                     <div className="row justify-content-center">
                         {/* {this.state.tweets.map(tweet => 
                             <TweetCard tweet = {tweet} key = {tweet.twitterId}/>          
