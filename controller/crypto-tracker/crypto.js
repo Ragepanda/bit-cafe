@@ -40,7 +40,7 @@ module.exports = {
 
     hourlyHistory: function(req, res){
         var symbol = req.query.symbol;
-        axios.get("https://min-api.cryptocompare.com/data/histohour?fsym="+symbol+"&tsym=USD&limit=10")
+        axios.get("https://min-api.cryptocompare.com/data/histohour?fsym="+symbol+"&tsym=USD&limit=23")
         .then(response =>{
             console.log(response.data.Data);
             res.send(response.data.Data);
