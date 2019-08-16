@@ -135,10 +135,11 @@ class About extends React.Component{
             </div>{/* /.footer__site-map */}
           </div>{/* /.footer__content */}
         </footer>{/* /.footer */}
-      </div> {/* /.wrapper */}
+        {/* /.wrapper */}
       {/*  SET UP Addthis & Pinterest Pin Function  */}
       {/*#include virtual="/includes/addthis_pinterest.shtml" */}
       {/*  End of Addthis & Pinterest Pin Function  */}
+      </div> 
 	
 	)}
 }
