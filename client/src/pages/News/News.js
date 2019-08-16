@@ -48,6 +48,8 @@ class News extends React.Component {
                                   {/*#include virtual="/includes/728x15-ATF-Link-Ad.shtml" */}
                                   {/* END of Menu Code */}
                                   <hr />
+                                  <hr />
+                                  <hr />
                                   <header className="section__head">
                                     <h1 align="left"><a href="./">Bitcoin Tools</a></h1>
                                     <h2 align="left">Bitcoin News Aggregator</h2>

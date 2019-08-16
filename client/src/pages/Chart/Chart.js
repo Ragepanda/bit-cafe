@@ -54,6 +54,8 @@ class Chart extends React.Component{
                     {/*#include virtual="/includes/728x15-ATF-Link-Ad.shtml" */}
                     {/* END of Menu Code */}
                     <hr />
+                    <hr />
+                    <hr />
                     <header className="section__head">
                       <div>
                         <h1 align="left"><a href="./">Bitcoin Tools</a></h1>
