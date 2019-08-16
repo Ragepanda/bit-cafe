@@ -1,6 +1,7 @@
 import React from "react";
 import API from "../../utils/API";
 import Graph from "./Graph";
+import Moment from "moment";
 
 
 class Chart extends React.Component{
@@ -17,12 +18,13 @@ class Chart extends React.Component{
 		//console.log(res.data);
 		this.setState({hourlyData: res.data}, function(){
 			console.log(this.state.hourlyData);
+			this.convertTime(res.data[0].time);
 		});
 		//console.log(test);
      	 })
-	  	.catch(err => console.log(err));
-		
-	}
+		  .catch(err => console.log(err));
+		 
+	}	
 
 	addGraph(){
 		if(this.state.hourlyData.length > 0){
@@ -30,7 +32,9 @@ class Chart extends React.Component{
 		}
   	}
 
-
+	  convertTime(timeStamp){
+		   console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
+	  }
 
 	render(){
 		return(
