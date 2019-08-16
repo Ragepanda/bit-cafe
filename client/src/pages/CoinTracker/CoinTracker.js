@@ -27,7 +27,7 @@ class CoinTracker extends React.Component{
 					AD SPACE
 					AD SPACE
 				</div>
-				<table className="col-10 table table-striped table-dark table-hover" id="coinTable">
+				<table className="col-10 table table-striped table-dark" id="coinTable">
 				<thead>
 				<tr>
 					<th scope="col">Rank</th>

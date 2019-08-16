@@ -2,3 +2,13 @@
 	background-color: #211D30;
 	color: #E5E4E7;
 }
+
+.table td, .table th, .table thead th {
+	border-color: #CAC9CF;
+}
+
+
+.rowHover:hover td, .rowHover:hover th{
+	background-color:#9593A0;
+	color: #E5E4E7;
+}
