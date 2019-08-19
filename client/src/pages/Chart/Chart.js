@@ -18,7 +18,6 @@ class Chart extends React.Component{
 		//console.log(res.data);
 		this.setState({hourlyData: res.data}, function(){
 			console.log(this.state.hourlyData);
-			this.convertTime(res.data[0].time);
 		});
 		//console.log(test);
      	 })
@@ -28,13 +27,23 @@ class Chart extends React.Component{
 
 	addGraph(){
 		if(this.state.hourlyData.length > 0){
-  			return(<Graph data = {this.state.hourlyData}/>)
+  			return(<Graph 
+          symbol = {this.props.symbol}
+          data = {this.state.hourlyData}
+          hourConverter = {this.convertTimeHours}
+          dayConverter = {this.convertTimeExactDay}
+        />)
 		}
   	}
 
-	  convertTime(timeStamp){
-		   console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
+	  convertTimeHours(timeStamp){
+		  //console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
+      return Moment.unix(timeStamp,"x").format("HH:mm"); 
 	  }
+    convertTimeExactDay(timeStamp){
+      //console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
+      return Moment.unix(timeStamp,"x").format("YYYY-MM-DD"); 
+    }
 
 	render(){
 		return(

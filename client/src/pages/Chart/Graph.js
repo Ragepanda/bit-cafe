@@ -15,17 +15,15 @@ class Graph extends React.Component{
 
 		for(var i =0; i < this.props.data.length; i++){
 			points.push({x: i *5, y: this.props.data[i].high});
-			timeLabels.push(this.props.data[i].time/60/24)
+			timeLabels.push(this.props.hourConverter(this.props.data[i].time))
 			console.log(points[i]);
 		}
 
 
 		this.state={
 			chartData: {
-				backgroundColor: "#0C0032",
 				labels: timeLabels,
 				datasets: [{
-					label: 'price',
 					data: points,
 					backgroundColor: 'rgba(224, 218, 242, 0.8)',//fill under line
 					borderColor: 'rgba(224, 218, 242, 1)', //line
@@ -35,6 +33,10 @@ class Graph extends React.Component{
 					
             },
             options: {
+            	title: {
+            		display: true,
+            		text: this.props.symbol + " price " + this.props.dayConverter(this.props.data[0].time)
+            	},
         		elements: {
             		line: {
                 		tension: 0 // disables bezier curves
@@ -53,9 +55,20 @@ class Graph extends React.Component{
         					color:"#E2DFEB"
         				}
         			}],
-        		}
-    		}
-		}
+        		},
+        		legend:{
+        			display: false
+        		},
+
+        		tooltips: {
+            		callbacks: {
+                		label: function(tooltipItems, data) {
+                    	return "$" + tooltipItems.yLabel.toString();
+                		}
+    				}
+				}	
+			}
+		}	
 	}
 	
 
