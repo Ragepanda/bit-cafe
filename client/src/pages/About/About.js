@@ -2,8 +2,7 @@ import React from "react";
 import API from "../../utils/API";
 import { Helmet } from "react-helmet";
 
-
-class About extends React.Component {
+class About extends React.Component{
 
   constructor(props) {
     super(props);
@@ -64,7 +63,9 @@ class About extends React.Component {
                   {/* SET UP Menu Code */}
                   {/*#include virtual="/includes/728x15-ATF-Link-Ad.shtml" */}
                   {/* END of Menu Code */}
-                  <hr />
+                  <hr/>
+                  <hr/>
+                  <hr/>
                   <header className="section__head">
                     <h1 align="left"><a href="./">Bitcoin Tools</a></h1>
                     <h2 align="left">What is Bitcoin ?</h2>
