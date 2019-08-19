@@ -1,6 +1,6 @@
 import React from "react";
 import API from "../../utils/API";
-
+import { Helmet } from "react-helmet";
 
 class Exchange extends React.Component{
 
@@ -21,8 +21,18 @@ class Exchange extends React.Component{
 	}
 
 	render(){
+    if (!this.props.coin) return <div></div>;
 		return(
 			<div className="wrapper">
+              <Helmet>
+          <title>{this.props.coin.CoinInfo.FullName + " | "+ this.props.coin.CoinInfo.FullName + " Exchange Rate Overview"}</title>
+          <meta name="description" content={"This "+this.props.coin.CoinInfo.FullName+" Exchange Rate Overview page will help you locate a "+this.props.coin.CoinInfo.FullName+" exchange to use to track the price of "+this.props.coin.CoinInfo.FullName+" as well as the current "+this.props.coin.CoinInfo.FullName+" exchange rate. This page also includes a "+this.props.coin.CoinInfo.FullName+" exchange rate calculator to help you track the "+this.props.coin.CoinInfo.FullName+" exchange rate for "+this.props.coin.CoinInfo.FullName+" to usd or other currencies."}/>
+          <meta name="keywords" content={"cryptocurrency,crypto,coin,"+this.props.coin.CoinInfo.FullName+","+this.props.symbol+",price,value,calculator,calculators,exchange,rate,track,exchanges,usd"} />
+          <meta name="author" content="calc-aids.com"/>
+          <meta http-equiv="Content-Language" content="en-US"/>
+          <meta name="rating" content="kids"/>
+          <meta http-equiv="content-type" content="text/html" charSet="utf-8" />
+        </Helmet>
         <div className="container">
           <div className="content">
             {/* SET UP Logo Top of Page */}
@@ -44,20 +54,20 @@ class Exchange extends React.Component{
                   <hr />
                   <hr />
                   <header className="section__head">
-                    <h1 align="left"><a href="./">Bitcoin Tools</a></h1>
-                    <h2 align="left">Bitcoin Exchange Rate Overview</h2>
+                    <h1 align="left"><a href="./">{this.props.coin.CoinInfo.FullName}</a></h1>
+                    <h2 align="left">{this.props.coin.CoinInfo.FullName} Exchange Rate Overview</h2>
                   </header>{/* /.section__head */}
                   <div className="section__body">
                     <article className="article">
                       <header className="article__head">
                       </header>{/* /.article__head */}
                       <div className="article__body">
-                        <p>This Bitcoin Exchange Rate Overview page will help you locate a bitcoin exchange to use to track the price of bitcoin as well as the current bitcoin exchange rate. This page also includes a bitcoin exchange rate calculator to help you track the bitcoin exchange rate for bitcoin to usd or other currencies.</p><br />
-                        <h3>Bitcoin Exchange</h3>
-                        <p>This is a bitcoin exchange repository, populated with many of the most used bitcoin exchanges. You can click a bitcoin exchange to get a more in-depth view of that bitcoin exchange.</p>
+                        <p>This {this.props.coin.CoinInfo.FullName} Exchange Rate Overview page will help you locate a {this.props.coin.CoinInfo.FullName} exchange to use to track the price of {this.props.coin.CoinInfo.FullName} as well as the current {this.props.coin.CoinInfo.FullName} exchange rate. This page also includes a {this.props.coin.CoinInfo.FullName} exchange rate calculator to help you track the {this.props.coin.CoinInfo.FullName} exchange rate for {this.props.coin.CoinInfo.FullName} to usd or other currencies.</p><br />
+                        <h3>{this.props.coin.CoinInfo.FullName} Exchange</h3>
+                        <p>This is a {this.props.coin.CoinInfo.FullName} exchange repository, populated with many of the most used {this.props.coin.CoinInfo.FullName} exchanges. You can click a {this.props.coin.CoinInfo.FullName} exchange to get a more in-depth view of that {this.props.coin.CoinInfo.FullName} exchange.</p>
                         <div id="exchangeContainer" />
-                        <h3>Bitcoin Exchange Rate Calculator</h3>
-                        <p>This bitcoin exchange calculator will allow you to determine the bitcoin exchange rate to USD, and many other currencies.</p>
+                        <h3>{this.props.coin.CoinInfo.FullName} Exchange Rate Calculator</h3>
+                        <p>This {this.props.coin.CoinInfo.FullName} exchange calculator will allow you to determine the {this.props.coin.CoinInfo.FullName} exchange rate to USD, and many other currencies.</p>
                         <div id="calculatorContainer" />
                         <p>For more useful calculators, click <a href="./">here</a></p>
                         {/*  Insert 625-728-Combo-Tag Code Here   */}
@@ -72,7 +82,7 @@ class Exchange extends React.Component{
                             </tr>
                           </tbody></table>
                         <br /><br /><br /><br />
-                        <div align="center"><b>Click here for more pages like this </b> <a href="./"><b>Bitcoin Exchange Overview</b></a></div>
+                        <div align="center"><b>Click here for more pages like this </b> <a href="./"><b>{this.props.coin.CoinInfo.FullName} Exchange Overview</b></a></div>
                         <div style={{height: '1200px'}} />
                       </div>{/* /.article__body */}
                     </article>{/* /.article */}
@@ -124,7 +134,7 @@ class Exchange extends React.Component{
             {/*#include virtual="/includes/footer.shtml" */}
             {/* END Footer */}
             <div className="footer__site-map">
-              <a href="./">Bitcoin Exchange</a>
+              <a href="./">{this.props.coin.CoinInfo.FullName} Exchange</a>
             </div>{/* /.footer__site-map */}
           </div>{/* /.footer__content */}
         </footer>{/* /.footer */}

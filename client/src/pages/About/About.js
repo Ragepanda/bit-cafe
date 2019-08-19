@@ -16,36 +16,36 @@ class About extends React.Component{
 
 
   componentDidMount() {
-
-
   }
 
   loadMeta() {
     // We can do a big switch statement here and have the return value be the exact helmet element we want. For example: 
-
-    switch (this.props.symbol) {
-      case "BTC":
-        return
+    return(
         <Helmet>
-          <meta charSet="utf-8" />
-          <title>My Title</title>
-          <link rel="canonical" href="http://mysite.com/example" />
+          <title>{this.props.coin.CoinInfo.FullName + "| What is "+ this.props.coin.CoinInfo.FullName}</title>
+          <meta name="description" content={"This page will help answer the question of, what is "+this.props.coin.CoinInfo.FullName+"? Our what is "+this.props.coin.CoinInfo.FullName+" page provides useful information about the cryptocurrency, "+this.props.coin.CoinInfo.FullName+". If you still don't know what is "+this.props.coin.CoinInfo.FullName+", then read on."}/>
+          <meta name="keywords" content={"cryptocurrency,crypto,coin,"+this.props.coin.CoinInfo.FullName+","+this.props.symbol+",price,value,news,aggregator,new"} />
+          <meta name="author" content="calc-aids.com"/>
+          <meta http-equiv="Content-Language" content="en-US"/>
+          <meta name="rating" content="kids"/>
+          <meta http-equiv="content-type" content="text/html" charSet="utf-8" />
         </Helmet>
-
-      case "ETH":
-        return
-        <Helmet>
-          <meta charSet="utf-8" />
-          <title>My Title</title>
-          <link rel="canonical" href="http://mysite.com/example" />
-        </Helmet>
-    }
+        )
   }
 
   render() {
-
+    if (!this.props.coin) return <div></div>;
     return (
       <div className="wrapper">
+        <Helmet>
+          <title>{this.props.coin.CoinInfo.FullName + " | What is "+ this.props.coin.CoinInfo.FullName}</title>
+          <meta name="description" content={"This page will help answer the question of, what is "+this.props.coin.CoinInfo.FullName+"? Our what is "+this.props.coin.CoinInfo.FullName+" page provides useful information about the cryptocurrency, "+this.props.coin.CoinInfo.FullName+". If you still don't know what is "+this.props.coin.CoinInfo.FullName+", then read on."}/>
+          <meta name="keywords" content={"cryptocurrency,crypto,coin,"+this.props.coin.CoinInfo.FullName+","+this.props.symbol+",price,value,news,aggregator,new"} />
+          <meta name="author" content="calc-aids.com"/>
+          <meta http-equiv="Content-Language" content="en-US"/>
+          <meta name="rating" content="kids"/>
+          <meta http-equiv="content-type" content="text/html" charSet="utf-8" />
+        </Helmet>
         <div className="container">
           <div className="content">
             {/* SET UP Logo Top of Page */}
@@ -67,31 +67,31 @@ class About extends React.Component{
                   <hr/>
                   <hr/>
                   <header className="section__head">
-                    <h1 align="left"><a href="./">Bitcoin Tools</a></h1>
-                    <h2 align="left">What is Bitcoin ?</h2>
+                    <h1 align="left"><a href="./">{this.props.coin.CoinInfo.FullName}</a></h1>
+                    <h2 align="left">What is {this.props.coin.CoinInfo.FullName} ?</h2>
                   </header>{/* /.section__head */}
                   <div className="section__body">
                     <article className="article">
                       <header className="article__head">
                       </header>{/* /.article__head */}
                       <div className="article__body">
-                        <p>This page will help answer the question of, what is Bitcoin? Our what is Bitcoin page provides useful information about the cryptocurrency, Bitcoin. If you still don't know what is bitcoin, then read on.</p>
-                        <h3>An overview of Bitcoin</h3>
+                        <p>This page will help answer the question of, what is {this.props.coin.CoinInfo.FullName}? Our what is {this.props.coin.CoinInfo.FullName} page provides useful information about the cryptocurrency, {this.props.coin.CoinInfo.FullName}. If you still don't know what is {this.props.coin.CoinInfo.FullName}, then read on.</p>
+                        <h3>An overview of {this.props.coin.CoinInfo.FullName}</h3>
                         <ul className="list-unstyled">
-                          <li>What is Bitcoin?</li>
-                          <ul><li>Bitcoin is an electronic payment system and the most popular cryptocurrency. Bitcoin was created by a mysterious person(s) named Satoshi Nakamoto to be a secure, peer-to-peer currency. To learn more about cryptocurrency in general, click here.</li></ul>
-                          <li>What is Bitcoin mining?</li>
-                          <ul><li>So what is Bitcoin mining? It is when a large network of computers process and solve how to chain together blocks of bitcoin transactions. When a bitcoin miner does this, they are given newly created Bitcoin and fees. This method of mining is called 'proof of work'.</li></ul>
-                          <li>What is Bitcoin worth?</li>
-                          <ul><li>Like most cryptocurrencies, and currencies, Bitcoin is a fiat currency. So technically the answer to what is Bitcoin worth, is nothing. That being said, since enough people agree to value it as a currency, it does have value.</li></ul>
-                          <li>What is Bitcoin price?</li>
+                          <li>What is {this.props.coin.CoinInfo.FullName}?</li>
+                          <ul><li>{this.props.coin.CoinInfo.FullName} is an electronic payment system and the most popular cryptocurrency. {this.props.coin.CoinInfo.FullName} was created by a mysterious person(s) named Satoshi Nakamoto to be a secure, peer-to-peer currency. To learn more about cryptocurrency in general, click here.</li></ul>
+                          <li>What is {this.props.coin.CoinInfo.FullName} mining?</li>
+                          <ul><li>So what is {this.props.coin.CoinInfo.FullName} mining? It is when a large network of computers process and solve how to chain together blocks of {this.props.coin.CoinInfo.FullName} transactions. When a {this.props.coin.CoinInfo.FullName} miner does this, they are given newly created {this.props.coin.CoinInfo.FullName} and fees. This method of mining is called 'proof of work'.</li></ul>
+                          <li>What is {this.props.coin.CoinInfo.FullName} worth?</li>
+                          <ul><li>Like most cryptocurrencies, and currencies, {this.props.coin.CoinInfo.FullName} is a fiat currency. So technically the answer to what is {this.props.coin.CoinInfo.FullName} worth, is nothing. That being said, since enough people agree to value it as a currency, it does have value.</li></ul>
+                          <li>What is {this.props.coin.CoinInfo.FullName} price?</li>
                           <div id="priceContainer" />
-                          <li>What is Bitcoin marketcap?</li>
+                          <li>What is {this.props.coin.CoinInfo.FullName} marketcap?</li>
                           <div id="graphContainer" />
-                          <li>What is a Bitcoin wallet?</li>
-                          <ul><li>A Bitcoin wallet stores relevant information to access one's Bitcoin, such as the private key to access your Bitcoin and to make transactions with Bitcoin. A Bitcoin wallet can be a desktop program, a web program, a piece of hardware, or a mobile app.</li></ul>
+                          <li>What is a {this.props.coin.CoinInfo.FullName} wallet?</li>
+                          <ul><li>A {this.props.coin.CoinInfo.FullName} wallet stores relevant information to access one's {this.props.coin.CoinInfo.FullName}, such as the private key to access your {this.props.coin.CoinInfo.FullName} and to make transactions with {this.props.coin.CoinInfo.FullName}. A {this.props.coin.CoinInfo.FullName} wallet can be a desktop program, a web program, a piece of hardware, or a mobile app.</li></ul>
                         </ul>
-                        <h3><a href="./">News: What is Bitcoin?</a></h3>
+                        <h3><a href="./">News: What is {this.props.coin.CoinInfo.FullName}?</a></h3>
                         <div id="newsContainer" />
                         {/*  Insert 625-728-Combo-Tag Code Here   */}
                         {/*#include virtual="/includes/625-728-Combo-Tag.shtml" */}
@@ -104,7 +104,7 @@ class About extends React.Component{
                             </td>
                           </tr>
                           </tbody></table>
-                        <div align="center"><b>Click here for more pages like this </b> <a href="./"><b>Overview: What is Bitcoin</b></a></div>
+                        <div align="center"><b>Click here for more pages like this </b> <a href="./"><b>Overview: What is {this.props.coin.CoinInfo.FullName}</b></a></div>
 
                       </div>{/* /.article__body */}
                     </article>{/* /.article */}
@@ -156,7 +156,7 @@ class About extends React.Component{
             {/*#include virtual="/includes/footer.shtml" */}
             {/* END Footer */}
             <div className="footer__site-map">
-              <a href="./">What is Bitcoin ?</a>
+              <a href="./">What is {this.props.coin.CoinInfo.FullName} ?</a>
             </div>{/* /.footer__site-map */}
           </div>{/* /.footer__content */}
         </footer>{/* /.footer */}
