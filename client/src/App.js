@@ -73,15 +73,20 @@ class App extends Component {
           <Navbar
             symbol={this.state.symbol} coins={this.state.coins} changeSymbol={this.changeSymbol} />
           <Switch>
-            <Route
+          <Route
               exact
               path="/"
-              component={(props) => <CoinTracker {...props} coins={this.state.coins} symbol={this.state.symbol} />} />
+              component={(props) => <CoinTracker {...props} coins={this.state.coins} symbol={this.state.symbol} coin={this.state.coin} />} />
+
+            <Route
+              exact
+              path="/tracker"
+              component={(props) => <CoinTracker {...props} coins={this.state.coins} symbol={this.state.symbol} coin={this.state.coin} />} />
 
             <Route
               exact
               path="/news"
-              component={(props) => <News {...props} symbol={this.state.symbol} />} />
+              component={(props) => <News {...props} coin={this.state.coin} symbol={this.state.symbol} />} />
 
             <Route
               exact
@@ -91,17 +96,17 @@ class App extends Component {
             <Route
               exact
               path="/calculator"
-              component={(props) => <Calculator {...props} symbol={this.state.symbol} />} />
+              component={(props) => <Calculator {...props} symbol={this.state.symbol} coin={this.state.coin} />} />
 
             <Route
               exact
               path="/exchange"
-              component={(props) => <Exchange {...props} symbol={this.state.symbol} />} />
+              component={(props) => <Exchange {...props} symbol={this.state.symbol} coin={this.state.coin} />} />
 
             <Route
               exact
               path="/about"
-              component={(props) => <About {...props} symbol={this.state.symbol} />} />
+              component={(props) => <About {...props} symbol={this.state.symbol} coin={this.state.coin} />} />
 
           </Switch>
           <Coinbar />
