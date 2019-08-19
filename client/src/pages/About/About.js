@@ -1,28 +1,52 @@
 import React from "react";
 import API from "../../utils/API";
+import { Helmet } from "react-helmet";
 
 
-class About extends React.Component{
+class About extends React.Component {
 
-    constructor(props){
-        super(props);
+  constructor(props) {
+    super(props);
 
+  }
+
+  state = {
+    coins: []
+  }
+
+
+
+  componentDidMount() {
+
+
+  }
+
+  loadMeta() {
+    // We can do a big switch statement here and have the return value be the exact helmet element we want. For example: 
+
+    switch (this.props.symbol) {
+      case "BTC":
+        return
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>My Title</title>
+          <link rel="canonical" href="http://mysite.com/example" />
+        </Helmet>
+
+      case "ETH":
+        return
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>My Title</title>
+          <link rel="canonical" href="http://mysite.com/example" />
+        </Helmet>
     }
-    
-	state ={
-    	coins: []
-  	}
+  }
 
+  render() {
 
-
-	componentDidMount(){
-
-
-	}
-
-	render(){
-		return(
-		<div className="wrapper">
+    return (
+      <div className="wrapper">
         <div className="container">
           <div className="content">
             {/* SET UP Logo Top of Page */}
@@ -40,7 +64,7 @@ class About extends React.Component{
                   {/* SET UP Menu Code */}
                   {/*#include virtual="/includes/728x15-ATF-Link-Ad.shtml" */}
                   {/* END of Menu Code */}
-                  <hr/>
+                  <hr />
                   <header className="section__head">
                     <h1 align="left"><a href="./">Bitcoin Tools</a></h1>
                     <h2 align="left">What is Bitcoin ?</h2>
@@ -54,7 +78,7 @@ class About extends React.Component{
                         <h3>An overview of Bitcoin</h3>
                         <ul className="list-unstyled">
                           <li>What is Bitcoin?</li>
-                          <ul><li>Bitcoin is an electronic payment system and the most popular cryptocurrency. Bitcoin was created by a mysterious person(s) named Satoshi Nakamoto to be a secure, peer-to-peer currency. To learn more about cryptocurrency in general, click here.</li></ul> 
+                          <ul><li>Bitcoin is an electronic payment system and the most popular cryptocurrency. Bitcoin was created by a mysterious person(s) named Satoshi Nakamoto to be a secure, peer-to-peer currency. To learn more about cryptocurrency in general, click here.</li></ul>
                           <li>What is Bitcoin mining?</li>
                           <ul><li>So what is Bitcoin mining? It is when a large network of computers process and solve how to chain together blocks of bitcoin transactions. When a bitcoin miner does this, they are given newly created Bitcoin and fees. This method of mining is called 'proof of work'.</li></ul>
                           <li>What is Bitcoin worth?</li>
@@ -71,16 +95,16 @@ class About extends React.Component{
                         {/*  Insert 625-728-Combo-Tag Code Here   */}
                         {/*#include virtual="/includes/625-728-Combo-Tag.shtml" */}
                         {/*  End of 625-728-Combo-Tag Code Here  */}
-                        
+
                         <table border={0} width="100%" cellPadding={0} cellSpacing={0}>
                           <tbody><tr>
-                              <td align="center">
-                                {/*#include virtual="/includes/300x250-Content.shtml" */}
-                              </td>
-                            </tr>
+                            <td align="center">
+                              {/*#include virtual="/includes/300x250-Content.shtml" */}
+                            </td>
+                          </tr>
                           </tbody></table>
                         <div align="center"><b>Click here for more pages like this </b> <a href="./"><b>Overview: What is Bitcoin</b></a></div>
-                   
+
                       </div>{/* /.article__body */}
                     </article>{/* /.article */}
                   </div>{/* /.section__body */}
@@ -136,12 +160,13 @@ class About extends React.Component{
           </div>{/* /.footer__content */}
         </footer>{/* /.footer */}
         {/* /.wrapper */}
-      {/*  SET UP Addthis & Pinterest Pin Function  */}
-      {/*#include virtual="/includes/addthis_pinterest.shtml" */}
-      {/*  End of Addthis & Pinterest Pin Function  */}
-      </div> 
-	
-	)}
+        {/*  SET UP Addthis & Pinterest Pin Function  */}
+        {/*#include virtual="/includes/addthis_pinterest.shtml" */}
+        {/*  End of Addthis & Pinterest Pin Function  */}
+      </div>
+
+    )
+  }
 }
 
 export default About;
