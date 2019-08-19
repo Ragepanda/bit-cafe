@@ -24,6 +24,7 @@ class App extends Component {
     super(props);
     this.state = {
       coins: [],
+      coin: {},
       symbol: "BTC",
       symbolCoin: []
     }
@@ -62,7 +63,7 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.coins.length === 0) {
+    if (this.state.coins.length === 0 && this.state.coin === {}) {
       return <div />
     }
 
@@ -80,7 +81,7 @@ class App extends Component {
 
             <Route
               exact
-              path="/tracker"
+              path="/home"
               component={(props) => <CoinTracker {...props} coins={this.state.coins} symbol={this.state.symbol} coin={this.state.coin} />} />
 
             <Route
@@ -106,6 +107,43 @@ class App extends Component {
             <Route
               exact
               path="/about"
+              component={(props) => <About {...props} symbol={this.state.symbol} coin={this.state.coin} />} />
+
+              {/* EXPERIMENTAL STUFF, VARIABLE BASED URLS */}
+
+                <Route
+              exact
+              path="/"
+              component={(props) => <CoinTracker {...props} coins={this.state.coins} symbol={this.state.symbol} coin={this.state.coin} />} />
+
+            <Route
+              exact
+              path="/home"
+              component={(props) => <CoinTracker {...props} coins={this.state.coins} symbol={this.state.symbol} coin={this.state.coin} />} />
+
+            <Route
+              exact
+              path="/news/:symbol"
+              component={(props) => <News {...props} coin={this.state.coin} symbol={this.state.symbol} />} />
+
+            <Route
+              exact
+              path="/chart/:symbol"
+              component={(props) => <Chart {...props} coin={this.state.coin}  symbol={this.state.symbol} />} />
+
+            <Route
+              exact
+              path="/calculator/:symbol"
+              component={(props) => <Calculator {...props} symbol={this.state.symbol} coin={this.state.coin} />} />
+
+            <Route
+              exact
+              path="/exchange/:symbol"
+              component={(props) => <Exchange {...props} symbol={this.state.symbol} coin={this.state.coin} />} />
+
+            <Route
+              exact
+              path="/about/:symbol"
               component={(props) => <About {...props} symbol={this.state.symbol} coin={this.state.coin} />} />
 
           </Switch>

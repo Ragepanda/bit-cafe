@@ -25,22 +25,22 @@ class Navbar extends React.Component{
        <div className="collapse navbar-collapse" id="navbarNav">
     <ul className="navbar-nav mr-auto">
       <li className="nav-item">
-        <NavLink className="nav-link" to="/tracker">Home</NavLink>
+        <NavLink className="nav-link" to="/home">Home</NavLink>
       </li>
       <li className="nav-item">
-        <NavLink className="nav-link" to="/chart">{this.props.symbol} Chart</NavLink>
+        <NavLink className="nav-link" to={"/chart/"+this.props.symbol}>{this.props.symbol} Chart</NavLink>
       </li>
       <li className="nav-item">
-        <NavLink className="nav-link" to="/exchange">{this.props.symbol} Exchange</NavLink>
+        <NavLink className="nav-link" to={"/exchange/"+this.props.symbol}>{this.props.symbol} Exchange</NavLink>
       </li>
       <li className="nav-item">
-          <NavLink className="nav-link" to="/news">{this.props.symbol} News</NavLink>
+          <NavLink className="nav-link" to={"/news/"+this.props.symbol}>{this.props.symbol} News</NavLink>
       </li>
       <li className="nav-item">
-          <NavLink className="nav-link" to="/calculator">{this.props.symbol} Calculator</NavLink>
+          <NavLink className="nav-link" to={"/calculator/"+this.props.symbol}>{this.props.symbol} Calculator</NavLink>
       </li>
       <li className="nav-item">
-          <NavLink className="nav-link" to="/about">About {this.props.symbol}</NavLink>
+          <NavLink className="nav-link" to={"/about/"+this.props.symbol}>About {this.props.symbol}</NavLink>
       </li>
      <li className="nav-item">
         <SearchBar classname="nav-link" symbol={this.props.symbol} coins = {this.props.coins} changeSymbol = {this.props.changeSymbol}> </SearchBar>
