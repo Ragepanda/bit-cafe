@@ -3,6 +3,7 @@ import API from "../../utils/API";
 import Graph from "./Graph";
 import Moment from "moment";
 import { Helmet } from "react-helmet";
+import'./Chart.css';
 
 class Chart extends React.Component{
 
@@ -90,7 +91,7 @@ class Chart extends React.Component{
                     <header className="section__head">
                       <div>
                         <h1 align="left"><a href="./">{this.props.coin.CoinInfo.FullName}</a></h1>
-                        <h2 align="left">{this.props.coin.CoinInfo.FullName} Price Overview</h2>
+                        <h2 align="left">{this.props.coin.CoinInfo.FullName} Price Chart Overview</h2>
                       </div></header>{/* /.section__head */}
                   </section></div>
                 <div className="section__body">
@@ -102,7 +103,7 @@ class Chart extends React.Component{
                   <p>This {this.props.coin.CoinInfo.FullName} Price Chart will be helpful in determining the current {this.props.coin.CoinInfo.FullName} price, as well as trends in {this.props.coin.CoinInfo.FullName} price. Our {this.props.coin.CoinInfo.FullName} price chart is highly customizable to help you find and analyze the trends in {this.props.coin.CoinInfo.FullName} price and {this.props.coin.CoinInfo.FullName} value.</p><br />
                 </div>
                 <div className="row">
-                  <div className="col-md-7" id="chartDIV">
+                  <div className="col-md-7">
                     <h3>{this.props.coin.CoinInfo.FullName} Price Chart</h3>
                     <div>
                     {this.addGraph()}

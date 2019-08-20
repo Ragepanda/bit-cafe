@@ -1,6 +1,7 @@
 import React from "react";
 import ListItem from "./ListItem";
 import "./CoinTracker.css";
+import { Helmet } from "react-helmet";
 
 class CoinTracker extends React.Component{
 
@@ -12,8 +13,18 @@ class CoinTracker extends React.Component{
 	}
 
 	render(){
+		if (typeof(this.props.coin.CoinInfo) ==="undefined") return <div></div>;
 		return(
 			<div>
+			<Helmet>
+			  <title>{"BitcoinSama | "+this.props.coin.CoinInfo.FullName+" News & "+this.props.coin.CoinInfo.FullName+" Charts"}</title>
+			  <meta name="description" content={"This page will help answer the question of, what is "+this.props.coin.CoinInfo.FullName+"? Our what is "+this.props.coin.CoinInfo.FullName+" page provides useful information about the cryptocurrency, "+this.props.coin.CoinInfo.FullName+". If you still don't know what is "+this.props.coin.CoinInfo.FullName+", then read on."}/>
+			  <meta name="keywords" content={"cryptocurrency,crypto,coin,"+this.props.coin.CoinInfo.FullName+","+this.props.symbol+",price,value,news,aggregator,new"} />
+			  <meta name="author" content="calc-aids.com"/>
+			  <meta http-equiv="Content-Language" content="en-US"/>
+			  <meta name="rating" content="kids"/>
+			  <meta http-equiv="content-type" content="text/html" charSet="utf-8" />
+			</Helmet>
 			<br/>
 			<br/>
 			<div className="container">

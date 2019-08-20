@@ -36,52 +36,50 @@ class News extends React.Component {
     if (this.state.articles.length > 0) {
       // console.log(this.state.articles);
 
-      return (
-
-        <div className="wrapper">
-          <Helmet>
-            <title>{this.props.coin.CoinInfo.FullName + " | " + this.props.coin.CoinInfo.FullName + " Calculator"}</title>
-            <meta name="description" content={"This is our " + this.props.coin.CoinInfo.FullName + " news aggregator. Here you can find recent " + this.props.coin.CoinInfo.FullName + " news that can help you understand " + this.props.coin.CoinInfo.FullName + " trends and possibly provide insight into " + this.props.coin.CoinInfo.FullName + " price trends. This " + this.props.coin.CoinInfo.FullName + " news page is updated constantly. Please enjoy using our " + this.props.coin.CoinInfo.FullName + " news aggregator."} />
-            <meta name="keywords" content={"cryptocurrency,crypto,coin," + this.props.coin.CoinInfo.FullName + "," + this.props.symbol + ",price,value,news,aggregator,new,info"} />
-            <meta name="author" content="calc-aids.com" />
-            <meta http-equiv="Content-Language" content="en-US" />
-            <meta name="rating" content="kids" />
-            <meta http-equiv="content-type" content="text/html" charSet="utf-8" />
-          </Helmet>
-          <div className="container">
-            <div className="content">
-              {/* SET UP Logo Top of Page */}
-              {/*#include virtual="/includes/logo-header.shtml" */}
-              {/* END of Logo Top of Page */}
-              <div className="main">
-                {/* SET UP Menu Code */}
-                {/*#include virtual="/includes/menu-topic.shtml" */}
-                {/* END of Menu Code */}
-                <div className="main__content">
-                  {/* SET UP Menu Code */}
-                  {/*#include virtual="/includes/hamburger-menu-controls.shtml" */}
-                  {/* END of Menu Code */}
-                  <section className="section">
-                    {/* SET UP Menu Code */}
-                    {/*#include virtual="/includes/728x15-ATF-Link-Ad.shtml" */}
-                    {/* END of Menu Code */}
-                    <hr />
-                    <hr />
-                    <hr />
-                    <header className="section__head">
-                      <h1 align="left"><a href="./">{this.props.coin.CoinInfo.FullName}</a></h1>
-                      <h2 align="left">{this.props.coin.CoinInfo.FullName} News Aggregator</h2>
-                    </header>{/* /.section__head */}
-                    <div className="section__body">
-                      <article className="article">
-                        <header className="article__head">
-                        </header>{/* /.article__head */}
-                        <div className="article__body">
-                          <p>This is our {this.props.coin.CoinInfo.FullName} news aggregator. Here you can find recent {this.props.coin.CoinInfo.FullName} news that can help you understand {this.props.coin.CoinInfo.FullName} trends and possibly provide insight into {this.props.coin.CoinInfo.FullName} price trends. This {this.props.coin.CoinInfo.FullName} news page is updated constantly. Please enjoy using our {this.props.coin.CoinInfo.FullName} news aggregator.</p><br />
-                          <h3>Current {this.props.coin.CoinInfo.FullName} News</h3>
-                          <div className="col-12">
-                            <div className="row justify-content-center">
-                              {/* {this.state.tweets.map(tweet => 
+                <div className="wrapper">
+                <Helmet>
+                  <title>{this.props.coin.CoinInfo.FullName + " | "+ this.props.coin.CoinInfo.FullName + " News Aggregator"}</title>
+                  <meta name="description" content={"This is our "+this.props.coin.CoinInfo.FullName+" news aggregator. Here you can find recent "+this.props.coin.CoinInfo.FullName+" news that can help you understand "+this.props.coin.CoinInfo.FullName+" trends and possibly provide insight into "+this.props.coin.CoinInfo.FullName+" price trends. This "+this.props.coin.CoinInfo.FullName+" news page is updated constantly. Please enjoy using our "+this.props.coin.CoinInfo.FullName+" news aggregator."}/>
+                  <meta name="keywords" content={"cryptocurrency,crypto,coin,"+this.props.coin.CoinInfo.FullName+","+this.props.symbol+",price,value,news,aggregator,new,info"} />
+                  <meta name="author" content="calc-aids.com"/>
+                  <meta http-equiv="Content-Language" content="en-US"/>
+                  <meta name="rating" content="kids"/>
+                  <meta http-equiv="content-type" content="text/html" charSet="utf-8" />
+                </Helmet>
+                        <div className="container">
+                          <div className="content">
+                            {/* SET UP Logo Top of Page */}
+                            {/*#include virtual="/includes/logo-header.shtml" */}
+                            {/* END of Logo Top of Page */}
+                            <div className="main">
+                              {/* SET UP Menu Code */}
+                              {/*#include virtual="/includes/menu-topic.shtml" */}
+                              {/* END of Menu Code */}
+                              <div className="main__content">
+                                {/* SET UP Menu Code */}
+                                {/*#include virtual="/includes/hamburger-menu-controls.shtml" */}
+                                {/* END of Menu Code */}
+                                <section className="section">
+                                  {/* SET UP Menu Code */}
+                                  {/*#include virtual="/includes/728x15-ATF-Link-Ad.shtml" */}
+                                  {/* END of Menu Code */}
+                                  <hr />
+                                  <hr />
+                                  <hr />
+                                  <header className="section__head">
+                                    <h1 align="left"><a href="./">{this.props.coin.CoinInfo.FullName}</a></h1>
+                                    <h2 align="left">{this.props.coin.CoinInfo.FullName} News Aggregator</h2>
+                                  </header>{/* /.section__head */}
+                                  <div className="section__body">
+                                    <article className="article">
+                                      <header className="article__head">
+                                      </header>{/* /.article__head */}
+                                      <div className="article__body">
+                                        <p>This is our {this.props.coin.CoinInfo.FullName} news aggregator. Here you can find recent {this.props.coin.CoinInfo.FullName} news that can help you understand {this.props.coin.CoinInfo.FullName} trends and possibly provide insight into {this.props.coin.CoinInfo.FullName} price trends. This {this.props.coin.CoinInfo.FullName} news page is updated constantly. Please enjoy using our {this.props.coin.CoinInfo.FullName} news aggregator.</p><br />
+                                        <h3>Current {this.props.coin.CoinInfo.FullName} News</h3>
+                    <div className="col-12">
+                    <div className="row justify-content-center">
+                        {/* {this.state.tweets.map(tweet => 
                             <TweetCard tweet = {tweet} key = {tweet.twitterId}/>          
                         )} */}
                               {
@@ -164,7 +162,7 @@ class News extends React.Component {
           {/*#include virtual="/includes/addthis_pinterest.shtml" */}
           {/*  End of Addthis & Pinterest Pin Function  */}
         </div>
-      )
+      
     }
 
     else return null;

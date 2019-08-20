@@ -20,25 +20,8 @@ class About extends React.Component {
       if (typeof(this.props.match.params.symbol) === "undefined")
         this.props.history.push("./"+this.props.symbol);
     }
-
-
-
   }
 
-  loadMeta() {
-    // We can do a big switch statement here and have the return value be the exact helmet element we want. For example: 
-    return (
-      <Helmet>
-        <title>{this.props.coin.CoinInfo.FullName + "| What is " + this.props.coin.CoinInfo.FullName}</title>
-        <meta name="description" content={"This page will help answer the question of, what is " + this.props.coin.CoinInfo.FullName + "? Our what is " + this.props.coin.CoinInfo.FullName + " page provides useful information about the cryptocurrency, " + this.props.coin.CoinInfo.FullName + ". If you still don't know what is " + this.props.coin.CoinInfo.FullName + ", then read on."} />
-        <meta name="keywords" content={"cryptocurrency,crypto,coin," + this.props.coin.CoinInfo.FullName + "," + this.props.symbol + ",price,value,news,aggregator,new"} />
-        <meta name="author" content="calc-aids.com" />
-        <meta http-equiv="Content-Language" content="en-US" />
-        <meta name="rating" content="kids" />
-        <meta http-equiv="content-type" content="text/html" charSet="utf-8" />
-      </Helmet>
-    )
-  }
 
   render() {
     if (this.props.coin.CoinInfo == null || this.props.symbol == null) return <div></div>;

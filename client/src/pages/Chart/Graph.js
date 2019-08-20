@@ -1,5 +1,6 @@
 import React from "react";
 import {Chart, Line} from 'react-chartjs-2'
+import "./Graph.css"
 //import Chart from "chart.js"
 
 
@@ -87,7 +88,7 @@ class Graph extends React.Component{
   	render()
   	{
   		return(
-  			<div className="col-xs-4">
+  			<div>
   				<Line
   					data={this.state.chartData}
   					width={50}
