@@ -2,7 +2,7 @@ import React from "react";
 import API from "../../utils/API";
 import Graph from "./Graph";
 import Moment from "moment";
-
+import { Helmet } from "react-helmet";
 
 class Chart extends React.Component{
 
@@ -15,10 +15,17 @@ class Chart extends React.Component{
 	componentDidMount(){
 			API.getHourlyHistoryBySymbol(this.props.symbol)
       .then(res => {
-		//console.log(res.data);
+        
+        if (this.props.symbol !== this.props.match.params.symbol) {
+          if (this.props.match.params.symbol !== null) {
+            this.props.changeSymbol(this.props.match.params.symbol);
+          }
+          if (typeof(this.props.match.params.symbol) === "undefined")
+            this.props.history.push("./"+this.props.symbol);
+        }
 		this.setState({hourlyData: res.data}, function(){
-			console.log(this.state.hourlyData);
-			this.convertTime(res.data[0].time);
+    
+    
 		});
 		//console.log(test);
      	 })
@@ -28,18 +35,38 @@ class Chart extends React.Component{
 
 	addGraph(){
 		if(this.state.hourlyData.length > 0){
-  			return(<Graph data = {this.state.hourlyData}/>)
+  			return(<Graph 
+          symbol = {this.props.symbol}
+          data = {this.state.hourlyData}
+          hourConverter = {this.convertTimeHours}
+          dayConverter = {this.convertTimeExactDay}
+        />)
 		}
   	}
 
-	  convertTime(timeStamp){
-		   console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
+	  convertTimeHours(timeStamp){
+		  //console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
+      return Moment.unix(timeStamp,"x").format("HH:mm"); 
 	  }
+    convertTimeExactDay(timeStamp){
+      //console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
+      return Moment.unix(timeStamp,"x").format("YYYY-MM-DD"); 
+    }
 
 	render(){
+    if (typeof(this.props.coin.CoinInfo) ==="undefined") return <div></div>;
 		return(
 <div>
         <div className="wrapper">
+        <Helmet>
+          <title>{this.props.coin.CoinInfo.FullName + " | "+ this.props.coin.CoinInfo.FullName + " Price Chart"}</title>
+          <meta name="description" content={"This "+this.props.coin.CoinInfo.FullName+" Price Chart will be helpful in determining the current "+this.props.coin.CoinInfo.FullName+" price, as well as trends in "+this.props.coin.CoinInfo.FullName+" price. Our "+this.props.coin.CoinInfo.FullName+" price chart is highly customizable to help you find and analyze the trends in "+this.props.coin.CoinInfo.FullName+" price and "+this.props.coin.CoinInfo.FullName+" value."}/>
+          <meta name="keywords" content={"cryptocurrency,crypto,coin,"+this.props.coin.CoinInfo.FullName+","+this.props.symbol+",price,value,usd, chart, charts, trends, trend, prices, values"} />
+          <meta name="author" content="calc-aids.com"/>
+          <meta http-equiv="Content-Language" content="en-US"/>
+          <meta name="rating" content="kids"/>
+          <meta http-equiv="content-type" content="text/html" charSet="utf-8" />
+        </Helmet>
           <div className="container">
             <div className="content">
               {/* SET UP Logo Top of Page */}
@@ -62,8 +89,8 @@ class Chart extends React.Component{
                     <hr />
                     <header className="section__head">
                       <div>
-                        <h1 align="left"><a href="./">Bitcoin Tools</a></h1>
-                        <h2 align="left">Bitcoin Price Overview</h2>
+                        <h1 align="left"><a href="./">{this.props.coin.CoinInfo.FullName}</a></h1>
+                        <h2 align="left">{this.props.coin.CoinInfo.FullName} Price Overview</h2>
                       </div></header>{/* /.section__head */}
                   </section></div>
                 <div className="section__body">
@@ -72,23 +99,23 @@ class Chart extends React.Component{
                     </header>{/* /.article__head */}
                   </article></div>
                 <div className="article__body">
-                  <p>This Bitcoin Price Chart will be helpful in determining the current bitcoin price, as well as trends in Bitcoin price. Our Bitcoin price chart is highly customizable to help you find and analyze the trends in Bitcoin price and bitcoin value.</p><br />
+                  <p>This {this.props.coin.CoinInfo.FullName} Price Chart will be helpful in determining the current {this.props.coin.CoinInfo.FullName} price, as well as trends in {this.props.coin.CoinInfo.FullName} price. Our {this.props.coin.CoinInfo.FullName} price chart is highly customizable to help you find and analyze the trends in {this.props.coin.CoinInfo.FullName} price and {this.props.coin.CoinInfo.FullName} value.</p><br />
                 </div>
                 <div className="row">
                   <div className="col-md-7" id="chartDIV">
-                    <h3>Bitcoin Price Chart</h3>
+                    <h3>{this.props.coin.CoinInfo.FullName} Price Chart</h3>
                     <div>
                     {this.addGraph()}
                     </div>
                   </div>
                   <div className="col-md-5">
-                    <h3>News of Bitcoin Price</h3>
+                    <h3>News of {this.props.coin.CoinInfo.FullName} Price</h3>
                     <div id="newsContainer">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</div>
                   </div>
                 </div>
                 {/* row */}
                 <br />
-                <h3 align="left"><a href="./">Exchanges to Track Bitcoin Price</a></h3>
+                <h3 align="left"><a href="./">Exchanges to Track {this.props.coin.CoinInfo.FullName} Price</a></h3>
                 <div id="exchanges">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</div>
                 {/*  Insert 625-728-Combo-Tag Code Here   */}
                 {/*#include virtual="/includes/625-728-Combo-Tag.shtml" */}
@@ -102,7 +129,7 @@ class Chart extends React.Component{
                     </tr>
                   </tbody></table>
                 <br /><br /><br /><br />
-                <div align="center"><b>Click here for more pages like this </b> <a href="./"><b>Bitcoin Price Chart</b></a></div>
+                <div align="center"><b>Click here for more pages like this </b> <a href="./"><b>{this.props.coin.CoinInfo.FullName} Price Chart</b></a></div>
                 <div style={{height: '1200px'}} />
               </div>{/* /.article__body */}
               {/* /.article */}
@@ -154,7 +181,7 @@ class Chart extends React.Component{
             {/*#include virtual="/includes/footer.shtml" */}
             {/* END Footer */}
             <div className="footer__site-map">
-              <a href="./">Bitcoin Price Chart</a>
+              <a href="./">{this.props.coin.CoinInfo.FullName} Price Chart</a>
             </div>{/* /.footer__site-map */}
           </div>{/* /.footer__content */}
           {/* /.footer */}

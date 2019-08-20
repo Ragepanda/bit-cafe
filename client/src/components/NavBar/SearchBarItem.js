@@ -1,5 +1,6 @@
 import React from "react";
-import {NavLink } from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
+
 
 class SearchBarItem extends React.Component {
 
@@ -18,16 +19,15 @@ class SearchBarItem extends React.Component {
 
 	componentDidMount(){
 		// console.log(this.state.coin);
+		console.log(this.props);
+	}	
 
-	}
 
 	render() {
-		if(!this.coin){
-			return <div/>
-		}
+		
 		
 		return (								
-			<li><button onClick={()=>{this.test();}} className="dropdown-item" type="button"> <img height="15px" width="15px" alt={this.props.coin.CoinInfo.Internal}src={"https://www.cryptocompare.com"+this.props.coin.CoinInfo.ImageUrl}></img>{this.props.coin.CoinInfo.FullName}</button></li>				
+			<li><NavLink to={"./"+this.state.coin.CoinInfo.Internal}><button onClick={()=>{this.test();}} className="dropdown-item" type="button"> <img height="15px" width="15px" alt={this.props.coin.CoinInfo.Internal}src={"https://www.cryptocompare.com"+this.props.coin.CoinInfo.ImageUrl}></img>{this.props.coin.CoinInfo.FullName}</button></NavLink></li>				
 		);
 	}
 }

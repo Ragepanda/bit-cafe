@@ -1,12 +1,14 @@
 import React from "react";
-import API from "../../utils/API";
-
+import { Helmet } from "react-helmet";
 
 class Calculator extends React.Component{
 
     constructor(props){
         super(props);
-
+        this.state = {
+          coin: this.props.coin,
+          symbol: this.props.symbol
+        }
     }
     
 	state ={
@@ -16,13 +18,29 @@ class Calculator extends React.Component{
 
 
 	componentDidMount(){
-
+    if (this.props.symbol !== this.props.match.params.symbol) {
+      if (this.props.match.params.symbol !== null) {
+        this.props.changeSymbol(this.props.match.params.symbol);
+      }
+      if (typeof(this.props.match.params.symbol) === "undefined")
+        this.props.history.push("./"+this.props.symbol);
+    }
 
 	}
 
 	render(){
+    if (typeof(this.props.coin.CoinInfo) ==="undefined") return <div></div>;
 		return(
 		<div className="wrapper">
+        <Helmet>
+          <title>{this.props.coin.CoinInfo.FullName + " | "+ this.props.coin.CoinInfo.FullName + " Calculator"}</title>
+          <meta name="description" content={"This "+this.props.coin.CoinInfo.FullName+" Calculator overview page will provide you with a "+this.props.coin.CoinInfo.FullName+" calculator for the "+this.props.coin.CoinInfo.FullName+" exchange rate as well as a "+this.props.coin.CoinInfo.FullName+" calculator to determine the profitability of mining "+this.props.coin.CoinInfo.FullName+"."}/>
+          <meta name="keywords" content={"cryptocurrency,crypto,coin,"+this.props.coin.CoinInfo.FullName+","+this.props.symbol+",price,value,calculator,calculators, exchange, rate, mining,profitability"} />
+          <meta name="author" content="calc-aids.com"/>
+          <meta http-equiv="Content-Language" content="en-US"/>
+          <meta name="rating" content="kids"/>
+          <meta http-equiv="content-type" content="text/html" charSet="utf-8" />
+        </Helmet>
         <div className="container">
           <div className="content">
             {/* SET UP Logo Top of Page */}
@@ -44,20 +62,20 @@ class Calculator extends React.Component{
                   <hr />
                   <hr />
                   <header className="section__head">
-                    <h1 align="left"><a href="./">Bitcoin Tools</a></h1>
-                    <h2 align="left">Bitcoin Calculator Overview</h2>
+                    <h1 align="left"><a href="./">{this.props.coin.CoinInfo.FullName}</a></h1>
+                    <h2 align="left">{this.props.coin.CoinInfo.FullName} Calculator Overview</h2>
                   </header>{/* /.section__head */}
                   <div className="section__body">
                     <article className="article">
                       <header className="article__head">
                       </header>{/* /.article__head */}
                       <div className="article__body">
-                        <p>This Bitcoin Calculator overview page will provide you with a bitcoin calculator for the bitcoin exchange rate as well as a bitcoin calculator to determine the profitability of mining bitcoin.</p><br />
-                        <h3>Bitcoin Calculator - Exchange Rate Bitcoin to USD</h3>
-                        <p>This bitcoin calculator will allow you to determine the bitcoin exchange rate to USD, and many other currencies.</p>
+                        <p>This {this.props.coin.CoinInfo.FullName} Calculator overview page will provide you with a {this.props.coin.CoinInfo.FullName} calculator for the {this.props.coin.CoinInfo.FullName} exchange rate as well as a {this.props.coin.CoinInfo.FullName} calculator to determine the profitability of mining {this.props.coin.CoinInfo.FullName}.</p><br />
+                        <h3>{this.props.coin.CoinInfo.FullName} Calculator - Exchange Rate {this.props.coin.CoinInfo.FullName} to USD</h3>
+                        <p>This {this.props.coin.CoinInfo.FullName} calculator will allow you to determine the {this.props.coin.CoinInfo.FullName} exchange rate to USD, and many other currencies.</p>
                         <div id="exchangeCalcContainer" />
-                        <h3>Bitcoin Calculator - Mining Profitability</h3>
-                        <p>This bitcoin calculator will allow you to determine the mining profitability of mining Bitcoin.</p>
+                        <h3>{this.props.coin.CoinInfo.FullName} Calculator - Mining Profitability</h3>
+                        <p>This {this.props.coin.CoinInfo.FullName} calculator will allow you to determine the mining profitability of mining {this.props.coin.CoinInfo.FullName}.</p>
                         <div id="miningCalcContainer" />
                         {/*  Insert 625-728-Combo-Tag Code Here   */}
                         {/*#include virtual="/includes/625-728-Combo-Tag.shtml" */}
@@ -71,7 +89,7 @@ class Calculator extends React.Component{
                             </tr>
                           </tbody></table>
                         <br /><br /><br /><br />
-                        <div align="center"><b>Click here for more pages like this </b> <a href="./"><b>Bitcoin Calculator</b></a></div>
+                        <div align="center"><b>Click here for more pages like this </b> <a href="./"><b>{this.props.coin.CoinInfo.FullName} Calculator</b></a></div>
                         <div style={{height: '1200px'}} />
                       </div>{/* /.article__body */}
                     </article>{/* /.article */}
@@ -123,7 +141,7 @@ class Calculator extends React.Component{
             {/*#include virtual="/includes/footer.shtml" */}
             {/* END Footer */}
             <div className="footer__site-map">
-              <a href="./">Bitcoin Calculator</a>
+              <a href="./">{this.props.coin.CoinInfo.FullName} Calculator</a>
             </div>{/* /.footer__site-map */}
           </div>{/* /.footer__content */}
         </footer>{/* /.footer */}

@@ -22,13 +22,13 @@ class SearchBar extends React.Component {
 					Viewing {this.props.symbol} Information
             </a>
 				<div className="dropdown-menu" aria-labelledby="dropdownMenu2">
-
+					
 					{this.props.coins.map((coin, index) =>
 	    		
 						<SearchBarItem coin = {coin} key={index} changeSymbol={this.props.changeSymbol}></SearchBarItem>
 
 					)}
-              
+					
 				</div>
 			</div>
 		);
