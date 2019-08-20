@@ -32,7 +32,7 @@ class News extends React.Component {
 
                 <div className="wrapper">
                 <Helmet>
-                  <title>{this.props.coin.CoinInfo.FullName + " | "+ this.props.coin.CoinInfo.FullName + " Calculator"}</title>
+                  <title>{this.props.coin.CoinInfo.FullName + " | "+ this.props.coin.CoinInfo.FullName + " News Aggregator"}</title>
                   <meta name="description" content={"This is our "+this.props.coin.CoinInfo.FullName+" news aggregator. Here you can find recent "+this.props.coin.CoinInfo.FullName+" news that can help you understand "+this.props.coin.CoinInfo.FullName+" trends and possibly provide insight into "+this.props.coin.CoinInfo.FullName+" price trends. This "+this.props.coin.CoinInfo.FullName+" news page is updated constantly. Please enjoy using our "+this.props.coin.CoinInfo.FullName+" news aggregator."}/>
                   <meta name="keywords" content={"cryptocurrency,crypto,coin,"+this.props.coin.CoinInfo.FullName+","+this.props.symbol+",price,value,news,aggregator,new,info"} />
                   <meta name="author" content="calc-aids.com"/>

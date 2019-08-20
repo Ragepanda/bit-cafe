@@ -83,7 +83,7 @@ class Chart extends React.Component{
                     <header className="section__head">
                       <div>
                         <h1 align="left"><a href="./">{this.props.coin.CoinInfo.FullName}</a></h1>
-                        <h2 align="left">{this.props.coin.CoinInfo.FullName} Price Overview</h2>
+                        <h2 align="left">{this.props.coin.CoinInfo.FullName} Price Chart Overview</h2>
                       </div></header>{/* /.section__head */}
                   </section></div>
                 <div className="section__body">
