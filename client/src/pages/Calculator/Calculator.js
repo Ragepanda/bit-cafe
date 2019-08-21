@@ -36,7 +36,7 @@ class Calculator extends React.Component{
           <title>{this.props.coin.CoinInfo.FullName + " | "+ this.props.coin.CoinInfo.FullName + " Calculator Overview"}</title>
           <meta name="description" content={"This "+this.props.coin.CoinInfo.FullName+" Calculator overview page will provide you with a "+this.props.coin.CoinInfo.FullName+" calculator for the "+this.props.coin.CoinInfo.FullName+" exchange rate as well as a "+this.props.coin.CoinInfo.FullName+" calculator to determine the profitability of mining "+this.props.coin.CoinInfo.FullName+"."}/>
           <meta name="keywords" content={"cryptocurrency,crypto,coin,"+this.props.coin.CoinInfo.FullName+","+this.props.symbol+",price,value,calculator,calculators, exchange, rate, mining,profitability"} />
-          <meta name="author" content="calc-aids.com"/>
+          <meta name="author" content="bitcoinsama.com"/>
           <meta http-equiv="Content-Language" content="en-US"/>
           <meta name="rating" content="kids"/>
           <meta http-equiv="content-type" content="text/html" charSet="utf-8" />
