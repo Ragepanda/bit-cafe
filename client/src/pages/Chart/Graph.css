@@ -1,3 +1,9 @@
 canvas{
 	height: 350px !important;
 }
+button{
+	margin-right: 10px !important;
+	margin-bottom: 5px !important;
+	height: 30px !important;
+	padding-top: 2px !important;
+}

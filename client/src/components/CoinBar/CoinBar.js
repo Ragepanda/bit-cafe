@@ -17,12 +17,16 @@ class Coinbar extends React.Component {
 	}
 
 	componentDidMount(){
+		this.loadCoins();
+	}
+
+	loadCoins()
+	{
 		API.getMarketCapData()
       .then(res => {
         this.setState({coins: res.data});
       })
       .catch(err => console.log(err));
-
 	}
 
 	// testRender(){
@@ -37,9 +41,11 @@ class Coinbar extends React.Component {
 	  		<div className="fixed-bottom" style={this.navStyle}>
 	   			<Scroller offset="0"
 	   				coins = {this.state.coins}
+	   				loadCoins = {this.loadCoins}
 	   			/>
 	   			<Scroller offset="1"
 	   				coins = {this.state.coins}
+	   				loadCoins = {this.loadCoins}
 	   			/>
 	   	 	
 	  		</div>
