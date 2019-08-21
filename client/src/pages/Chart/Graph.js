@@ -89,6 +89,11 @@ class Graph extends React.Component{
   	{
   		return(
   			<div>
+          <button type="button" className="btn btn-dark">minutes</button>
+          
+          <button type="button" className="btn btn-dark">hourly</button>
+          
+          <button type="button" className="btn btn-dark">monthly</button>
   				<Line
   					data={this.state.chartData}
   					width={50}

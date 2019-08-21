@@ -63,7 +63,7 @@ class Chart extends React.Component{
           <title>{this.props.coin.CoinInfo.FullName + " | "+ this.props.coin.CoinInfo.FullName + " Price Chart"}</title>
           <meta name="description" content={"This "+this.props.coin.CoinInfo.FullName+" Price Chart will be helpful in determining the current "+this.props.coin.CoinInfo.FullName+" price, as well as trends in "+this.props.coin.CoinInfo.FullName+" price. Our "+this.props.coin.CoinInfo.FullName+" price chart is highly customizable to help you find and analyze the trends in "+this.props.coin.CoinInfo.FullName+" price and "+this.props.coin.CoinInfo.FullName+" value."}/>
           <meta name="keywords" content={"cryptocurrency,crypto,coin,"+this.props.coin.CoinInfo.FullName+","+this.props.symbol+",price,value,usd, chart, charts, trends, trend, prices, values"} />
-          <meta name="author" content="calc-aids.com"/>
+          <meta name="author" content="bitcoinsama.com"/>
           <meta http-equiv="Content-Language" content="en-US"/>
           <meta name="rating" content="kids"/>
           <meta http-equiv="content-type" content="text/html" charSet="utf-8" />
@@ -90,7 +90,7 @@ class Chart extends React.Component{
                     <hr />
                     <header className="section__head">
                       <div>
-                        <h1 align="left"><a href="./">{this.props.coin.CoinInfo.FullName}</a></h1>
+                        <h1 align="left"><a href={"./"+this.props.symbol}>{this.props.coin.CoinInfo.FullName}</a></h1>
                         <h2 align="left">{this.props.coin.CoinInfo.FullName} Price Chart Overview</h2>
                       </div></header>{/* /.section__head */}
                   </section></div>
@@ -116,7 +116,7 @@ class Chart extends React.Component{
                 </div>
                 {/* row */}
                 <br />
-                <h3 align="left"><a href="./">Exchanges to Track {this.props.coin.CoinInfo.FullName} Price</a></h3>
+                <h3 align="left"><a href={"/exchange/"+this.props.symbol}>Exchanges to Track {this.props.coin.CoinInfo.FullName} Price</a></h3>
                 <div id="exchanges">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</div>
                 {/*  Insert 625-728-Combo-Tag Code Here   */}
                 {/*#include virtual="/includes/625-728-Combo-Tag.shtml" */}
@@ -130,7 +130,7 @@ class Chart extends React.Component{
                     </tr>
                   </tbody></table>
                 <br /><br /><br /><br />
-                <div align="center"><b>Click here for more pages like this </b> <a href="./"><b>{this.props.coin.CoinInfo.FullName} Price Chart</b></a></div>
+                <div align="center"><b>Click here for more pages like this </b> <a href={"./"+this.props.symbol}><b>{this.props.coin.CoinInfo.FullName} Price Chart</b></a></div>
                 <div style={{height: '1200px'}} />
               </div>{/* /.article__body */}
               {/* /.article */}
@@ -182,7 +182,7 @@ class Chart extends React.Component{
             {/*#include virtual="/includes/footer.shtml" */}
             {/* END Footer */}
             <div className="footer__site-map">
-              <a href="./">{this.props.coin.CoinInfo.FullName} Price Chart</a>
+              <a href={"./"+this.props.symbol}>{this.props.coin.CoinInfo.FullName} Price Chart</a>
             </div>{/* /.footer__site-map */}
           </div>{/* /.footer__content */}
           {/* /.footer */}
