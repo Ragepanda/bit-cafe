@@ -41,7 +41,7 @@ class News extends React.Component {
                   <title>{this.props.coin.CoinInfo.FullName + " | "+ this.props.coin.CoinInfo.FullName + " News Aggregator"}</title>
                   <meta name="description" content={"This is our "+this.props.coin.CoinInfo.FullName+" news aggregator. Here you can find recent "+this.props.coin.CoinInfo.FullName+" news that can help you understand "+this.props.coin.CoinInfo.FullName+" trends and possibly provide insight into "+this.props.coin.CoinInfo.FullName+" price trends. This "+this.props.coin.CoinInfo.FullName+" news page is updated constantly. Please enjoy using our "+this.props.coin.CoinInfo.FullName+" news aggregator."}/>
                   <meta name="keywords" content={"cryptocurrency,crypto,coin,"+this.props.coin.CoinInfo.FullName+","+this.props.symbol+",price,value,news,aggregator,new,info"} />
-                  <meta name="author" content="calc-aids.com"/>
+                  <meta name="author" content="bitcoinsama.com"/>
                   <meta http-equiv="Content-Language" content="en-US"/>
                   <meta name="rating" content="kids"/>
                   <meta http-equiv="content-type" content="text/html" charSet="utf-8" />
@@ -67,7 +67,7 @@ class News extends React.Component {
                                   <hr />
                                   <hr />
                                   <header className="section__head">
-                                    <h1 align="left"><a href="./">{this.props.coin.CoinInfo.FullName}</a></h1>
+                                    <h1 align="left"><a href={"./"+this.props.symbol}>{this.props.coin.CoinInfo.FullName}</a></h1>
                                     <h2 align="left">{this.props.coin.CoinInfo.FullName} News Aggregator</h2>
                                   </header>{/* /.section__head */}
                                   <div className="section__body">
@@ -101,7 +101,7 @@ class News extends React.Component {
                             </tr>
                             </tbody></table>
                           <br /><br /><br /><br />
-                          <div align="center"><b>Click here for more pages like this </b> <a href="./"><b>{this.props.coin.CoinInfo.FullName} News Aggregator</b></a></div>
+                          <div align="center"><b>Click here for more pages like this </b> <a href={"./"+this.props.symbol}><b>{this.props.coin.CoinInfo.FullName} News Aggregator</b></a></div>
                           <div style={{ height: '1200px' }} />
                         </div>{/* /.article__body */}
                       </article>{/* /.article */}
@@ -153,7 +153,7 @@ class News extends React.Component {
               {/*#include virtual="/includes/footer.shtml" */}
               {/* END Footer */}
               <div className="footer__site-map">
-                <a href="./">{this.props.coin.CoinInfo.FullName} News Aggregator</a>
+                <a href={"./"+this.props.symbol}>{this.props.coin.CoinInfo.FullName} News Aggregator</a>
               </div>{/* /.footer__site-map */}
             </div>{/* /.footer__content */}
           </footer>{/* /.footer */}

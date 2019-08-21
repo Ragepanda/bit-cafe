@@ -62,7 +62,7 @@ class Calculator extends React.Component{
                   <hr />
                   <hr />
                   <header className="section__head">
-                    <h1 align="left"><a href="./">{this.props.coin.CoinInfo.FullName}</a></h1>
+                    <h1 align="left"><a href={"./"+this.props.symbol}>{this.props.coin.CoinInfo.FullName}</a></h1>
                     <h2 align="left">{this.props.coin.CoinInfo.FullName} Calculator Overview</h2>
                   </header>{/* /.section__head */}
                   <div className="section__body">
@@ -89,7 +89,7 @@ class Calculator extends React.Component{
                             </tr>
                           </tbody></table>
                         <br /><br /><br /><br />
-                        <div align="center"><b>Click here for more pages like this </b> <a href="./"><b>{this.props.coin.CoinInfo.FullName} Calculator</b></a></div>
+                        <div align="center"><b>Click here for more pages like this </b> <a href={"./"+this.props.symbol}><b>{this.props.coin.CoinInfo.FullName} Calculator</b></a></div>
                         <div style={{height: '1200px'}} />
                       </div>{/* /.article__body */}
                     </article>{/* /.article */}
@@ -141,7 +141,7 @@ class Calculator extends React.Component{
             {/*#include virtual="/includes/footer.shtml" */}
             {/* END Footer */}
             <div className="footer__site-map">
-              <a href="./">{this.props.coin.CoinInfo.FullName} Calculator</a>
+              <a href={"./"+this.props.symbol}>{this.props.coin.CoinInfo.FullName} Calculator</a>
             </div>{/* /.footer__site-map */}
           </div>{/* /.footer__content */}
         </footer>{/* /.footer */}

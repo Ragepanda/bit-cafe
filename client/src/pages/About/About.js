@@ -57,7 +57,7 @@ class About extends React.Component {
                   <hr />
                   <hr />
                   <header className="section__head">
-                    <h1 align="left"><a href="./">{this.props.coin.CoinInfo.FullName}</a></h1>
+                    <h1 align="left"><a href={"./"+this.props.symbol}>{this.props.coin.CoinInfo.FullName}</a></h1>
                     <h2 align="left">What is {this.props.coin.CoinInfo.FullName} ?</h2>
                   </header>{/* /.section__head */}
                   <div className="section__body">
@@ -81,7 +81,7 @@ class About extends React.Component {
                           <li>What is a {this.props.coin.CoinInfo.FullName} wallet?</li>
                           <ul><li>A {this.props.coin.CoinInfo.FullName} wallet stores relevant information to access one's {this.props.coin.CoinInfo.FullName}, such as the private key to access your {this.props.coin.CoinInfo.FullName} and to make transactions with {this.props.coin.CoinInfo.FullName}. A {this.props.coin.CoinInfo.FullName} wallet can be a desktop program, a web program, a piece of hardware, or a mobile app.</li></ul>
                         </ul>
-                        <h3><a href="./">News: What is {this.props.coin.CoinInfo.FullName}?</a></h3>
+                        <h3><a href={"/news/"+this.props.symbol}>News: What is {this.props.coin.CoinInfo.FullName}?</a></h3>
                         <div id="newsContainer" />
                         {/*  Insert 625-728-Combo-Tag Code Here   */}
                         {/*#include virtual="/includes/625-728-Combo-Tag.shtml" */}
@@ -94,7 +94,7 @@ class About extends React.Component {
                             </td>
                           </tr>
                           </tbody></table>
-                        <div align="center"><b>Click here for more pages like this </b> <a href="./"><b>Overview: What is {this.props.coin.CoinInfo.FullName}</b></a></div>
+                        <div align="center"><b>Click here for more pages like this </b> <a href={"./"+this.props.symbol}><b>Overview: What is {this.props.coin.CoinInfo.FullName}</b></a></div>
 
                       </div>{/* /.article__body */}
                     </article>{/* /.article */}
@@ -146,7 +146,7 @@ class About extends React.Component {
             {/*#include virtual="/includes/footer.shtml" */}
             {/* END Footer */}
             <div className="footer__site-map">
-              <a href="./">What is {this.props.coin.CoinInfo.FullName} ?</a>
+              <a href={"./"+this.props.symbol}>What is {this.props.coin.CoinInfo.FullName} ?</a>
             </div>{/* /.footer__site-map */}
           </div>{/* /.footer__content */}
         </footer>{/* /.footer */}
