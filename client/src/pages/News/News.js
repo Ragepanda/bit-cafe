@@ -35,7 +35,7 @@ class News extends React.Component {
     if (typeof(this.props.coin.CoinInfo) ==="undefined") return <div></div>;
     if (this.state.articles.length > 0) {
       // console.log(this.state.articles);
-
+        return(
                 <div className="wrapper">
                 <Helmet>
                   <title>{this.props.coin.CoinInfo.FullName + " | "+ this.props.coin.CoinInfo.FullName + " News Aggregator"}</title>
@@ -162,7 +162,7 @@ class News extends React.Component {
           {/*#include virtual="/includes/addthis_pinterest.shtml" */}
           {/*  End of Addthis & Pinterest Pin Function  */}
         </div>
-      
+        )
     }
 
     else return null;
