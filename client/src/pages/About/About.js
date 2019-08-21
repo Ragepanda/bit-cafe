@@ -24,6 +24,14 @@ class About extends React.Component {
 
 
   render() {
+
+    const aboutInfo = {
+      BTC: {p1: "p1 text here", p2: "p2 text here", p3: "p3 text here"},
+      ETH: {p1: "p1 text here", p2: "p2 text here", p3: "p3 text here"},
+      XRP: {p1: "p1 text here", p2: "p2 text here", p3: "p3 text here"}
+    }
+
+
     if (this.props.coin.CoinInfo == null || this.props.symbol == null) return <div></div>;
     return (
       <div className="wrapper">
