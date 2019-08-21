@@ -29,7 +29,7 @@ class About extends React.Component {
     if (this.props.coin.CoinInfo == null || this.props.symbol == null) return <div></div>;
 
     const aboutInfo = [
-      {symbol: "BTC", p1: "p1 text here", p2: "p2 text here", p3: "p3 text here"},
+      {symbol: "BTC", p1: "Bitcoin is an electronic payment system and the most popular cryptocurrency. Bitcoin was created by a mysterious person(s) named Satoshi Nakamoto to be a secure, peer-to-peer currency. To learn more about cryptocurrency in general, click here.", p2: "So what is Bitcoin mining? It is when a large network of computers process and solve how to chain together blocks of bitcoin transactions. When a bitcoin miner does this, they are given newly created Bitcoin and fees. This method of mining is called 'proof of work'.", p3: "Like most cryptocurrencies, and currencies, Bitcoin is a fiat currency. So technically the answer to what is Bitcoin worth, is nothing. That being said, since enough people agree to value it as a currency, it does have value.", p4: "A Bitcoin wallet stores relevant information to access one's Bitcoin, such as the private key to access your Bitcoin and to make transactions with Bitcoin. A Bitcoin wallet can be a desktop program, a web program, a piece of hardware, or a mobile app."},
       {symbol: "ETH", p1: "p1 text here", p2: "p2 text here", p3: "p3 text here"},
        {symbol: "XRP", p1: "p1 text here", p2: "p2 text here", p3: "p3 text here"}
     ]
@@ -81,17 +81,17 @@ class About extends React.Component {
                         <h3>An overview of {this.props.coin.CoinInfo.FullName}</h3>
                         <ul className="list-unstyled">
                           <li>What is {this.props.coin.CoinInfo.FullName}?</li>
-                          <ul><li>{this.props.coin.CoinInfo.FullName} is an electronic payment system and the most popular cryptocurrency. {this.props.coin.CoinInfo.FullName} was created by a mysterious person(s) named Satoshi Nakamoto to be a secure, peer-to-peer currency. To learn more about cryptocurrency in general, click here.</li></ul>
+                          <ul><li>{aboutText.p1}</li></ul>
                           <li>What is {this.props.coin.CoinInfo.FullName} mining?</li>
-                          <ul><li>So what is {this.props.coin.CoinInfo.FullName} mining? It is when a large network of computers process and solve how to chain together blocks of {this.props.coin.CoinInfo.FullName} transactions. When a {this.props.coin.CoinInfo.FullName} miner does this, they are given newly created {this.props.coin.CoinInfo.FullName} and fees. This method of mining is called 'proof of work'.</li></ul>
+                          <ul><li>{aboutText.p2}</li></ul>
                           <li>What is {this.props.coin.CoinInfo.FullName} worth?</li>
-                          <ul><li>Like most cryptocurrencies, and currencies, {this.props.coin.CoinInfo.FullName} is a fiat currency. So technically the answer to what is {this.props.coin.CoinInfo.FullName} worth, is nothing. That being said, since enough people agree to value it as a currency, it does have value.</li></ul>
+                          <ul><li>{aboutText.p3}</li></ul>
                           <li>What is {this.props.coin.CoinInfo.FullName} price?</li>
                           <div id="priceContainer" />
                           <li>What is {this.props.coin.CoinInfo.FullName} marketcap?</li>
                           <div id="graphContainer" />
                           <li>What is a {this.props.coin.CoinInfo.FullName} wallet?</li>
-                          <ul><li>A {this.props.coin.CoinInfo.FullName} wallet stores relevant information to access one's {this.props.coin.CoinInfo.FullName}, such as the private key to access your {this.props.coin.CoinInfo.FullName} and to make transactions with {this.props.coin.CoinInfo.FullName}. A {this.props.coin.CoinInfo.FullName} wallet can be a desktop program, a web program, a piece of hardware, or a mobile app.</li></ul>
+                          <ul><li>{aboutText.p4}</li></ul>
                         </ul>
                         <h3><a href={"/news/"+this.props.symbol}>News: What is {this.props.coin.CoinInfo.FullName}?</a></h3>
                         <div id="newsContainer" />
