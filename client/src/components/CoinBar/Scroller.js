@@ -6,7 +6,8 @@ class Scroller extends React.Component{
 	state = {
 		barposition: 0, //0 or 1, 1 starts bar offset by one whole bar
 		bar_one_style: {}, //updateable styling so bar can move
-		inited: "false" //checks to see if int() has been called
+		inited: "false", //checks to see if int() has been called
+		coins: this.props.coins
 	
 	}
 	barlength = 0;
@@ -37,7 +38,6 @@ class Scroller extends React.Component{
 	}
 
 	tick() {
-		
 		if(this.props.coins.length >= 20){
 			if(this.state.inited === "false"){
 
