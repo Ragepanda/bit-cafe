@@ -12,7 +12,7 @@ class Exchange extends React.Component {
       if (typeof (this.props.match.params.symbol) === "undefined")
         this.props.history.push("./" + this.props.symbol);
     }
-
+    console.log(this.props.coin.RAW); // Takes a couple of mounting iterations before this value isn't undefined. As structured, should work in the app. Would suggest putting this varaible in a method using pros.coin.RAW.USD.PRICE
   }
 
   render() {

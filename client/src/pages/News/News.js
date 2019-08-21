@@ -21,18 +21,18 @@ class News extends React.Component {
       if (typeof (this.props.match.params.symbol) === "undefined")
         this.props.history.push("./" + this.props.symbol);
     }
+    API.getArticlesBySymbol(this.props.symbol)
+    .then(res=>{
+      this.setState({articles: res.data});
 
-    API.getArticles()
-      .then(res => {
-        this.setState({ articles: res.data });
-      })
+    })
       .catch(err => console.log(err));
   }
 
 
 
   render() {
-    if (typeof(this.props.coin.CoinInfo) ==="undefined") return <div></div>;
+    if (typeof(this.props.coin.CoinInfo) ==="undefined" || this.state.articles.length === 0) return <div></div>;
     if (this.state.articles.length > 0) {
       // console.log(this.state.articles);
         return(
