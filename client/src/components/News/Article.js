@@ -1,7 +1,7 @@
 import React from "react"
-import ReactDOM from "react-dom"
-import API from "../../utils/API"
-import ModalFiller from "./ModalFiller"
+// import ReactDOM from "react-dom"
+// import API from "../../utils/API"
+// import ModalFiller from "./ModalFiller"
 
 class Article extends React.Component {
 	constructor(props) {
