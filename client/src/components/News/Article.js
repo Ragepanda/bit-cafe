@@ -14,19 +14,19 @@ class Article extends React.Component {
 	}
 
 	componentDidMount() {
-		// console.log(this.props.article);
+		 console.log(this.props.article);
 	}
 
 	retriveBody() {
 
-		API.getArticleBody(this.props.article.source, this.props.article.articleUrl)
-			.then(response => {
-				console.log(response.data);
-				const articleText = <ModalFiller text={response.data} article={this.props.article}></ModalFiller>;
-				ReactDOM.render(this.props.article.title, document.getElementById("title-" + this.props.article.id));
-				ReactDOM.render(articleText, document.getElementById(this.props.article.id));
+		// API.getArticleBody(this.props.article.source, this.props.article.articleUrl)
+		// 	.then(response => {
+		// 		console.log(response.data);
+		// 		const articleText = <ModalFiller text={response.data} article={this.props.article}></ModalFiller>;
+		// 		ReactDOM.render(this.props.article.title, document.getElementById("title-" + this.props.article.id));
+		// 		ReactDOM.render(articleText, document.getElementById(this.props.article.id));
 
-			})
+		// 	})
 	}
 
 	render() {
@@ -36,7 +36,7 @@ class Article extends React.Component {
 				<div className="card-body">
 					<h5 className="card-title">{this.props.article.title}</h5>
 					<h6 className="card-subtitle mb-2 text-muted"> Source: {this.props.article.source}</h6>
-					<a href={this.props.article.articleUrl}><img className="news-image" alt ="" src={this.props.article.imageUrl}></img></a>
+					<a href={this.props.article.guid}><img className="news-image" alt ="" src={this.props.article.imageurl}></img></a>
 					<p className="card-text mt-3">{this.props.article.body}</p>
 					{/* <button onClick={this.retriveBody} className="btn btn-dark" role="button" data-toggle="modal" data-target={"#article-modal-" + this.props.article.id}>Read More</button> */}
 
