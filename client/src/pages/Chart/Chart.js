@@ -8,13 +8,24 @@ import'./Chart.css';
 class Chart extends React.Component{
 
 	state ={
-    	hourlyData: []
+    	hourlyData: [],
+      minutesData: [],
+      dailyData: []
   	}
 
 
 
 	componentDidMount(){
-			API.getHourlyHistoryBySymbol(this.props.symbol)
+			this.getChartHourly();
+      this.getChartMinutes();
+      this.getChartDaily();
+		 
+	}	
+
+
+
+  getChartHourly(){
+    API.getHourlyHistoryBySymbol(this.props.symbol)
       .then(res => {
         
         if (this.props.symbol !== this.props.match.params.symbol) {
@@ -24,22 +35,65 @@ class Chart extends React.Component{
           if (typeof(this.props.match.params.symbol) === "undefined")
             this.props.history.push("./"+this.props.symbol);
         }
-		this.setState({hourlyData: res.data}, function(){
+    this.setState({hourlyData: res.data}, function(){
     
     
-		});
-		//console.log(test);
-     	 })
-		  .catch(err => console.log(err));
-		 
-	}	
+    });
+    //console.log(test);
+       })
+      .catch(err => console.log(err));
+  }
+
+   getChartMinutes(){
+    API.getMinuteHistoryBySymbol(this.props.symbol)
+      .then(res => {
+        
+        if (this.props.symbol !== this.props.match.params.symbol) {
+          if (this.props.match.params.symbol !== null) {
+            this.props.changeSymbol(this.props.match.params.symbol);
+          }
+          if (typeof(this.props.match.params.symbol) === "undefined")
+            this.props.history.push("./"+this.props.symbol);
+        }
+    this.setState({minutesData: res.data}, function(){
+    
+    
+    });
+    //console.log(test);
+       })
+      .catch(err => console.log(err));
+  }
+
+   getChartDaily(){
+    API.getDailyHistoryBySymbol(this.props.symbol)
+      .then(res => {
+        
+        if (this.props.symbol !== this.props.match.params.symbol) {
+          if (this.props.match.params.symbol !== null) {
+            this.props.changeSymbol(this.props.match.params.symbol);
+          }
+          if (typeof(this.props.match.params.symbol) === "undefined")
+            this.props.history.push("./"+this.props.symbol);
+        }
+    this.setState({dailyData: res.data}, function(){
+    
+    
+    });
+    //console.log(test);
+       })
+      .catch(err => console.log(err));
+  }
 
 	addGraph(){
-		if(this.state.hourlyData.length > 0){
+		if(this.state.hourlyData.length > 0 && this.state.minutesData.length > 0 && this.state.dailyData.length > 0){
   			return(<Graph 
           symbol = {this.props.symbol}
           data = {this.state.hourlyData}
+          minutesData = {this.state.minutesData}
+          dailyData = {this.state.dailyData}
           hourConverter = {this.convertTimeHours}
+          minConverter = {this.convertTimeMin}
+          multiDayConverter = {this.convertTimeDay}
           dayConverter = {this.convertTimeExactDay}
         />)
 		}
@@ -49,6 +103,14 @@ class Chart extends React.Component{
 		  //console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
       return Moment.unix(timeStamp,"x").format("HH:mm"); 
 	  }
+    convertTimeMin(timeStamp){
+      //console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
+      return Moment.unix(timeStamp,"x").format("mm:ss"); 
+    }
+    convertTimeDay(timeStamp){
+      //console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
+      return Moment.unix(timeStamp,"x").format("MM-DD"); 
+    }
     convertTimeExactDay(timeStamp){
       //console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
       return Moment.unix(timeStamp,"x").format("YYYY-MM-DD"); 
