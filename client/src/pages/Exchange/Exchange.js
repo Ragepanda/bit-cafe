@@ -12,7 +12,7 @@ class Exchange extends React.Component {
       if (typeof (this.props.match.params.symbol) === "undefined")
         this.props.history.push("./" + this.props.symbol);
     }
-
+    console.log(this.props.coin.RAW); // Takes a couple of mounting iterations before this value isn't undefined. As structured, should work in the app. Would suggest putting this varaible in a method using pros.coin.RAW.USD.PRICE
   }
 
   render() {
@@ -25,7 +25,7 @@ class Exchange extends React.Component {
           <title>{this.props.coin.CoinInfo.FullName + " | " + this.props.coin.CoinInfo.FullName + " Exchange Rate Overview"}</title>
           <meta name="description" content={"This " + this.props.coin.CoinInfo.FullName + " Exchange Rate Overview page will help you locate a " + this.props.coin.CoinInfo.FullName + " exchange to use to track the price of " + this.props.coin.CoinInfo.FullName + " as well as the current " + this.props.coin.CoinInfo.FullName + " exchange rate. This page also includes a " + this.props.coin.CoinInfo.FullName + " exchange rate calculator to help you track the " + this.props.coin.CoinInfo.FullName + " exchange rate for " + this.props.coin.CoinInfo.FullName + " to usd or other currencies."} />
           <meta name="keywords" content={"cryptocurrency,crypto,coin," + this.props.coin.CoinInfo.FullName + "," + this.props.symbol + ",price,value,calculator,calculators,exchange,rate,track,exchanges,usd"} />
-          <meta name="author" content="calc-aids.com" />
+          <meta name="author" content="bitcoinsama.com" />
           <meta http-equiv="Content-Language" content="en-US" />
           <meta name="rating" content="kids" />
           <meta http-equiv="content-type" content="text/html" charSet="utf-8" />
@@ -51,7 +51,7 @@ class Exchange extends React.Component {
                   <hr />
                   <hr />
                   <header className="section__head">
-                    <h1 align="left"><a href="./">{this.props.coin.CoinInfo.FullName}</a></h1>
+                    <h1 align="left"><a href={"./"+this.props.symbol}>{this.props.coin.CoinInfo.FullName}</a></h1>
                     <h2 align="left">{this.props.coin.CoinInfo.FullName} Exchange Rate Overview</h2>
                   </header>{/* /.section__head */}
                   <div className="section__body">
@@ -66,7 +66,7 @@ class Exchange extends React.Component {
                         <h3>{this.props.coin.CoinInfo.FullName} Exchange Rate Calculator</h3>
                         <p>This {this.props.coin.CoinInfo.FullName} exchange calculator will allow you to determine the {this.props.coin.CoinInfo.FullName} exchange rate to USD, and many other currencies.</p>
                         <div id="calculatorContainer" />
-                        <p>For more useful calculators, click <a href="./">here</a></p>
+                        <p>For more useful calculators, click <a href={"/calculator/"+this.props.symbol}>here</a></p>
                         {/*  Insert 625-728-Combo-Tag Code Here   */}
                         {/*#include virtual="/includes/625-728-Combo-Tag.shtml" */}
                         {/*  End of 625-728-Combo-Tag Code Here  */}
@@ -79,7 +79,7 @@ class Exchange extends React.Component {
                           </tr>
                           </tbody></table>
                         <br /><br /><br /><br />
-                        <div align="center"><b>Click here for more pages like this </b> <a href="./"><b>{this.props.coin.CoinInfo.FullName} Exchange Overview</b></a></div>
+                        <div align="center"><b>Click here for more pages like this </b> <a href={"./"+this.props.symbol}><b>{this.props.coin.CoinInfo.FullName} Exchange Overview</b></a></div>
                         <div style={{ height: '1200px' }} />
                       </div>{/* /.article__body */}
                     </article>{/* /.article */}
@@ -131,7 +131,7 @@ class Exchange extends React.Component {
             {/*#include virtual="/includes/footer.shtml" */}
             {/* END Footer */}
             <div className="footer__site-map">
-              <a href="./">{this.props.coin.CoinInfo.FullName} Exchange</a>
+              <a href={"./"+this.props.symbol}>{this.props.coin.CoinInfo.FullName} Exchange</a>
             </div>{/* /.footer__site-map */}
           </div>{/* /.footer__content */}
         </footer>{/* /.footer */}

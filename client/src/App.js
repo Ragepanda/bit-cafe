@@ -118,9 +118,20 @@ class App extends Component {
               path="/"
               component={(props) => <CoinTracker {...props} coins={this.state.coins} symbol={this.state.symbol} coin={this.state.coin} />} />
 
+               <Route
+              exact
+              path="/:symbol"
+              component={(props) => <CoinTracker {...props} coins={this.state.coins} symbol={this.state.symbol} coin={this.state.coin} />} />
+
+
             <Route
               exact
               path="/home"
+              component={(props) => <CoinTracker {...props} coins={this.state.coins} symbol={this.state.symbol} coin={this.state.coin} />} />
+
+                <Route
+              exact
+              path="/home/:symbol"
               component={(props) => <CoinTracker {...props} coins={this.state.coins} symbol={this.state.symbol} coin={this.state.coin} />} />
 
             <Route

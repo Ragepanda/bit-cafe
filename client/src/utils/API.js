@@ -5,6 +5,10 @@ export default {
 		return axios.get("/api/news/feed/articles");
 	},
 
+  getArticlesBySymbol: function(symbol){
+    return axios.get("/api/news/feed/articlesBySymbol", {params: {symbol: symbol}})
+  },
+
 	getTweets: function(){
 		return axios.get("/api/news/twitter/aggregated");
 	},

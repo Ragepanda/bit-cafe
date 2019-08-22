@@ -2,18 +2,6 @@ var axios = require("axios");
 var db = require("../../../models");
 module.exports = {
 
-    getNewsArticlesBySymbol: function(req, res){
-        
-
-        axios.get("https://min-api.cryptocompare.com/data/v2/news/?lang=EN&categories=ETH")
-        .then(response =>{
-            res.send(response.data.Data);
-        })
-        .catch(error =>{
-            res.send(error);
-        })
-    },
-
     getNewArticles: function (req, res) {
 
         db.articles.findAll({ where: {}, order: [['publishedOn', 'DESC']] })
@@ -99,5 +87,35 @@ module.exports = {
                         })
                 }
             })
+    },
+
+    getNewsArticlesBySymbol: function (req, res){
+        var currentTimestamp = new Date() / 1000;
+        axios.get("https://min-api.cryptocompare.com/data/v2/news/?lang=EN&feeds=bitcoinmagazine,bitcoinist,bitcoin.com,ccn,coindesk,cointelegraph&limit=100&categories="+req.query.symbol)
+            .then(response =>{
+                var articles = [];
+                            response.data.Data.forEach(element => {
+                                var entry = {
+                                    source: element.source,
+                                    cryptoId: element.id,
+                                    title: element.title,
+                                    body: element.body.substr(0, 254),
+                                    articleUrl: element.guid,
+                                    imageUrl: element.imageurl,
+                                    createdAt: currentTimestamp,
+                                    publishedOn: element.published_on
+                                }
+                                articles.push(entry);
+                                
+                            });
+                            console.log(response);
+                            res.send(response.data.Data);
+            })
+            .catch(error =>{
+                console.log(error);
+                res.send(error);
+            })
     }
+
+
 }
