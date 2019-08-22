@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import ExchangeCalc from "./ExchangeCalc";
 
 class Calculator extends React.Component{
 
@@ -27,6 +28,13 @@ class Calculator extends React.Component{
     }
 
 	}
+
+  exchangeCalc(){
+    return (<ExchangeCalc 
+              symbol = {this.props.symbol}
+              coin   = {this.props.coin}
+          />)
+  }
 
 	render(){
     if (typeof(this.props.coin.CoinInfo) ==="undefined") return <div></div>;
@@ -73,10 +81,13 @@ class Calculator extends React.Component{
                         <p>This {this.props.coin.CoinInfo.FullName} Calculator overview page will provide you with a {this.props.coin.CoinInfo.FullName} calculator for the {this.props.coin.CoinInfo.FullName} exchange rate as well as a {this.props.coin.CoinInfo.FullName} calculator to determine the profitability of mining {this.props.coin.CoinInfo.FullName}.</p><br />
                         <h3>{this.props.coin.CoinInfo.FullName} Calculator - Exchange Rate {this.props.coin.CoinInfo.FullName} to USD</h3>
                         <p>This {this.props.coin.CoinInfo.FullName} calculator will allow you to determine the {this.props.coin.CoinInfo.FullName} exchange rate to USD, and many other currencies.</p>
-                        <div id="exchangeCalcContainer" />
+                        <div id="exchangeCalcContainer">
+                        {this.exchangeCalc()}
+                        </div>
                         <h3>{this.props.coin.CoinInfo.FullName} Calculator - Mining Profitability</h3>
                         <p>This {this.props.coin.CoinInfo.FullName} calculator will allow you to determine the mining profitability of mining {this.props.coin.CoinInfo.FullName}.</p>
-                        <div id="miningCalcContainer" />
+                        <div id="miningCalcContainer">
+                        </div>
                         {/*  Insert 625-728-Combo-Tag Code Here   */}
                         {/*#include virtual="/includes/625-728-Combo-Tag.shtml" */}
                         {/*  End of 625-728-Combo-Tag Code Here  */}
