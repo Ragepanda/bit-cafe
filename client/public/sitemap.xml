@@ -1,0 +1,506 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/home</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+    
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/chart/BTC</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/exchange/BTC</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+     <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/news/BTC</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/calculator/BTC</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/about/BTC</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/chart/XRP</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/exchange/XRP</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/news/XRP</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/calculator/XRP</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/about/XRP</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/chart/ETH</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/exchange/ETH</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/news/ETH</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/calculator/ETH</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/about/ETH</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/chart/BCH</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/exchange/BCH</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/news/BCH</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/calculator/BCH</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/about/BCH</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/chart/FLC</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/exchange/FLC</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/news/FLC</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/calculator/FLC</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/about/FLC</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/chart/LTC</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/exchange/LTC</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/news/LTC</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/calculator/LTC</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/about/LTC</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/chart/CRO</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/exchange/CRO</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/news/CRO</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/calculator/CRO</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/about/CRO</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/chart/BNB</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/exchange/BNB</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/news/BNB</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/calculator/BNB</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/about/BNB</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/chart/USDT</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/exchange/USDT</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/news/USDT</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/calculator/USDT</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/about/USDT</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/chart/EOS</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/exchange/EOS</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/news/EOS</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/calculator/EOS</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/about/EOS</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/chart/AION</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/exchange/AION</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/news/AION</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/calculator/AION</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/about/AION</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/chart/HT</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/exchange/HT</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/news/HT</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/calculator/HT</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/about/HT</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/chart/BSV</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/exchange/BSV</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/news/BSV</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/calculator/BSV</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/about/BSV</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/chart/LINK</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/exchange/LINK</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/news/LINK</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/calculator/LINK</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/about/LINK</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/chart/XMR</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/exchange/XMR</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/news/XMR</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/calculator/XMR</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/about/XMR</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/chart/XLM</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/exchange/XLM</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/news/XLM</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/calculator/XLM</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/about/XLM</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/chart/BRC</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/exchange/BRC</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/news/BRC</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/calculator/BRC</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/about/BRC</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/chart/ADA</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/exchange/ADA</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/news/ADA</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/calculator/ADA</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/about/ADA</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/chart/TRX</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/exchange/TRX</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/news/TRX</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/calculator/TRX</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/about/TRX</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/chart/BTMX</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/exchange/BTMX</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/news/BTMX</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/calculator/BTMX</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+
+    <url>
+    <loc>https://ancient-harbor-10145.herokuapp.com/about/BTMX</loc>
+    <lastmod>2018-8-23</lastmod>
+    </url>
+</urlset>
