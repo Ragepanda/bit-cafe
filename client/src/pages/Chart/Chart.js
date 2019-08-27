@@ -1,6 +1,7 @@
 import React from "react";
 import API from "../../utils/API";
 import Graph from "./Graph";
+import NewsContainer from "./NewsContainer";
 import Moment from "moment";
 import { Helmet } from "react-helmet";
 import'./Chart.css';
@@ -10,7 +11,8 @@ class Chart extends React.Component{
 	state ={
     	hourlyData: [],
       minutesData: [],
-      dailyData: []
+      dailyData: [],
+      articles: []
   	}
 
 
@@ -21,6 +23,22 @@ class Chart extends React.Component{
       this.getChartDaily();
 		 
 	}	
+
+  componentWillMount() {
+    if (this.props.symbol !== this.props.match.params.symbol) {
+      if (this.props.match.params.symbol !== null) {
+        this.props.changeSymbol(this.props.match.params.symbol);
+      }
+      if (typeof (this.props.match.params.symbol) === "undefined")
+        this.props.history.push("./" + this.props.symbol);
+    }
+    API.getArticlesBySymbol(this.props.symbol)
+    .then(res=>{
+      this.setState({articles: res.data});
+
+    })
+      .catch(err => console.log(err));
+  }
 
 
 
@@ -97,7 +115,16 @@ class Chart extends React.Component{
           dayConverter = {this.convertTimeExactDay}
         />)
 		}
-  	}
+  }
+
+  addNews(){
+    if(this.state.articles.length > 0){
+      return(
+        <NewsContainer articles = {this.state.articles}/>
+      )
+    }
+  }
+
 
 	  convertTimeHours(timeStamp){
 		  //console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
@@ -173,7 +200,9 @@ class Chart extends React.Component{
                   </div>
                   <div className="col-md-5">
                     <h3>News of {this.props.coin.CoinInfo.FullName} Price</h3>
-                    <div id="newsContainer">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</div>
+                    <div id="scroller">
+                      {this.addNews()}
+                    </div>
                   </div>
                 </div>
                 {/* row */}
