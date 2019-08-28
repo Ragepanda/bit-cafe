@@ -132,7 +132,7 @@ class Chart extends React.Component{
 	  }
     convertTimeMin(timeStamp){
       //console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
-      return Moment.unix(timeStamp,"x").format("mm:ss"); 
+      return Moment.unix(timeStamp,"x").format("hh:mm"); 
     }
     convertTimeDay(timeStamp){
       //console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
