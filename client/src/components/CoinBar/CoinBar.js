@@ -16,8 +16,13 @@ class Coinbar extends React.Component {
 
 	}
 
+
 	componentDidMount(){
 		this.loadCoins();
+		this.timerID = setInterval(
+      	() => this.loadCoins(),
+      	10000
+    	);
 	}
 
 	loadCoins()
