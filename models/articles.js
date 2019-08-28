@@ -32,6 +32,10 @@ module.exports = function (sequelize, DataTypes) {
       publishedOn: {
         type: DataTypes.INTEGER,
         allowNull: false
+      },
+      category: {
+        type: DataTypes.STRING,
+        allowNull: false
       }
     },
       { timestamps: true });

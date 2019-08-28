@@ -1,5 +1,13 @@
 {
-  "development": {
+  "development-Woltz": {
+    "username": "root",
+    "password": "",
+    "database": "cointracker",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql"
+  },
+  "development":{
     "username": "c824tfgz2pcvvej5",
     "password": "fdpx7qxgybnta2kd",
     "database": "waiwivty9d0updzr",
