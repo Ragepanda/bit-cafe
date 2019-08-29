@@ -151,7 +151,11 @@ class Graph extends React.Component{
 		Chart.plugins.register({
  			 beforeDraw: function(chartInstance) {
     			var ctx = chartInstance.chart.ctx;
+<<<<<<< HEAD
     			ctx.fillStyle = "#2C2640";
+=======
+    			ctx.fillStyle = "#2c2640";
+>>>>>>> 243233fcce2e516a239c19f853b65e4dac96f5bc
     			ctx.fillRect(0, 0, chartInstance.chart.width, chartInstance.chart.height);
 
   			}

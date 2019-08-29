@@ -27,8 +27,14 @@ class Converter extends React.Component {
 
     convertHandler = () => {
             if (this.state.fromCurrency !== this.state.toCurrency) {
+                    if (this.state.fromCurrency === this.props.symbol){
                         const result = this.state.amount * this.props.coin.RAW.USD.PRICE;
-                        this.setState({ result: result.toFixed(5) })
+                        this.setState({ result: "$" + result.toFixed(7) })
+                    }
+                    else {
+                        const result = this.state.amount / this.props.coin.RAW.USD.PRICE;
+                        this.setState({ result: result.toFixed(7) + this.props.symbol })
+                    }
             }
             else {
                 this.setState({ result: "You cant convert the same currency!" })
@@ -47,7 +53,6 @@ class Converter extends React.Component {
     render() {
         return (
             <div className="Converter">
-                <h2><span>Currency </span> Converter <span role="img" aria-label="money">&#x1f4b5;</span> </h2>
                 <div className="Form">
                     <input
                         name="amount"
