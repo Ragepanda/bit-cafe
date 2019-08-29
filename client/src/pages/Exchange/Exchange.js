@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import ExchangeCalc from "../Calculator/ExchangeCalc";
 
 class Exchange extends React.Component {
 
@@ -13,6 +14,13 @@ class Exchange extends React.Component {
         this.props.history.push("./" + this.props.symbol);
     }
     console.log(this.props.coin.RAW); // Takes a couple of mounting iterations before this value isn't undefined. As structured, should work in the app. Would suggest putting this varaible in a method using pros.coin.RAW.USD.PRICE
+  }
+
+  exchangeCalc(){
+    return (<ExchangeCalc 
+              symbol = {this.props.symbol}
+              coin   = {this.props.coin}
+          />)
   }
 
   render() {
@@ -65,7 +73,9 @@ class Exchange extends React.Component {
                         <div id="exchangeContainer" />
                         <h3>{this.props.coin.CoinInfo.FullName} Exchange Rate Calculator</h3>
                         <p>This {this.props.coin.CoinInfo.FullName} exchange calculator will allow you to determine the {this.props.coin.CoinInfo.FullName} exchange rate to USD, and many other currencies.</p>
-                        <div id="calculatorContainer" />
+                        <div id="exchangeCalcContainer">
+                        {this.exchangeCalc()}
+                        </div>
                         <p>For more useful calculators, click <a href={"/calculator/"+this.props.symbol}>here</a></p>
                         {/*  Insert 625-728-Combo-Tag Code Here   */}
                         {/*#include virtual="/includes/625-728-Combo-Tag.shtml" */}
