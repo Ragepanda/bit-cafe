@@ -68,6 +68,7 @@ class Graph extends React.Component{
       options: {
         title: {
           display: true,
+          fontColor: "white",
           text: this.props.symbol + " price " + this.props.dayConverter(this.props.data[0].time)
         },
         elements: {
@@ -81,15 +82,29 @@ class Graph extends React.Component{
         	   xAxes:[{
         		   gridLines:{
         			   color:"#E2DFEB"
-        		    }
+        		    },
+                ticks:{
+                  fontColor: "white"
+                }
         	   }],
         	 yAxes:[{
         		      gridLines:{
         			   color:"#E2DFEB"
-        	     }
+        	     },
+               ticks: {
+                    fontColor: "white",
+                    // Include a dollar sign in the ticks
+                    callback: function(value, index, values) {
+                        return '$' + value;
+                    }
+                }
         	   }],
+
         	},
         		legend:{
+              labels: {
+                fontColor: "white"
+              },
         		display: false
         	},
 
@@ -136,7 +151,7 @@ class Graph extends React.Component{
 		Chart.plugins.register({
  			 beforeDraw: function(chartInstance) {
     			var ctx = chartInstance.chart.ctx;
-    			ctx.fillStyle = "#0C0032";
+    			ctx.fillStyle = "#2C2640";
     			ctx.fillRect(0, 0, chartInstance.chart.width, chartInstance.chart.height);
 
   			}
