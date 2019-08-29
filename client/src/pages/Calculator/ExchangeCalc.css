@@ -18,24 +18,24 @@
     padding: 5px;
     margin: 5px 10px;
     border-radius: 5px;
-    border: 1px solid rgba(119, 119, 119, 0.5);
+    border: 1px solid #2c2640;
 }
 
 .Form button {
     padding: 5px 10px;
     border-radius: 5px;
-    background: rgb(11, 170, 59);
+    background: #2c2640;
     color: white;
     border: none;
 }
 
 .Converter h3 {
-    background-color: #ccc;
+    background-color: #2c2640;
     border-radius: 10px;
     padding: 15px;
     font-size: 30px;
 }
 
 .Converter h2 span {
-    color: rgb(11, 170, 59);
+    color: #2c2640;
 }
