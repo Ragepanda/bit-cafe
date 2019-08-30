@@ -81,18 +81,18 @@ class Graph extends React.Component{
         	scales: {
         	   xAxes:[{
         		   gridLines:{
-        			   color:"#E2DFEB"
+        			   color:"#E5E4E7"
         		    },
                 ticks:{
-                  fontColor: "white"
+                  fontColor: "#E5E4E7"
                 }
         	   }],
         	 yAxes:[{
         		      gridLines:{
-        			   color:"#E2DFEB"
+        			   color:"#E5E4E7"
         	     },
                ticks: {
-                    fontColor: "white",
+                    fontColor: "#E5E4E7",
                     // Include a dollar sign in the ticks
                     callback: function(value, index, values) {
                         return '$' + value;
@@ -103,7 +103,7 @@ class Graph extends React.Component{
         	},
         		legend:{
               labels: {
-                fontColor: "white"
+                fontColor: "#E5E4E7"
               },
         		display: false
         	},
@@ -126,7 +126,7 @@ class Graph extends React.Component{
     this.state.chartData.labels = this.state.dayLabel;
     this.state.lineChart.update();
     
-    console.log(this.state.chartData.labels);
+    //console.log(this.state.chartData.labels);
   }
   redoChartMinutes(){
     //let lineChart = this.reference.chartInstance;
@@ -134,7 +134,7 @@ class Graph extends React.Component{
     this.state.chartData.labels = this.state.minuteLabel;
     this.state.lineChart.update();
     
-    console.log(this.state.chartData.labels);
+    //console.log(this.state.chartData.labels);
   }
   redoChartHourly(){
     //let lineChart = this.reference.chartInstance;
@@ -142,7 +142,7 @@ class Graph extends React.Component{
     this.state.chartData.labels = this.state.hourLabel;
     this.state.lineChart.update();
     
-    console.log(this.state.chartData.labels);
+    //console.log(this.state.chartData.labels);
   }
 
 
@@ -151,11 +151,7 @@ class Graph extends React.Component{
 		Chart.plugins.register({
  			 beforeDraw: function(chartInstance) {
     			var ctx = chartInstance.chart.ctx;
-<<<<<<< HEAD
     			ctx.fillStyle = "#2C2640";
-=======
-    			ctx.fillStyle = "#2c2640";
->>>>>>> 243233fcce2e516a239c19f853b65e4dac96f5bc
     			ctx.fillRect(0, 0, chartInstance.chart.width, chartInstance.chart.height);
 
   			}
@@ -167,11 +163,11 @@ class Graph extends React.Component{
   	{
   		return(
   			<div>
-          <button type="button" className="btn btn-dark" onClick={this.redoChartMinutes}>minutes</button>
+          <button type="button" className="btn btn-dark btn-dark2" id="btn-dark2" onClick={this.redoChartMinutes}>minutes</button>
           
-          <button type="button" className="btn btn-dark" onClick={this.redoChartHourly}>hourly</button>
+          <button type="button" className="btn btn-dark btn-dark2" id="btn-dark2" onClick={this.redoChartHourly}>hourly</button>
           
-          <button type="button" className="btn btn-dark" onClick={this.redoChartDaily}>daily</button>
+          <button type="button" className="btn btn-dark btn-dark2" id="btn-dark2" onClick={this.redoChartDaily}>daily</button>
   				<Line
   					data={this.state.chartData}
   					width={50}
