@@ -1,11 +1,16 @@
 #dropdownMenu2 {
 	background-color:#2C2640;
 	color:#E5E4E7;
+
 }
 
 
 .dropdown-menu {
 	background-color:#2C2640;
+	overflow: auto;
+	margin: 0 auto;
+  height: 400px;
+  width: 260px;
 }
 
 .dropdown-menu > li:nth-child(odd) button{
