@@ -43,7 +43,7 @@ class Navbar extends React.Component{
           <NavLink className="nav-link" to={"/about/"+this.props.symbol}>About {this.props.symbol}</NavLink>
       </li>
      <li className="nav-item">
-        <SearchBar classname="nav-link" symbol={this.props.symbol} coins = {this.props.coins} changeSymbol = {this.props.changeSymbol}> </SearchBar>
+        <SearchBar id="dropdown" classname="nav-link" symbol={this.props.symbol} coins = {this.props.coins} changeSymbol = {this.props.changeSymbol}> </SearchBar>
       </li>
     </ul>
   </div>
