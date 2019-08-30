@@ -192,7 +192,7 @@ class About extends React.Component {
                             </td>
                           </tr>
                           </tbody></table>
-                        <div align="center"><b>Click here for more pages like this </b> <a href={"./"+this.props.symbol}><b>Overview: What is {this.props.coin.CoinInfo.FullName}</b></a></div>
+                        <div align="center"><b>Click here for more pages like this </b> <a href={"./"+this.props.symbol}><b>What is {this.props.coin.CoinInfo.FullName}</b></a></div>
                   </div>{/* /.section__body */}
                 </section>{/* /.section */}
                 <section className="section-ads">

@@ -1,0 +1,17 @@
+a, a:hover, a:focus {
+    text-decoration: none;
+}
+
+.bigLink, .bigLink:hover, .bigLink:focus {
+	text-decoration:none;
+	color:#E5E4E7;
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+.bigDiv {
+	display:block;
+	height:100%;
+	width:100%;
+}

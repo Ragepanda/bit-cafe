@@ -1,0 +1,35 @@
+.section__body {
+	text-align: left;
+}
+
+
+.accordion-section .panel-default > .panel-heading {
+    border: 0;
+    background: #2c2640;
+    padding: 0;
+}
+.accordion-section .panel-default .panel-title a {
+    display: block;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: #e5e4e7;
+}
+.accordion-section .panel-default .panel-title a:after {
+   content: '-'; /* Unicode character for "plus" sign (+) */
+  font-size: 20px;
+  color: #e5e4e7;
+  float: right;
+  margin-left: 5px;
+  font-style: normal;
+}
+.accordion-section .panel-default .panel-title a.collapsed:after {
+    content: "+"; /* Unicode character for "minus" sign (-) */
+      font-size: 20px;
+  color: #e5e4e7;
+  float: right;
+  margin-left: 5px;
+  font-style: normal;
+}
+.accordion-section .panel-default .panel-body {
+    font-size: 1.2rem;
+}
