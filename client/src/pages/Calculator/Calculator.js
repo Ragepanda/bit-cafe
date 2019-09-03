@@ -87,6 +87,7 @@ class Calculator extends React.Component{
                         <h3>{this.props.coin.fullName} Calculator - Mining Profitability</h3>
                         <p>This {this.props.coin.fullName} calculator will allow you to determine the mining profitability of mining {this.props.coin.fullName}.</p>
                         <div id="miningCalcContainer">
+                        {this.props.coin.fullName} Mining Profitability Calculator coming soon
                         </div>
                         {/*  Insert 625-728-Combo-Tag Code Here   */}
                         {/*#include virtual="/includes/625-728-Combo-Tag.shtml" */}

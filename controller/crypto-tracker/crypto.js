@@ -12,8 +12,43 @@ module.exports = {
                 var currentTimestamp = new Date() / 1000;
                 var entry = [];
                 if (marketData.length > 0) {
-                    //Database has goodies
-                    res.send(marketData);
+                    if (currentTimestamp - marketData[0].createdAt > 60) {
+                        axios.get("https://min-api.cryptocompare.com/data/top/mktcapfull?limit=25&tsym=USD")
+                            .then(response => {
+                                var marketInfo = [];
+                                response.data.Data.forEach(element => {
+                                    var entry = {
+                                        fullName: element.CoinInfo.FullName,
+                                        symbol: element.CoinInfo.Internal,
+                                        imageUrl: element.CoinInfo.ImageUrl,
+                                        marketCap: element.RAW.USD.MKTCAP,
+                                        marketCapString: element.DISPLAY.USD.MKTCAP,
+                                        price: element.DISPLAY.USD.PRICE,
+                                        rawPrice: element.RAW.USD.PRICE,
+                                        volume24H: element.DISPLAY.USD.VOLUME24HOURTO,
+                                        supply: element.DISPLAY.USD.SUPPLY,
+                                        changePct24: element.RAW.USD.CHANGEPCT24HOUR,
+                                        createdAt: currentTimestamp
+                                    }
+                                    marketInfo.push(entry);
+
+                                    // ORGANIZE INTO DB STORAGE
+                                })
+                                db.market.destroy({ where: {} })
+                                    .then(() => {
+                                        db.market.bulkCreate(marketInfo)
+                                            .then(() => {
+                                                res.send(marketInfo);
+                                            })
+                                    })
+                            }).catch((error) => {
+                                res.send(error);
+                            })
+                    }
+                    else {
+                        //Database has goodies
+                        res.send(marketData);
+                    }
                 }
 
                 else {
@@ -29,6 +64,7 @@ module.exports = {
                                     marketCap: element.RAW.USD.MKTCAP,
                                     marketCapString: element.DISPLAY.USD.MKTCAP,
                                     price: element.DISPLAY.USD.PRICE,
+                                    rawPrice: element.RAW.USD.PRICE,
                                     volume24H: element.DISPLAY.USD.VOLUME24HOURTO,
                                     supply: element.DISPLAY.USD.SUPPLY,
                                     changePct24: element.RAW.USD.CHANGEPCT24HOUR,
@@ -40,7 +76,7 @@ module.exports = {
                             })
                             db.market.bulkCreate(marketInfo)
                                 .then(() => {
-                                    res.send(response.data.Data);
+                                    res.send(marketInfo);
                                 })
 
                         }).catch((error) => {

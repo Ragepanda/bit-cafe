@@ -31,7 +31,7 @@ class Graph extends React.Component{
 
     for(var i =0; i < this.props.minutesData.length; i++){
       pointsMinute.push({x: i *5, y: this.props.minutesData[i].high});
-      timeLabelsMinute.push(this.props.hourConverter(this.props.minutesData[i].time));
+      timeLabelsMinute.push(this.props.minConverter(this.props.minutesData[i].time));
     }
 
 
@@ -43,6 +43,7 @@ class Graph extends React.Component{
 
 
 		this.state={
+
       dailyPoints: pointsDaily,
       minutePoints: pointsMinute,
       hourPoints: points,
@@ -50,8 +51,9 @@ class Graph extends React.Component{
       dayLabel: timeLabelsDay,
       minuteLabel: timeLabelsMinute,
       hourLabel: timeLabelsHour,
-
+      lineChart: {},
 			chartData: {
+        
 				labels: timeLabelsHour,
 
 				datasets: [{
@@ -63,66 +65,84 @@ class Graph extends React.Component{
 				}]
 					
             },
-            options: {
-            	title: {
-            		display: true,
-            		text: this.props.symbol + " price " + this.props.dayConverter(this.props.data[0].time)
-            	},
-        		elements: {
-            		line: {
-                		tension: 0 // disables bezier curves
-            		}
-        		},
+      options: {
+        title: {
+          display: true,
+          fontColor: "white",
+          text: this.props.symbol + " price " + this.props.dayConverter(this.props.data[0].time)
+        },
+        elements: {
+          line: {
+            tension: 0 // disables bezier curves
+          }
+        },
 
-        		maintainAspectRatio: false,
-        		scales: {
-        			xAxes:[{
-        				gridLines:{
-        					color:"#E2DFEB"
-        				}
-        			}],
-        			yAxes:[{
-        				gridLines:{
-        					color:"#E2DFEB"
-        				}
-        			}],
-        		},
+        maintainAspectRatio: false,
+        	scales: {
+        	   xAxes:[{
+        		   gridLines:{
+        			   color:"#E5E4E7"
+        		    },
+                ticks:{
+                  fontColor: "#E5E4E7"
+                }
+        	   }],
+        	 yAxes:[{
+        		      gridLines:{
+        			   color:"#E5E4E7"
+        	     },
+               ticks: {
+                    fontColor: "#E5E4E7",
+                    // Include a dollar sign in the ticks
+                    callback: function(value, index, values) {
+                        return '$' + value;
+                    }
+                }
+        	   }],
+
+        	},
         		legend:{
-        			display: false
-        		},
+              labels: {
+                fontColor: "#E5E4E7"
+              },
+        		display: false
+        	},
 
-        		tooltips: {
-            		callbacks: {
+        	tooltips: {
+            	callbacks: {
                 		label: function(tooltipItems, data) {
                     	return "$" + tooltipItems.yLabel.toString();
                 		}
     				}
 				}	
 			}
+
 		}	
 	}
 	
   redoChartDaily(){
-    console.log();
+    //let lineChart = this.reference.chartInstance;
     this.state.chartData.datasets[0].data = this.state.dailyPoints;
     this.state.chartData.labels = this.state.dayLabel;
-    let lineChart = this.reference.chartInstance
-    lineChart.update();
-    console.log(this.state.dailyPoints);
+    this.state.lineChart.update();
+    
+    //console.log(this.state.chartData.labels);
   }
   redoChartMinutes(){
+    //let lineChart = this.reference.chartInstance;
     this.state.chartData.datasets[0].data = this.state.minutePoints;
     this.state.chartData.labels = this.state.minuteLabel;
-    let lineChart = this.reference.chartInstance
-    lineChart.update();
-    console.log(this.state.minutePoints);
+    this.state.lineChart.update();
+    
+    //console.log(this.state.chartData.labels);
   }
   redoChartHourly(){
+    //let lineChart = this.reference.chartInstance;
     this.state.chartData.datasets[0].data = this.state.hourPoints;
     this.state.chartData.labels = this.state.hourLabel;
-    let lineChart = this.reference.chartInstance
-    lineChart.update();
-    console.log(this.state.hourPoints);
+    this.state.lineChart.update();
+    
+    //console.log(this.state.chartData.labels);
   }
 
 
@@ -131,21 +151,23 @@ class Graph extends React.Component{
 		Chart.plugins.register({
  			 beforeDraw: function(chartInstance) {
     			var ctx = chartInstance.chart.ctx;
-    			ctx.fillStyle = "#0C0032";
+    			ctx.fillStyle = "#2C2640";
     			ctx.fillRect(0, 0, chartInstance.chart.width, chartInstance.chart.height);
+
   			}
 		});
-  	}
+    this.state.lineChart = this.reference.chartInstance;
+  }
 
   	render()
   	{
   		return(
   			<div>
-          <button type="button" className="btn btn-dark" onClick={this.redoChartMinutes}>minutes</button>
+          <button type="button" className="btn btn-dark btn-dark2" id="btn-dark2" onClick={this.redoChartMinutes}>minutes</button>
           
-          <button type="button" className="btn btn-dark" onClick={this.redoChartHourly}>hourly</button>
+          <button type="button" className="btn btn-dark btn-dark2" id="btn-dark2" onClick={this.redoChartHourly}>hourly</button>
           
-          <button type="button" className="btn btn-dark" onClick={this.redoChartDaily}>daily</button>
+          <button type="button" className="btn btn-dark btn-dark2" id="btn-dark2" onClick={this.redoChartDaily}>daily</button>
   				<Line
   					data={this.state.chartData}
   					width={50}

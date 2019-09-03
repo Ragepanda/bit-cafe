@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-
+import "./About.css";
 class About extends React.Component {
 
   constructor(props) {
@@ -52,7 +52,6 @@ class About extends React.Component {
     ]
 
     let aboutText = aboutInfo.find(e => e.symbol === this.props.symbol);
-    console.log(aboutText);
 
     return (
       <div className="wrapper">
@@ -67,17 +66,8 @@ class About extends React.Component {
         </Helmet>
         <div className="container">
           <div className="content">
-            {/* SET UP Logo Top of Page */}
-            {/*#include virtual="/includes/logo-header.shtml" */}
-            {/* END of Logo Top of Page */}
             <div className="main">
-              {/* SET UP Menu Code */}
-              {/*#include virtual="/includes/menu-topic.shtml" */}
-              {/* END of Menu Code */}
               <div className="main__content">
-                {/* SET UP Menu Code */}
-                {/*#include virtual="/includes/hamburger-menu-controls.shtml" */}
-                {/* END of Menu Code */}
                 <section className="section">
                   {/* SET UP Menu Code */}
                   {/*#include virtual="/includes/728x15-ATF-Link-Ad.shtml" */}
@@ -90,26 +80,105 @@ class About extends React.Component {
                     <h2 align="left">What is {this.props.coin.fullName} ?</h2>
                   </header>{/* /.section__head */}
                   <div className="section__body">
-                    <article className="article">
-                      <header className="article__head">
-                      </header>{/* /.article__head */}
-                      <div className="article__body">
                         <p>This page will help answer the question of, what is {this.props.coin.fullName}? Our what is {this.props.coin.fullName} page provides useful information about the cryptocurrency, {this.props.coin.fullName}. If you still don't know what is {this.props.coin.fullName}, then read on.</p>
-                        <h3>An overview of {this.props.coin.fullName}</h3>
-                        <ul className="list-unstyled">
-                          <li>What is {this.props.coin.fullName}?</li>
-                          <ul><li>{aboutText.p1}</li></ul>
-                          <li>What is {this.props.coin.fullName} mining?</li>
-                          <ul><li>{aboutText.p2}</li></ul>
-                          <li>What is {this.props.coin.fullName} worth?</li>
-                          <ul><li>{aboutText.p3}</li></ul>
-                          <li>What is {this.props.coin.fullName} price?</li>
-                          <div id="priceContainer" />
-                          <li>What is {this.props.coin.fullName} marketcap?</li>
-                          <div id="graphContainer" />
-                          <li>What is a {this.props.coin.fullName} wallet?</li>
-                          <ul><li>{aboutText.p4}</li></ul>
-                        </ul>
+                        <section class="accordion-section clearfix mt-3" aria-label="Question Accordions">
+                          <div class="container">
+                          
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                              <div class="panel-heading p-3 mb-3" role="tab" id="heading0">
+                              <h3 class="panel-title">
+                                <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse0" aria-expanded="true" aria-controls="collapse0">
+                                What is {this.props.coin.fullName}?
+                                </a>
+                              </h3>
+                              </div>
+                              <div id="collapse0" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading0">
+                              <div class="panel-body px-3 mb-4">
+                                <p>{aboutText.p1}</p>
+                              </div>
+                              </div>
+                            </div>
+                            
+                            <div class="panel panel-default">
+                              <div class="panel-heading p-3 mb-3" role="tab" id="heading1">
+                              <h3 class="panel-title">
+                                <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                What is {this.props.coin.fullName} mining?
+                                </a>
+                              </h3>
+                              </div>
+                              <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
+                              <div class="panel-body px-3 mb-4">
+                                <p>{aboutText.p2}</p>
+                              </div>
+                              </div>
+                            </div>
+                            
+                            <div class="panel panel-default">
+                              <div class="panel-heading p-3 mb-3" role="tab" id="heading2">
+                              <h3 class="panel-title">
+                                <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                                What is {this.props.coin.fullName} worth?
+                                </a>
+                              </h3>
+                              </div>
+                              <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+                              <div class="panel-body px-3 mb-4">
+                                <p>{aboutText.p3}</p>
+                              </div>
+                              </div>
+                            </div>
+                            
+                            <div class="panel panel-default">
+                              <div class="panel-heading p-3 mb-3" role="tab" id="heading3">
+                              <h3 class="panel-title">
+                                <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                                What is {this.props.coin.fullName} price?
+                                </a>
+                              </h3>
+                              </div>
+                              <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+                              <div class="panel-body px-3 mb-4">
+                                <p>{this.props.coin.price}</p>
+                              </div>
+                              </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                              <div class="panel-heading p-3 mb-3" role="tab" id="heading4">
+                              <h3 class="panel-title">
+                                <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="true" aria-controls="collapse4">
+                                What is {this.props.coin.fullName} marketcap?
+                                </a>
+                              </h3>
+                              </div>
+                              <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+                              <div class="panel-body px-3 mb-4">
+                                <p>{this.props.coin.marketCapString}</p>
+                              </div>
+                              </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                              <div class="panel-heading p-3 mb-3" role="tab" id="heading5">
+                              <h3 class="panel-title">
+                                <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="true" aria-controls="collapse5">
+                                What is a {this.props.coin.fullName} wallet?
+                                </a>
+                              </h3>
+                              </div>
+                              <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+                              <div class="panel-body px-3 mb-4">
+                                <p>{aboutText.p4}</p>
+                              </div>
+                              </div>
+                            </div>
+                            </div>
+                          
+                          </div>
+                        </section>
+
                         <h3><a href={"/news/"+this.props.symbol}>News: What is {this.props.coin.fullName}?</a></h3>
                         <div id="newsContainer" />
                         {/*  Insert 625-728-Combo-Tag Code Here   */}
@@ -123,10 +192,7 @@ class About extends React.Component {
                             </td>
                           </tr>
                           </tbody></table>
-                        <div align="center"><b>Click here for more pages like this </b> <a href={"./"+this.props.symbol}><b>Overview: What is {this.props.coin.fullName}</b></a></div>
-
-                      </div>{/* /.article__body */}
-                    </article>{/* /.article */}
+                        <div align="center"><b>Click here for more pages like this </b> <a href={"./"+this.props.symbol}><b>What is {this.props.coin.fullName}</b></a></div>
                   </div>{/* /.section__body */}
                 </section>{/* /.section */}
                 <section className="section-ads">

@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import ExchangeCalc from "../Calculator/ExchangeCalc";
 
 class Exchange extends React.Component {
 
@@ -12,6 +13,13 @@ class Exchange extends React.Component {
       if (typeof (this.props.match.params.symbol) === "undefined")
         this.props.history.push("./" + this.props.symbol);
     }
+  }
+
+  exchangeCalc(){
+    return (<ExchangeCalc 
+              symbol = {this.props.symbol}
+              coin   = {this.props.coin}
+          />)
   }
 
   render() {
@@ -64,7 +72,9 @@ class Exchange extends React.Component {
                         <div id="exchangeContainer" />
                         <h3>{this.props.coin.fullName} Exchange Rate Calculator</h3>
                         <p>This {this.props.coin.fullName} exchange calculator will allow you to determine the {this.props.coin.fullName} exchange rate to USD, and many other currencies.</p>
-                        <div id="calculatorContainer" />
+                        <div id="exchangeCalcContainer">
+                        {this.exchangeCalc()}
+                        </div>
                         <p>For more useful calculators, click <a href={"/calculator/"+this.props.symbol}>here</a></p>
                         {/*  Insert 625-728-Combo-Tag Code Here   */}
                         {/*#include virtual="/includes/625-728-Combo-Tag.shtml" */}

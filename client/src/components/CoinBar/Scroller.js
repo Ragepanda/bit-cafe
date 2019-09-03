@@ -30,7 +30,7 @@ class Scroller extends React.Component{
 	//Sets barlength to actual width of list, and starting location offset
 	init(){
 		this.barlength = (document.getElementsByClassName("scroller")[0].getBoundingClientRect().width);
-		console.log("barlength " + this.barlength);
+		//console.log("barlength " + this.barlength);
 		this.setState({
 			inited: "true",
 			barposition: (this.props.offset * this.barlength)
@@ -67,6 +67,11 @@ class Scroller extends React.Component{
      			barposition: this.barlength,
      			bar_one_style: styleCopy
     		});
+    	}
+    	this.props.addBarPos(this.state.barposition, this.props.offset);
+    	if(this.props.offset == 1){
+    			this.state.barposition = this.state.barposition - this.props.checkdif();
+    			//console.log("hey");
     	}
   	}
 

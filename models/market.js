@@ -25,6 +25,10 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
+        rawPrice: {
+            type: DataTypes.BIGINT,
+            allowNull: false
+        },
         volume24H: {
             type: DataTypes.STRING,
             allowNull: false
