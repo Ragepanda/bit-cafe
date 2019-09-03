@@ -35,7 +35,7 @@ class Article extends React.Component {
 			<div className="card border-0 col-md-11 m-1 justify-content-left">
 				<div className="card-body">
 					<h5 className="card-title">{this.props.article.title}</h5>
-					<a href={this.props.article.guid} target="_blank" className="card-subtitle mb-2 text-muted"> Source: {this.props.article.source}</a>
+					<a href={this.props.article.articleUrl} target="_blank" className="card-subtitle mb-2 text-muted"> Source: {this.props.article.source}</a>
 					{/* <button onClick={this.retriveBody} className="btn btn-dark" role="button" data-toggle="modal" data-target={"#article-modal-" + this.props.article.id}>Read More</button> */}
 
 				</div>

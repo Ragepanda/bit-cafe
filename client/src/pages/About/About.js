@@ -26,7 +26,7 @@ class About extends React.Component {
   render() {
 
     
-    if (this.props.coin.CoinInfo == null || this.props.symbol == null) return <div></div>;
+    if (this.props.coin == null || this.props.symbol == null) return <div></div>;
 
     const aboutInfo = [
       {symbol: "BTC", p1: "Bitcoin is an electronic payment system and the most popular cryptocurrency. Bitcoin was created by a mysterious person(s) named Satoshi Nakamoto to be a secure, peer-to-peer currency. To learn more about cryptocurrency in general, click here.", p2: "So what is Bitcoin mining? It is when a large network of computers process and solve how to chain together blocks of bitcoin transactions. When a bitcoin miner does this, they are given newly created Bitcoin and fees. This method of mining is called 'proof of work'.", p3: "Like most cryptocurrencies, and currencies, Bitcoin is a fiat currency. So technically the answer to what is Bitcoin worth, is nothing. That being said, since enough people agree to value it as a currency, it does have value.", p4: "A Bitcoin wallet stores relevant information to access one's Bitcoin, such as the private key to access your Bitcoin and to make transactions with Bitcoin. A Bitcoin wallet can be a desktop program, a web program, a piece of hardware, or a mobile app."},
@@ -56,9 +56,9 @@ class About extends React.Component {
     return (
       <div className="wrapper">
         <Helmet>
-          <title>{this.props.coin.CoinInfo.FullName + " | What is " + this.props.coin.CoinInfo.FullName}</title>
-          <meta name="description" content={"This page will help answer the question of, what is " + this.props.coin.CoinInfo.FullName + "? Our what is " + this.props.coin.CoinInfo.FullName + " page provides useful information about the cryptocurrency, " + this.props.coin.CoinInfo.FullName + ". If you still don't know what is " + this.props.coin.CoinInfo.FullName + ", then read on."} />
-          <meta name="keywords" content={"cryptocurrency,crypto,coin," + this.props.coin.CoinInfo.FullName + "," + this.props.symbol + ",price,value,news,aggregator,new"} />
+          <title>{this.props.coin.fullName + " | What is " + this.props.coin.fullName}</title>
+          <meta name="description" content={"This page will help answer the question of, what is " + this.props.coin.fullName + "? Our what is " + this.props.coin.fullName + " page provides useful information about the cryptocurrency, " + this.props.coin.fullName + ". If you still don't know what is " + this.props.coin.fullName + ", then read on."} />
+          <meta name="keywords" content={"cryptocurrency,crypto,coin," + this.props.coin.fullName + "," + this.props.symbol + ",price,value,news,aggregator,new"} />
           <meta name="author" content="bitcoinsama.com" />
           <meta http-equiv="Content-Language" content="en-US" />
           <meta name="rating" content="kids" />
@@ -76,11 +76,11 @@ class About extends React.Component {
                   <hr />
                   <hr />
                   <header className="section__head">
-                    <h1 align="left"><a href={"./"+this.props.symbol}>{this.props.coin.CoinInfo.FullName}</a></h1>
-                    <h2 align="left">What is {this.props.coin.CoinInfo.FullName} ?</h2>
+                    <h1 align="left"><a href={"./"+this.props.symbol}>{this.props.coin.fullName}</a></h1>
+                    <h2 align="left">What is {this.props.coin.fullName} ?</h2>
                   </header>{/* /.section__head */}
                   <div className="section__body">
-                        <p>This page will help answer the question of, what is {this.props.coin.CoinInfo.FullName}? Our what is {this.props.coin.CoinInfo.FullName} page provides useful information about the cryptocurrency, {this.props.coin.CoinInfo.FullName}. If you still don't know what is {this.props.coin.CoinInfo.FullName}, then read on.</p>
+                        <p>This page will help answer the question of, what is {this.props.coin.fullName}? Our what is {this.props.coin.fullName} page provides useful information about the cryptocurrency, {this.props.coin.fullName}. If you still don't know what is {this.props.coin.fullName}, then read on.</p>
                         <section class="accordion-section clearfix mt-3" aria-label="Question Accordions">
                           <div class="container">
                           
@@ -89,7 +89,7 @@ class About extends React.Component {
                               <div class="panel-heading p-3 mb-3" role="tab" id="heading0">
                               <h3 class="panel-title">
                                 <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse0" aria-expanded="true" aria-controls="collapse0">
-                                What is {this.props.coin.CoinInfo.FullName}?
+                                What is {this.props.coin.fullName}?
                                 </a>
                               </h3>
                               </div>
@@ -104,7 +104,7 @@ class About extends React.Component {
                               <div class="panel-heading p-3 mb-3" role="tab" id="heading1">
                               <h3 class="panel-title">
                                 <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                                What is {this.props.coin.CoinInfo.FullName} mining?
+                                What is {this.props.coin.fullName} mining?
                                 </a>
                               </h3>
                               </div>
@@ -119,7 +119,7 @@ class About extends React.Component {
                               <div class="panel-heading p-3 mb-3" role="tab" id="heading2">
                               <h3 class="panel-title">
                                 <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapse2">
-                                What is {this.props.coin.CoinInfo.FullName} worth?
+                                What is {this.props.coin.fullName} worth?
                                 </a>
                               </h3>
                               </div>
@@ -134,13 +134,13 @@ class About extends React.Component {
                               <div class="panel-heading p-3 mb-3" role="tab" id="heading3">
                               <h3 class="panel-title">
                                 <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="true" aria-controls="collapse3">
-                                What is {this.props.coin.CoinInfo.FullName} price?
+                                What is {this.props.coin.fullName} price?
                                 </a>
                               </h3>
                               </div>
                               <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
                               <div class="panel-body px-3 mb-4">
-                                <p>{this.props.coin.DISPLAY.USD.PRICE}</p>
+                                <p>{this.props.coin.price}</p>
                               </div>
                               </div>
                             </div>
@@ -149,13 +149,13 @@ class About extends React.Component {
                               <div class="panel-heading p-3 mb-3" role="tab" id="heading4">
                               <h3 class="panel-title">
                                 <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="true" aria-controls="collapse4">
-                                What is {this.props.coin.CoinInfo.FullName} marketcap?
+                                What is {this.props.coin.fullName} marketcap?
                                 </a>
                               </h3>
                               </div>
                               <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
                               <div class="panel-body px-3 mb-4">
-                                <p>{this.props.coin.DISPLAY.USD.MKTCAP}</p>
+                                <p>{this.props.coin.marketCapString}</p>
                               </div>
                               </div>
                             </div>
@@ -164,7 +164,7 @@ class About extends React.Component {
                               <div class="panel-heading p-3 mb-3" role="tab" id="heading5">
                               <h3 class="panel-title">
                                 <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="true" aria-controls="collapse5">
-                                What is a {this.props.coin.CoinInfo.FullName} wallet?
+                                What is a {this.props.coin.fullName} wallet?
                                 </a>
                               </h3>
                               </div>
@@ -179,7 +179,7 @@ class About extends React.Component {
                           </div>
                         </section>
 
-                        <h3><a href={"/news/"+this.props.symbol}>News: What is {this.props.coin.CoinInfo.FullName}?</a></h3>
+                        <h3><a href={"/news/"+this.props.symbol}>News: What is {this.props.coin.fullName}?</a></h3>
                         <div id="newsContainer" />
                         {/*  Insert 625-728-Combo-Tag Code Here   */}
                         {/*#include virtual="/includes/625-728-Combo-Tag.shtml" */}
@@ -192,7 +192,7 @@ class About extends React.Component {
                             </td>
                           </tr>
                           </tbody></table>
-                        <div align="center"><b>Click here for more pages like this </b> <a href={"./"+this.props.symbol}><b>What is {this.props.coin.CoinInfo.FullName}</b></a></div>
+                        <div align="center"><b>Click here for more pages like this </b> <a href={"./"+this.props.symbol}><b>What is {this.props.coin.fullName}</b></a></div>
                   </div>{/* /.section__body */}
                 </section>{/* /.section */}
                 <section className="section-ads">
@@ -241,7 +241,7 @@ class About extends React.Component {
             {/*#include virtual="/includes/footer.shtml" */}
             {/* END Footer */}
             <div className="footer__site-map">
-              <a href={"./"+this.props.symbol}>What is {this.props.coin.CoinInfo.FullName} ?</a>
+              <a href={"./"+this.props.symbol}>What is {this.props.coin.fullName} ?</a>
             </div>{/* /.footer__site-map */}
           </div>{/* /.footer__content */}
         </footer>{/* /.footer */}

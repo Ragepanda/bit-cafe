@@ -13,7 +13,6 @@ class Exchange extends React.Component {
       if (typeof (this.props.match.params.symbol) === "undefined")
         this.props.history.push("./" + this.props.symbol);
     }
-    console.log(this.props.coin.RAW); // Takes a couple of mounting iterations before this value isn't undefined. As structured, should work in the app. Would suggest putting this varaible in a method using pros.coin.RAW.USD.PRICE
   }
 
   exchangeCalc(){
@@ -24,15 +23,15 @@ class Exchange extends React.Component {
   }
 
   render() {
-    if (typeof(this.props.coin.CoinInfo) ==="undefined") return <div></div>;
+    if (typeof(this.props.coin) ==="undefined") return <div></div>;
 
 
     return (
       <div className="wrapper">
         <Helmet>
-          <title>{this.props.coin.CoinInfo.FullName + " | " + this.props.coin.CoinInfo.FullName + " Exchange Rate Overview"}</title>
-          <meta name="description" content={"This " + this.props.coin.CoinInfo.FullName + " Exchange Rate Overview page will help you locate a " + this.props.coin.CoinInfo.FullName + " exchange to use to track the price of " + this.props.coin.CoinInfo.FullName + " as well as the current " + this.props.coin.CoinInfo.FullName + " exchange rate. This page also includes a " + this.props.coin.CoinInfo.FullName + " exchange rate calculator to help you track the " + this.props.coin.CoinInfo.FullName + " exchange rate for " + this.props.coin.CoinInfo.FullName + " to usd or other currencies."} />
-          <meta name="keywords" content={"cryptocurrency,crypto,coin," + this.props.coin.CoinInfo.FullName + "," + this.props.symbol + ",price,value,calculator,calculators,exchange,rate,track,exchanges,usd"} />
+          <title>{this.props.coin.fullName + " | " + this.props.coin.fullName + " Exchange Rate Overview"}</title>
+          <meta name="description" content={"This " + this.props.coin.fullName + " Exchange Rate Overview page will help you locate a " + this.props.coin.fullName + " exchange to use to track the price of " + this.props.coin.fullName + " as well as the current " + this.props.coin.fullName + " exchange rate. This page also includes a " + this.props.coin.fullName + " exchange rate calculator to help you track the " + this.props.coin.fullName + " exchange rate for " + this.props.coin.fullName + " to usd or other currencies."} />
+          <meta name="keywords" content={"cryptocurrency,crypto,coin," + this.props.coin.fullName + "," + this.props.symbol + ",price,value,calculator,calculators,exchange,rate,track,exchanges,usd"} />
           <meta name="author" content="bitcoinsama.com" />
           <meta http-equiv="Content-Language" content="en-US" />
           <meta name="rating" content="kids" />
@@ -59,20 +58,20 @@ class Exchange extends React.Component {
                   <hr />
                   <hr />
                   <header className="section__head">
-                    <h1 align="left"><a href={"./"+this.props.symbol}>{this.props.coin.CoinInfo.FullName}</a></h1>
-                    <h2 align="left">{this.props.coin.CoinInfo.FullName} Exchange Rate Overview</h2>
+                    <h1 align="left"><a href={"./"+this.props.symbol}>{this.props.coin.fullName}</a></h1>
+                    <h2 align="left">{this.props.coin.fullName} Exchange Rate Overview</h2>
                   </header>{/* /.section__head */}
                   <div className="section__body">
                     <article className="article">
                       <header className="article__head">
                       </header>{/* /.article__head */}
                       <div className="article__body">
-                        <p>This {this.props.coin.CoinInfo.FullName} Exchange Rate Overview page will help you locate a {this.props.coin.CoinInfo.FullName} exchange to use to track the price of {this.props.coin.CoinInfo.FullName} as well as the current {this.props.coin.CoinInfo.FullName} exchange rate. This page also includes a {this.props.coin.CoinInfo.FullName} exchange rate calculator to help you track the {this.props.coin.CoinInfo.FullName} exchange rate for {this.props.coin.CoinInfo.FullName} to usd or other currencies.</p><br />
-                        <h3>{this.props.coin.CoinInfo.FullName} Exchange</h3>
-                        <p>This is a {this.props.coin.CoinInfo.FullName} exchange repository, populated with many of the most used {this.props.coin.CoinInfo.FullName} exchanges. You can click a {this.props.coin.CoinInfo.FullName} exchange to get a more in-depth view of that {this.props.coin.CoinInfo.FullName} exchange.</p>
+                        <p>This {this.props.coin.fullName} Exchange Rate Overview page will help you locate a {this.props.coin.fullName} exchange to use to track the price of {this.props.coin.fullName} as well as the current {this.props.coin.fullName} exchange rate. This page also includes a {this.props.coin.fullName} exchange rate calculator to help you track the {this.props.coin.fullName} exchange rate for {this.props.coin.fullName} to usd or other currencies.</p><br />
+                        <h3>{this.props.coin.fullName} Exchange</h3>
+                        <p>This is a {this.props.coin.fullName} exchange repository, populated with many of the most used {this.props.coin.fullName} exchanges. You can click a {this.props.coin.fullName} exchange to get a more in-depth view of that {this.props.coin.fullName} exchange.</p>
                         <div id="exchangeContainer" />
-                        <h3>{this.props.coin.CoinInfo.FullName} Exchange Rate Calculator</h3>
-                        <p>This {this.props.coin.CoinInfo.FullName} exchange calculator will allow you to determine the {this.props.coin.CoinInfo.FullName} exchange rate to USD, and many other currencies.</p>
+                        <h3>{this.props.coin.fullName} Exchange Rate Calculator</h3>
+                        <p>This {this.props.coin.fullName} exchange calculator will allow you to determine the {this.props.coin.fullName} exchange rate to USD, and many other currencies.</p>
                         <div id="exchangeCalcContainer">
                         {this.exchangeCalc()}
                         </div>
@@ -89,7 +88,7 @@ class Exchange extends React.Component {
                           </tr>
                           </tbody></table>
                         <br /><br /><br /><br />
-                        <div align="center"><b>Click here for more pages like this </b> <a href={"./"+this.props.symbol}><b>{this.props.coin.CoinInfo.FullName} Exchange Overview</b></a></div>
+                        <div align="center"><b>Click here for more pages like this </b> <a href={"./"+this.props.symbol}><b>{this.props.coin.fullName} Exchange Overview</b></a></div>
                         <div style={{ height: '1200px' }} />
                       </div>{/* /.article__body */}
                     </article>{/* /.article */}
@@ -141,7 +140,7 @@ class Exchange extends React.Component {
             {/*#include virtual="/includes/footer.shtml" */}
             {/* END Footer */}
             <div className="footer__site-map">
-              <a href={"./"+this.props.symbol}>{this.props.coin.CoinInfo.FullName} Exchange</a>
+              <a href={"./"+this.props.symbol}>{this.props.coin.fullName} Exchange</a>
             </div>{/* /.footer__site-map */}
           </div>{/* /.footer__content */}
         </footer>{/* /.footer */}

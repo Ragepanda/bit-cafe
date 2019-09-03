@@ -28,11 +28,11 @@ class Converter extends React.Component {
     convertHandler = () => {
             if (this.state.fromCurrency !== this.state.toCurrency) {
                     if (this.state.fromCurrency === this.props.symbol){
-                        const result = this.state.amount * this.props.coin.RAW.USD.PRICE;
+                        const result = this.state.amount * this.props.coin.rawPrice;
                         this.setState({ result: "$" + result.toFixed(7) })
                     }
                     else {
-                        const result = this.state.amount / this.props.coin.RAW.USD.PRICE;
+                        const result = this.state.amount / this.props.coin.rawPrice;
                         this.setState({ result: result.toFixed(7) + this.props.symbol })
                     }
             }
