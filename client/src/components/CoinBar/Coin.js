@@ -1,37 +1,43 @@
 import React from "react";
 
-class Coin extends React.Component{
+class Coin extends React.Component {
 	state = {
 		color: "text-success",
 		coinCost: ""
 	}
 
 
-	itemStyle ={
+	itemStyle = {
 		float: "left",
 		textAlign: 'center',
-	    padding: "8px",
-	    color: "#E5E4E7",
-	    backgroundColor: "#2C2640"
+		padding: "8px",
+		color: "#E5E4E7",
+		backgroundColor: "#2C2640"
 	}
 
-	
-	componentDidMount(){
-		if(this.props.coin.RAW.USD.CHANGEPCT24HOUR < 0){
+
+	componentDidMount() {
+		if (this.props.coin.changePct24 < 0) {
 			this.setState({
 				color: "text-danger"
 			})
 		}
-		
+
 
 	}
 
-	render(){
-		return(
-		<li className="" style={this.itemStyle}>
-	    	<span className="">| <img alt="" height="15px" width="15px" src={"https://www.cryptocompare.com"+this.props.coin.CoinInfo.ImageUrl}/> {this.props.coin.CoinInfo.Internal} {this.props.coin.DISPLAY.USD.PRICE.replace(/\s/g,'')}</span><span className={this.state.color}> {this.props.coin.DISPLAY.USD.CHANGEPCT24HOUR}% </span>
-		</li>
-	)}
+	render() {
+		if (typeof (this.props.coin) === "undefined")
+			return <div />
+
+		else {
+			return (
+				<li className="" style={this.itemStyle}>
+					<span className="">| <img alt="" height="15px" width="15px" src={"https://www.cryptocompare.com" + this.props.coin.imageUrl} /> {this.props.coin.symbol} {this.props.coin.price.replace(/\s/g, '')}</span><span className={this.state.color}> {Math.round(100 * this.props.coin.changePct24) / 100 + "%"} </span>
+				</li>
+			)
+		}
+	}
 }
 
 export default Coin;

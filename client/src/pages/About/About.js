@@ -26,7 +26,7 @@ class About extends React.Component {
   render() {
 
     
-    if (this.props.coin.CoinInfo == null || this.props.symbol == null) return <div></div>;
+    if (this.props.coin == null || this.props.symbol == null) return <div></div>;
 
     const aboutInfo = [
       {symbol: "BTC", p1: "Bitcoin is an electronic payment system and the most popular cryptocurrency. Bitcoin was created by a mysterious person(s) named Satoshi Nakamoto to be a secure, peer-to-peer currency. To learn more about cryptocurrency in general, click here.", p2: "So what is Bitcoin mining? It is when a large network of computers process and solve how to chain together blocks of bitcoin transactions. When a bitcoin miner does this, they are given newly created Bitcoin and fees. This method of mining is called 'proof of work'.", p3: "Like most cryptocurrencies, and currencies, Bitcoin is a fiat currency. So technically the answer to what is Bitcoin worth, is nothing. That being said, since enough people agree to value it as a currency, it does have value.", p4: "A Bitcoin wallet stores relevant information to access one's Bitcoin, such as the private key to access your Bitcoin and to make transactions with Bitcoin. A Bitcoin wallet can be a desktop program, a web program, a piece of hardware, or a mobile app."},
@@ -57,9 +57,9 @@ class About extends React.Component {
     return (
       <div className="wrapper">
         <Helmet>
-          <title>{this.props.coin.CoinInfo.FullName + " | What is " + this.props.coin.CoinInfo.FullName}</title>
-          <meta name="description" content={"This page will help answer the question of, what is " + this.props.coin.CoinInfo.FullName + "? Our what is " + this.props.coin.CoinInfo.FullName + " page provides useful information about the cryptocurrency, " + this.props.coin.CoinInfo.FullName + ". If you still don't know what is " + this.props.coin.CoinInfo.FullName + ", then read on."} />
-          <meta name="keywords" content={"cryptocurrency,crypto,coin," + this.props.coin.CoinInfo.FullName + "," + this.props.symbol + ",price,value,news,aggregator,new"} />
+          <title>{this.props.coin.fullName + " | What is " + this.props.coin.fullName}</title>
+          <meta name="description" content={"This page will help answer the question of, what is " + this.props.coin.fullName + "? Our what is " + this.props.coin.fullName + " page provides useful information about the cryptocurrency, " + this.props.coin.fullName + ". If you still don't know what is " + this.props.coin.fullName + ", then read on."} />
+          <meta name="keywords" content={"cryptocurrency,crypto,coin," + this.props.coin.fullName + "," + this.props.symbol + ",price,value,news,aggregator,new"} />
           <meta name="author" content="bitcoinsama.com" />
           <meta http-equiv="Content-Language" content="en-US" />
           <meta name="rating" content="kids" />
@@ -86,31 +86,31 @@ class About extends React.Component {
                   <hr />
                   <hr />
                   <header className="section__head">
-                    <h1 align="left"><a href={"./"+this.props.symbol}>{this.props.coin.CoinInfo.FullName}</a></h1>
-                    <h2 align="left">What is {this.props.coin.CoinInfo.FullName} ?</h2>
+                    <h1 align="left"><a href={"./"+this.props.symbol}>{this.props.coin.fullName}</a></h1>
+                    <h2 align="left">What is {this.props.coin.fullName} ?</h2>
                   </header>{/* /.section__head */}
                   <div className="section__body">
                     <article className="article">
                       <header className="article__head">
                       </header>{/* /.article__head */}
                       <div className="article__body">
-                        <p>This page will help answer the question of, what is {this.props.coin.CoinInfo.FullName}? Our what is {this.props.coin.CoinInfo.FullName} page provides useful information about the cryptocurrency, {this.props.coin.CoinInfo.FullName}. If you still don't know what is {this.props.coin.CoinInfo.FullName}, then read on.</p>
-                        <h3>An overview of {this.props.coin.CoinInfo.FullName}</h3>
+                        <p>This page will help answer the question of, what is {this.props.coin.fullName}? Our what is {this.props.coin.fullName} page provides useful information about the cryptocurrency, {this.props.coin.fullName}. If you still don't know what is {this.props.coin.fullName}, then read on.</p>
+                        <h3>An overview of {this.props.coin.fullName}</h3>
                         <ul className="list-unstyled">
-                          <li>What is {this.props.coin.CoinInfo.FullName}?</li>
+                          <li>What is {this.props.coin.fullName}?</li>
                           <ul><li>{aboutText.p1}</li></ul>
-                          <li>What is {this.props.coin.CoinInfo.FullName} mining?</li>
+                          <li>What is {this.props.coin.fullName} mining?</li>
                           <ul><li>{aboutText.p2}</li></ul>
-                          <li>What is {this.props.coin.CoinInfo.FullName} worth?</li>
+                          <li>What is {this.props.coin.fullName} worth?</li>
                           <ul><li>{aboutText.p3}</li></ul>
-                          <li>What is {this.props.coin.CoinInfo.FullName} price?</li>
+                          <li>What is {this.props.coin.fullName} price?</li>
                           <div id="priceContainer" />
-                          <li>What is {this.props.coin.CoinInfo.FullName} marketcap?</li>
+                          <li>What is {this.props.coin.fullName} marketcap?</li>
                           <div id="graphContainer" />
-                          <li>What is a {this.props.coin.CoinInfo.FullName} wallet?</li>
+                          <li>What is a {this.props.coin.fullName} wallet?</li>
                           <ul><li>{aboutText.p4}</li></ul>
                         </ul>
-                        <h3><a href={"/news/"+this.props.symbol}>News: What is {this.props.coin.CoinInfo.FullName}?</a></h3>
+                        <h3><a href={"/news/"+this.props.symbol}>News: What is {this.props.coin.fullName}?</a></h3>
                         <div id="newsContainer" />
                         {/*  Insert 625-728-Combo-Tag Code Here   */}
                         {/*#include virtual="/includes/625-728-Combo-Tag.shtml" */}
@@ -123,7 +123,7 @@ class About extends React.Component {
                             </td>
                           </tr>
                           </tbody></table>
-                        <div align="center"><b>Click here for more pages like this </b> <a href={"./"+this.props.symbol}><b>Overview: What is {this.props.coin.CoinInfo.FullName}</b></a></div>
+                        <div align="center"><b>Click here for more pages like this </b> <a href={"./"+this.props.symbol}><b>Overview: What is {this.props.coin.fullName}</b></a></div>
 
                       </div>{/* /.article__body */}
                     </article>{/* /.article */}
@@ -175,7 +175,7 @@ class About extends React.Component {
             {/*#include virtual="/includes/footer.shtml" */}
             {/* END Footer */}
             <div className="footer__site-map">
-              <a href={"./"+this.props.symbol}>What is {this.props.coin.CoinInfo.FullName} ?</a>
+              <a href={"./"+this.props.symbol}>What is {this.props.coin.fullName} ?</a>
             </div>{/* /.footer__site-map */}
           </div>{/* /.footer__content */}
         </footer>{/* /.footer */}

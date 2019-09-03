@@ -27,7 +27,7 @@ class Converter extends React.Component {
 
     convertHandler = () => {
             if (this.state.fromCurrency !== this.state.toCurrency) {
-                        const result = this.state.amount * this.props.coin.RAW.USD.PRICE;
+                        const result = this.state.amount * this.props.coin.price;
                         this.setState({ result: result.toFixed(5) })
             }
             else {

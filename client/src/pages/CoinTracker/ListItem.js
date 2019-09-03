@@ -7,7 +7,7 @@ class ListItem extends React.Component{
 	}
 
 	componentDidMount(){
-		if(this.props.coins.RAW.USD.CHANGEPCT24HOUR < 0){
+		if(this.props.coins.changePct24 < 0){
 			this.setState({
 				color: "text-danger"
 			})
@@ -18,13 +18,13 @@ class ListItem extends React.Component{
 		return(
 				<tr className="rowHover">
 					<th scope="row">{this.props.rank+1}</th>
-					<td><img alt="" height="15px" width="15px" src={"https://www.cryptocompare.com"+this.props.coins.CoinInfo.ImageUrl}/> {this.props.coins.CoinInfo.FullName} ({this.props.coins.CoinInfo.Name})</td>
-					<td>{this.props.coins.DISPLAY.USD.MKTCAP.replace(/\s/g,'')}</td>
-					<td>{this.props.coins.DISPLAY.USD.PRICE.replace(/\s/g,'')}</td>
-					<td>{this.props.coins.DISPLAY.USD.VOLUME24HOURTO.replace(/\s/g,'')}</td>
-					<td>{this.props.coins.DISPLAY.USD.SUPPLY}</td>
+					<td><img alt="" height="15px" width="15px" src={"https://www.cryptocompare.com"+this.props.coins.imageUrl}/> {this.props.coins.fullName} ({this.props.coins.symbol})</td>
+					<td>{this.props.coins.marketCapString.replace(/\s/g,'')}</td>
+					<td>{this.props.coins.price.replace(/\s/g,'')}</td>
+					<td>{this.props.coins.volume24H.replace(/\s/g,'')}</td>
+					<td>{this.props.coins.supply}</td>
 
-					<td className={this.state.color}>{Math.round(100*this.props.coins.RAW.USD.CHANGEPCT24HOUR)/100 + "%"}</td>
+					<td className={this.state.color}>{Math.round(100*this.props.coins.changePct24)/100 + "%"}</td>
 									
 				</tr>
 	)}

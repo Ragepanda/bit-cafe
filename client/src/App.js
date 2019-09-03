@@ -37,7 +37,7 @@ class App extends Component {
   
     var coin = {};
     this.state.coins.forEach(coinData => {
-      if (coinData.CoinInfo.Internal === newSymbol) {
+      if (coinData.symbol === newSymbol) {
         coin = coinData;
       }
     });
@@ -48,11 +48,12 @@ class App extends Component {
   componentDidMount() {
     API.getMarketCapData()
       .then(res => {
+        console.log(res.data);
         this.setState({ coins: res.data });
         var coin = {};
 
         this.state.coins.forEach(coinData => {
-          if (coinData.CoinInfo.Internal === this.state.symbol) {
+          if (coinData.symbol === this.state.symbol) {
             coin = coinData;
           }
         });
