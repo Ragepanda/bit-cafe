@@ -125,7 +125,8 @@ class Graph extends React.Component{
     this.state.chartData.datasets[0].data = this.state.dailyPoints;
     this.state.chartData.labels = this.state.dayLabel;
     this.state.lineChart.update();
-    
+    document.getElementById("option1").classList.remove("active");
+    document.getElementById("option2").classList.remove("active");
     //console.log(this.state.chartData.labels);
   }
   redoChartMinutes(){
@@ -133,6 +134,8 @@ class Graph extends React.Component{
     this.state.chartData.datasets[0].data = this.state.minutePoints;
     this.state.chartData.labels = this.state.minuteLabel;
     this.state.lineChart.update();
+    document.getElementById("option2").classList.remove("active");
+    document.getElementById("option3").classList.remove("active");
     
     //console.log(this.state.chartData.labels);
   }
@@ -141,7 +144,8 @@ class Graph extends React.Component{
     this.state.chartData.datasets[0].data = this.state.hourPoints;
     this.state.chartData.labels = this.state.hourLabel;
     this.state.lineChart.update();
-    
+    document.getElementById("option1").classList.remove("active");
+    document.getElementById("option3").classList.remove("active");
     //console.log(this.state.chartData.labels);
   }
 
@@ -163,11 +167,12 @@ class Graph extends React.Component{
   	{
   		return(
   			<div>
-          <button type="button" className="btn btn-dark btn-dark2" id="btn-dark2" onClick={this.redoChartMinutes}>minutes</button>
-          
-          <button type="button" className="btn btn-dark btn-dark2" id="btn-dark2" onClick={this.redoChartHourly}>hourly</button>
-          
-          <button type="button" className="btn btn-dark btn-dark2" id="btn-dark2" onClick={this.redoChartDaily}>daily</button>
+    			<button type="button" className="btn btn-dark btn-dark2" id="option1" name="options" onClick={this.redoChartMinutes} data-toggle="button" autoComplete="off" aria-pressed="false">minutes</button>
+  				
+    			<button type="button" className="btn btn-dark btn-dark2" id="option2" name="options" onClick={this.redoChartHourly} data-toggle="button" autoComplete="off" aria-pressed="true">hourly</button>
+  				
+    			<button type="button" className="btn btn-dark btn-dark2" id="option3" name="options" onClick={this.redoChartDaily} data-toggle="button" autoComplete="off" aria-pressed="false">daily</button>
+  				
   				<Line
   					data={this.state.chartData}
   					width={50}
