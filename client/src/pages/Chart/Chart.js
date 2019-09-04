@@ -85,7 +85,7 @@ class Chart extends React.Component{
    getChartDaily(){
     API.getDailyHistoryBySymbol(this.props.symbol)
       .then(res => {
-        
+        console.log(res.data);
         if (this.props.symbol !== this.props.match.params.symbol) {
           if (this.props.match.params.symbol !== null) {
             this.props.changeSymbol(this.props.match.params.symbol);
