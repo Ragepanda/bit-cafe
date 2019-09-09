@@ -84,6 +84,7 @@ class Calculator extends React.Component{
                         <div id="exchangeCalcContainer">
                         {this.exchangeCalc()}
                         </div>
+                        <br/><br/>
                         <h3>{this.props.coin.fullName} Calculator - Mining Profitability</h3>
                         <p>This {this.props.coin.fullName} calculator will allow you to determine the mining profitability of mining {this.props.coin.fullName}.</p>
                         <div id="miningCalcContainer">
