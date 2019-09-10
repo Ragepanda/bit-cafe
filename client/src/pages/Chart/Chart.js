@@ -45,7 +45,7 @@ class Chart extends React.Component{
   getChartHourly(){
     API.getHourlyHistoryBySymbol(this.props.symbol)
       .then(res => {
-        
+        //console.log(res.data);
         if (this.props.symbol !== this.props.match.params.symbol) {
           if (this.props.match.params.symbol !== null) {
             this.props.changeSymbol(this.props.match.params.symbol);
@@ -65,7 +65,7 @@ class Chart extends React.Component{
    getChartMinutes(){
     API.getMinuteHistoryBySymbol(this.props.symbol)
       .then(res => {
-        
+        //console.log(res.data);
         if (this.props.symbol !== this.props.match.params.symbol) {
           if (this.props.match.params.symbol !== null) {
             this.props.changeSymbol(this.props.match.params.symbol);
@@ -85,7 +85,7 @@ class Chart extends React.Component{
    getChartDaily(){
     API.getDailyHistoryBySymbol(this.props.symbol)
       .then(res => {
-        
+        //console.log(res.data);
         if (this.props.symbol !== this.props.match.params.symbol) {
           if (this.props.match.params.symbol !== null) {
             this.props.changeSymbol(this.props.match.params.symbol);
@@ -207,8 +207,9 @@ class Chart extends React.Component{
                 </div>
                 {/* row */}
                 <br />
-                <h3 align="left"><a href={"/exchange/"+this.props.symbol}>Exchanges to Track {this.props.coin.fullName} Price</a></h3>
-                <div id="exchanges">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</div>
+                <br/>
+                <h3 align="center"><a href={"/exchange/"+this.props.symbol}>Exchanges to Track {this.props.coin.fullName} Price</a></h3>
+                <div id="exchanges"></div>
                 {/*  Insert 625-728-Combo-Tag Code Here   */}
                 {/*#include virtual="/includes/625-728-Combo-Tag.shtml" */}
                 {/*  End of 625-728-Combo-Tag Code Here  */}

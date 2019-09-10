@@ -1,7 +1,4 @@
 import React from "react";
-import API from "../../utils/API";
-import Moment from "moment";
-import { Helmet } from "react-helmet";
 
 import './ExchangeCalc.css';
 

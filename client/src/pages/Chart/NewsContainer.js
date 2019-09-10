@@ -13,7 +13,7 @@ constructor(props) {
 	}
 
 	componentDidMount() {
-		 console.log(this.props.article);
+		 //console.log(this.props.article);
 	}
 
 	retriveBody() {
@@ -32,7 +32,7 @@ constructor(props) {
 
 		return(
         this.props.articles.map((article, index) =>
-        	<ArticleHead article={article} key={index}> </ArticleHead>)
+        	<a href={article.articleUrl}><ArticleHead article={article} key={index}> </ArticleHead></a>)
       	
 		);
 

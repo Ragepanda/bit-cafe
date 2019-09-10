@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const cryptoService = require("../../../controller/crypto-tracker/crypto");
-
+const chartService = require("../../../controller/chart/chart")
 router
 .route("/dataByMarketCap")
 .get(cryptoService.dataByMarketCap);
@@ -15,14 +15,14 @@ router
 
 router
 .route("/dailyHistoryBySymbol")
-.get(cryptoService.dailyHistory);
+.get(chartService.dailyHistory);
 
 router
 .route("/hourlyHistoryBySymbol")
-.get(cryptoService.hourlyHistory);
+.get(chartService.hourlyHistory);
 
 router
 .route("/minuteHistoryBySymbol")
-.get(cryptoService.minuteHistory);
+.get(chartService.minuteHistory);
 
 module.exports = router;

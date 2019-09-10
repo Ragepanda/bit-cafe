@@ -67,14 +67,17 @@ class Exchange extends React.Component {
                       </header>{/* /.article__head */}
                       <div className="article__body">
                         <p>This {this.props.coin.fullName} Exchange Rate Overview page will help you locate a {this.props.coin.fullName} exchange to use to track the price of {this.props.coin.fullName} as well as the current {this.props.coin.fullName} exchange rate. This page also includes a {this.props.coin.fullName} exchange rate calculator to help you track the {this.props.coin.fullName} exchange rate for {this.props.coin.fullName} to usd or other currencies.</p><br />
-                        <h3>{this.props.coin.fullName} Exchange</h3>
+                        <h3>{this.props.coin.fullName} Exchange (Coming Soon)</h3>
                         <p>This is a {this.props.coin.fullName} exchange repository, populated with many of the most used {this.props.coin.fullName} exchanges. You can click a {this.props.coin.fullName} exchange to get a more in-depth view of that {this.props.coin.fullName} exchange.</p>
                         <div id="exchangeContainer" />
+                        <br/>
+                        <br/>
                         <h3>{this.props.coin.fullName} Exchange Rate Calculator</h3>
                         <p>This {this.props.coin.fullName} exchange calculator will allow you to determine the {this.props.coin.fullName} exchange rate to USD, and many other currencies.</p>
                         <div id="exchangeCalcContainer">
                         {this.exchangeCalc()}
                         </div>
+                        <br/>
                         <p>For more useful calculators, click <a href={"/calculator/"+this.props.symbol}>here</a></p>
                         {/*  Insert 625-728-Combo-Tag Code Here   */}
                         {/*#include virtual="/includes/625-728-Combo-Tag.shtml" */}

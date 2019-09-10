@@ -12,7 +12,7 @@ class ModalFiller extends React.Component {
     }
     formatText(){
        var htmlText = [];
-        console.log(this.state.text);
+        //console.log(this.state.text);
         this.state.text.articleBody.forEach(element => {
             if('p' in element){
                 htmlText.push(<p>{element.p}</p>);
