@@ -32,7 +32,7 @@ constructor(props) {
 
 		return(
         this.props.articles.map((article, index) =>
-        	<ArticleHead article={article} key={index}> </ArticleHead>)
+        	<a href={article.articleUrl}><ArticleHead article={article} key={index}> </ArticleHead></a>)
       	
 		);
 
