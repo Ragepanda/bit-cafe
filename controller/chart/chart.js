@@ -4,7 +4,7 @@ var db = require("../../models");
 module.exports = {
 
     dailyHistory: function (req, res) {
-        db.dailyChart.findAll({ where: {}, order: [["createdAt", "DESC"]] })
+        db.dailyChart.findAll({ where: {}, order: [["time", "ASC"]] })
             .then(dailyData => {
                 var symbol = req.query.symbol;
                 var currentTimestamp = new Date() / 1000;
@@ -75,15 +75,15 @@ module.exports = {
     },
 
     hourlyHistory: function (req, res) {
-        db.hourlyChart.findAll({ where: {}, order: [["createdAt", "DESC"]] })
+        db.hourlyChart.findAll({ where: {}, order: [["time", "ASC"]] })
             .then(hourlyData => {
                 var symbol = req.query.symbol;
                 var currentTimestamp = new Date() / 1000;
                 //console.log(hourlyData);
-                res.send(hourlyData);
+               // res.send(hourlyData);
                 if (hourlyData.length > 0) {
                     if (currentTimestamp - hourlyData[0].createdAt >= 600) {
-                        axios.get("https://min-api.cryptocompare.com/data/hishour?fsym=" + symbol + "&tsym=USD&limit=23")
+                        axios.get("https://min-api.cryptocompare.com/data/histohour?fsym=" + symbol + "&tsym=USD&limit=23")
                             .then(response => {
                                 var hourlyInfo = [];
                                 console.log(response.data.Data);
@@ -104,8 +104,8 @@ module.exports = {
                                     .then(() => {
                                         db.hourlyChart.bulkCreate(hourlyInfo)
                                             .then(() => {
-                                                res.send(hourlyData);
-                                                //res.send(hourlyInfo);
+                                               //res.send(hourlyData);
+                                                res.send(hourlyInfo);
                                             })
                                     })
 
@@ -147,7 +147,7 @@ module.exports = {
     },
 
     minuteHistory: function (req, res) {
-        db.minuteChart.findAll({ where: {}, order: [["createdAt", "DESC"]] })
+        db.minuteChart.findAll({ where: {}, order: [["time", "ASC"]] })
         .then(minuteData => {
             var symbol = req.query.symbol;
             var currentTimestamp = new Date() / 1000;
