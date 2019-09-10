@@ -19,7 +19,7 @@ class SearchBarItem extends React.Component {
 
 	componentDidMount(){
 		// console.log(this.state.coin);
-		console.log(this.props);
+		//console.log(this.props);
 	}	
 
 

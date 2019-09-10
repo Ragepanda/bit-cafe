@@ -13,7 +13,7 @@ constructor(props) {
 	}
 
 	componentDidMount() {
-		 console.log(this.props.article);
+		 //console.log(this.props.article);
 	}
 
 	retriveBody() {

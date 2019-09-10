@@ -14,7 +14,7 @@ class Article extends React.Component {
 	}
 
 	componentDidMount() {
-		 console.log(this.props.article);
+		 //console.log(this.props.article);
 	}
 
 	retriveBody() {

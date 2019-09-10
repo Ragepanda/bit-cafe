@@ -48,7 +48,7 @@ class App extends Component {
   componentDidMount() {
     API.getMarketCapData()
       .then(res => { 
-        console.log(res.data);
+        //console.log(res.data);
         this.setState({ coins: res.data });
         var coin = {};
 
@@ -58,7 +58,7 @@ class App extends Component {
           }
         });
         this.setState({ coin: coin });
-        console.log(this.state.symbol);
+        //console.log(this.state.symbol);
       })
       .catch(err => {
         console.log(err);
