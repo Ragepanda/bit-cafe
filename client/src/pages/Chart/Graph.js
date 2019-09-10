@@ -24,18 +24,18 @@ class Graph extends React.Component{
     var timeLabelsMinute = [];
 
 		for(var i =0; i < this.props.data.length; i++){
-			points.push({x: i *5, y: this.props.data[i].high});
+			points.push({x: i*5, y: this.props.data[i].high});
 			timeLabelsHour.push(this.props.hourConverter(this.props.data[i].time));
 			//console.log(points[i]);
 		}
 
-    for(var i =0; i < this.props.minutesData.length; i++){
+    for( i =0; i < this.props.minutesData.length; i++){
       pointsMinute.push({x: i *5, y: this.props.minutesData[i].high});
       timeLabelsMinute.push(this.props.minConverter(this.props.minutesData[i].time));
     }
 
 
-    for(var i =0; i < this.props.dailyData.length; i++){
+    for( i =0; i < this.props.dailyData.length; i++){
       pointsDaily.push({x: i *5, y: this.props.dailyData[i].high});
       timeLabelsDay.push(this.props.multiDayConverter(this.props.dailyData[i].time));
       //console.log(points[i]);
@@ -122,8 +122,11 @@ class Graph extends React.Component{
 	
   redoChartDaily(){
     //let lineChart = this.reference.chartInstance;
-    this.state.chartData.datasets[0].data = this.state.dailyPoints;
-    this.state.chartData.labels = this.state.dayLabel;
+    this.setState(prevState =>{let chartData = Object.assign({}, prevState.chartData);
+    chartData.datasets[0].data = this.state.dailyPoints;
+    chartData.labels = this.state.dayLabel;
+    return {chartData};
+    });
     this.state.lineChart.update();
     document.getElementById("option1").classList.remove("active");
     document.getElementById("option2").classList.remove("active");
@@ -131,8 +134,11 @@ class Graph extends React.Component{
   }
   redoChartMinutes(){
     //let lineChart = this.reference.chartInstance;
-    this.state.chartData.datasets[0].data = this.state.minutePoints;
-    this.state.chartData.labels = this.state.minuteLabel;
+    this.setState(prevState =>{let chartData = Object.assign({}, prevState.chartData);
+    chartData.datasets[0].data = this.state.minutePoints;
+    chartData.labels = this.state.minuteLabel;
+    return {chartData};
+    });
     this.state.lineChart.update();
     document.getElementById("option2").classList.remove("active");
     document.getElementById("option3").classList.remove("active");
@@ -141,8 +147,11 @@ class Graph extends React.Component{
   }
   redoChartHourly(){
     //let lineChart = this.reference.chartInstance;
-    this.state.chartData.datasets[0].data = this.state.hourPoints;
-    this.state.chartData.labels = this.state.hourLabel;
+    this.setState(prevState =>{let chartData = Object.assign({}, prevState.chartData);
+    chartData.datasets[0].data = this.state.hourPoints;
+    chartData.labels = this.state.hourLabel;
+    return {chartData};
+    });
     this.state.lineChart.update();
     document.getElementById("option1").classList.remove("active");
     document.getElementById("option3").classList.remove("active");
@@ -160,7 +169,7 @@ class Graph extends React.Component{
 
   			}
 		});
-    this.state.lineChart = this.reference.chartInstance;
+    this.setState({lineChart : this.reference.chartInstance});
   }
 
   	render()
