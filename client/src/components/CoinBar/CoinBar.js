@@ -29,12 +29,12 @@ class Coinbar extends React.Component {
 	}
 
 	addBarPos = (barPos, id) =>{
-		if(id == 0){
+		if(id === 0){
 			this.setState({barPos1: barPos});
 			//console.log("bar1 "+ this.state.barPos1);
 		}
 		else{
-			this.setState({barPos2: barPos});;
+			this.setState({barPos2: barPos});
 			//console.log("bar2 "+ this.state.barPos2);
 		}
 		//console.log(this.state.barPos2 - this.state.barPos1);
