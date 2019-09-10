@@ -170,17 +170,18 @@ class Graph extends React.Component{
   			}
 		});
     this.setState({lineChart : this.reference.chartInstance});
+
   }
 
   	render()
   	{
   		return(
   			<div>
-    			<button type="button" className="btn btn-dark btn-dark2" id="option1" name="options" onClick={this.redoChartMinutes} data-toggle="button" autoComplete="off" aria-pressed="false">minutes</button>
+    			<button type="button" className="btn btn-dark3" id="option1" name="options" onClick={this.redoChartMinutes} data-toggle="button" autoComplete="off" aria-pressed="false">minutes</button>
   				
-    			<button type="button" className="btn btn-dark btn-dark2" id="option2" name="options" onClick={this.redoChartHourly} data-toggle="button" autoComplete="off" aria-pressed="true">hourly</button>
+    			<button type="button" className="btn btn-dark3" id="option2" name="options" onClick={this.redoChartHourly} data-toggle="button" autoComplete="off" aria-pressed="true" defaultChecked>hourly</button>
   				
-    			<button type="button" className="btn btn-dark btn-dark2" id="option3" name="options" onClick={this.redoChartDaily} data-toggle="button" autoComplete="off" aria-pressed="false">daily</button>
+    			<button type="button" className="btn btn-dark3" id="option3" name="options" onClick={this.redoChartDaily} data-toggle="button" autoComplete="off" aria-pressed="false">daily</button>
   				
   				<Line
   					data={this.state.chartData}
