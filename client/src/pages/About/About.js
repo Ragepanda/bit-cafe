@@ -1,13 +1,16 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import API from "../../utils/API";
 import "./About.css";
+import NewsContainer from "../Chart/NewsContainer";
 class About extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
       coin: this.props.coin,
-      symbol: this.props.symbol
+      symbol: this.props.symbol,
+      articles: []
     }
   }
 
@@ -19,6 +22,20 @@ class About extends React.Component {
       }
       if (typeof(this.props.match.params.symbol) === "undefined")
         this.props.history.push("./"+this.props.symbol);
+    }
+        API.getArticlesBySymbol(this.props.symbol)
+    .then(res=>{
+      this.setState({articles: res.data});
+
+    })
+      .catch(err => console.log(err));
+  }
+
+    addNews(){
+    if(this.state.articles.length > 0){
+      return(
+        <NewsContainer articles = {this.state.articles}/>
+      )
     }
   }
 
@@ -183,6 +200,9 @@ class About extends React.Component {
                         <br/>
                         <br/>
                         <h3><a href={"/news/"+this.props.symbol}>News: What is {this.props.coin.fullName}?</a></h3>
+                        <div id="newsscroll">
+                          {this.addNews()}
+                        </div>
                         {/*  Insert 625-728-Combo-Tag Code Here   */}
                         {/*#include virtual="/includes/625-728-Combo-Tag.shtml" */}
                         {/*  End of 625-728-Combo-Tag Code Here  */}
