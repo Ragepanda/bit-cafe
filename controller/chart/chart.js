@@ -8,7 +8,6 @@ module.exports = {
             .then(dailyData => {
                 var symbol = req.query.symbol;
                 var currentTimestamp = new Date() / 1000;
-
                 if (dailyData.length > 0) {
                     if (currentTimestamp - dailyData[0].createdAt >= 600) {
                         axios.get("https://min-api.cryptocompare.com/data/histoday?fsym=" + symbol + "&tsym=USD&limit=23")
@@ -80,13 +79,14 @@ module.exports = {
             .then(hourlyData => {
                 var symbol = req.query.symbol;
                 var currentTimestamp = new Date() / 1000;
-
+                //console.log(hourlyData);
+                res.send(hourlyData);
                 if (hourlyData.length > 0) {
                     if (currentTimestamp - hourlyData[0].createdAt >= 600) {
                         axios.get("https://min-api.cryptocompare.com/data/hishour?fsym=" + symbol + "&tsym=USD&limit=23")
                             .then(response => {
                                 var hourlyInfo = [];
-
+                                console.log(response.data.Data);
                                 response.data.Data.forEach(element => {
                                     var entry = {
                                         time: element.time,
@@ -104,7 +104,8 @@ module.exports = {
                                     .then(() => {
                                         db.hourlyChart.bulkCreate(hourlyInfo)
                                             .then(() => {
-                                                res.send(hourlyInfo);
+                                                res.send(hourlyData);
+                                                //res.send(hourlyInfo);
                                             })
                                     })
 
