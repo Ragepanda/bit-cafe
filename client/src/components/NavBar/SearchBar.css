@@ -17,10 +17,10 @@
 	color: #E5E4E7;
 }
 
-.dropdown-menu > #dropdown-item:nth-child(odd) button{
+.dropdown-menu > button:nth-child(odd){
   background-color: #2C2640;
 }
-.dropdown-menu > #dropdown-item:nth-child(even) button{
+.dropdown-menu > button:nth-child(even){
   background-color: #211D30;
 }
 

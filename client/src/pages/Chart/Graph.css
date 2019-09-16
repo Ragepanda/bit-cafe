@@ -8,18 +8,17 @@ button{
 	padding-top: 2px !important;
 }
 
-.btn-dark3 {
+#btn-dark2 {
 	background-color: #2c2640;
-	color: #E5E4E7;
 }
-.btn-dark3:hover{
+#btn-dark2:hover{
 	background-color: #211D30;
 }
-.btn-dark3:focus {
+#btn-dark2:focus {
 	box-shadow: 0 0 1px 3px #565360;
 	border-color: #1b1828;
 }
-.btn-dark3:active {
+#btn-dark2:active {
 	background-color: #211D30;
 	box-shadow: 0 0 1px 3px #565360;
 	border-color: #1b1828;

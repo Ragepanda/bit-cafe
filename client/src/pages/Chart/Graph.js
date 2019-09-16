@@ -170,17 +170,24 @@ class Graph extends React.Component{
   			}
 		});
     this.setState({lineChart : this.reference.chartInstance});
-
   }
 
   	render()
   	{
   		return(
   			<div>
+<<<<<<< HEAD
 
     			<button type="button" className="btn btn-dark btn-dark2" id="option1" name="options" onClick={this.redoChartMinutes} data-toggle="button" autoComplete="off">minutes</button>
   				
     			<button type="button" className="btn btn-dark btn-dark2 active" id="option2" name="options" onClick={this.redoChartHourly} data-toggle="button" autoComplete="off" active>hourly</button>
+=======
+    			<button type="button" className="btn btn-dark btn-dark2" id="option1" name="options" onClick={this.redoChartMinutes} data-toggle="button" autoComplete="off" aria-pressed="false">minutes</button>
+  				
+    			<button type="button" className="btn btn-dark btn-dark2" id="option2" name="options" onClick={this.redoChartHourly} data-toggle="button" autoComplete="off" aria-pressed="true">hourly</button>
+  				
+    			<button type="button" className="btn btn-dark btn-dark2" id="option3" name="options" onClick={this.redoChartDaily} data-toggle="button" autoComplete="off" aria-pressed="false">daily</button>
+>>>>>>> parent of 5777972... added color to buttons on graph page
   				
     			<button type="button" className="btn btn-dark btn-dark2" id="option3" name="options" onClick={this.redoChartDaily} data-toggle="button" autoComplete="off">daily</button>
 				
