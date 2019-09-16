@@ -4,7 +4,7 @@ var db = require("../../models");
 module.exports = {
 
     dailyHistory: function (req, res) {
-        db.dailyChart.findAll({ where: {}, order: [["time", "ASC"]] })
+        db.dailyChart.findAll({ where: {symbol: req.query.symbol}, order: [["time", "ASC"]] })
             .then(dailyData => {
                 var symbol = req.query.symbol;
                 var currentTimestamp = new Date() / 1000;
@@ -17,6 +17,7 @@ module.exports = {
                                 response.data.Data.forEach(element => {
                                     var entry = {
                                         time: element.time,
+                                        symbol: symbol,
                                         close: element.close,
                                         high: element.high,
                                         low: element.low,
@@ -27,7 +28,7 @@ module.exports = {
                                     }
                                     dailyInfo.push(entry);
                                 });
-                                db.dailyChart.destroy({ where: {} })
+                                db.dailyChart.destroy({ where: {symbol: symbol} })
                                     .then(() => {
                                         db.dailyChart.bulkCreate(dailyInfo)
                                             .then(() => {
@@ -52,6 +53,7 @@ module.exports = {
                                 var entry = {
                                     time: element.time,
                                     close: element.close,
+                                    symbol: symbol,
                                     high: element.high,
                                     low: element.low,
                                     open: element.open,
@@ -75,7 +77,7 @@ module.exports = {
     },
 
     hourlyHistory: function (req, res) {
-        db.hourlyChart.findAll({ where: {}, order: [["time", "ASC"]] })
+        db.hourlyChart.findAll({ where: {symbol: req.query.symbol}, order: [["time", "ASC"]] })
             .then(hourlyData => {
                 var symbol = req.query.symbol;
                 var currentTimestamp = new Date() / 1000;
@@ -90,6 +92,7 @@ module.exports = {
                                 response.data.Data.forEach(element => {
                                     var entry = {
                                         time: element.time,
+                                        symbol: symbol,
                                         close: element.close,
                                         high: element.high,
                                         low: element.low,
@@ -100,7 +103,7 @@ module.exports = {
                                     }
                                     hourlyInfo.push(entry);
                                 });
-                                db.hourlyChart.destroy({ where: {} })
+                                db.hourlyChart.destroy({ where: {symbol: symbol} })
                                     .then(() => {
                                         db.hourlyChart.bulkCreate(hourlyInfo)
                                             .then(() => {
@@ -126,6 +129,7 @@ module.exports = {
                                 var entry = {
                                     time: element.time,
                                     close: element.close,
+                                    symbole: symbol,
                                     high: element.high,
                                     low: element.low,
                                     open: element.open,
@@ -147,7 +151,7 @@ module.exports = {
     },
 
     minuteHistory: function (req, res) {
-        db.minuteChart.findAll({ where: {}, order: [["time", "ASC"]] })
+        db.minuteChart.findAll({ where: {symbol: req.query.symbol}, order: [["time", "ASC"]] })
         .then(minuteData => {
             var symbol = req.query.symbol;
             var currentTimestamp = new Date() / 1000;
@@ -162,6 +166,7 @@ module.exports = {
                                 var entry = {
                                     time: element.time,
                                     close: element.close,
+                                    symbol: symbol,
                                     high: element.high,
                                     low: element.low,
                                     open: element.open,
@@ -171,7 +176,7 @@ module.exports = {
                                 }
                                 minuteInfo.push(entry);
                             });
-                            db.minuteChart.destroy({ where: {} })
+                            db.minuteChart.destroy({ where: {symbol: symbol} })
                                 .then(() => {
                                     db.minuteChart.bulkCreate(minuteInfo)
                                         .then(() => {
@@ -196,6 +201,7 @@ module.exports = {
                             var entry = {
                                 time: element.time,
                                 close: element.close,
+                                symbol: symbol,
                                 high: element.high,
                                 low: element.low,
                                 open: element.open,

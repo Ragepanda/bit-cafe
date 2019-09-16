@@ -4,6 +4,10 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.BIGINT,
             allowNull: false
         },
+        symbol: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         close:{
             type: DataTypes.DECIMAL,
             allowNull: false
