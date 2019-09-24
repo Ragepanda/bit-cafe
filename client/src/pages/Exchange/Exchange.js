@@ -58,7 +58,7 @@ class Exchange extends React.Component {
                   <hr />
                   <hr />
                   <header className="section__head">
-                    <h1 align="left"><a href={"./"+this.props.symbol}>{this.props.coin.fullName}</a></h1>
+                    <h1 align="left"><a href={"/home/"+this.props.symbol}>{this.props.coin.fullName}</a></h1>
                     <h2 align="left">{this.props.coin.fullName} Exchange Rate Overview</h2>
                   </header>{/* /.section__head */}
                   <div className="section__body">
@@ -78,7 +78,8 @@ class Exchange extends React.Component {
                         {this.exchangeCalc()}
                         </div>
                         <br/>
-                        <p>For more useful calculators, click <a href={"/calculator/"+this.props.symbol}>here</a></p>
+                        <br /><br />
+                        <h4>For more useful calculators, click <a href={"/calculator/"+this.props.symbol}>here</a></h4>
                         {/*  Insert 625-728-Combo-Tag Code Here   */}
                         {/*#include virtual="/includes/625-728-Combo-Tag.shtml" */}
                         {/*  End of 625-728-Combo-Tag Code Here  */}
@@ -91,7 +92,8 @@ class Exchange extends React.Component {
                           </tr>
                           </tbody></table>
                         <br /><br /><br /><br />
-                        <div align="center"><b>Click here for more pages like this </b> <a href={"./"+this.props.symbol}><b>{this.props.coin.fullName} Exchange Overview</b></a></div>
+                        <br /><br /><br /><br />
+                        <div align="right"> <a href={"./"+this.props.symbol}><b>{this.props.coin.fullName} Exchange Overview</b></a></div>
                         <div style={{ height: '1200px' }} />
                       </div>{/* /.article__body */}
                     </article>{/* /.article */}

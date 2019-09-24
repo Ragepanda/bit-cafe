@@ -70,7 +70,7 @@ class Calculator extends React.Component{
                   <hr />
                   <hr />
                   <header className="section__head">
-                    <h1 align="left"><a href={"./"+this.props.symbol}>{this.props.coin.fullName}</a></h1>
+                    <h1 align="left"><a href={"/home/"+this.props.symbol}>{this.props.coin.fullName}</a></h1>
                     <h2 align="left">{this.props.coin.fullName} Calculator Overview</h2>
                   </header>{/* /.section__head */}
                   <div className="section__body">
@@ -78,7 +78,7 @@ class Calculator extends React.Component{
                       <header className="article__head">
                       </header>{/* /.article__head */}
                       <div className="article__body">
-                        <p>This {this.props.coin.fullName} Calculator overview page will provide you with a {this.props.coin.fullName} calculator for the {this.props.coin.fullName} exchange rate as well as a {this.props.coin.fullName} calculator to determine the profitability of mining {this.props.coin.fullName}.</p><br />
+                        <p>This {this.props.coin.fullName} Calculator overview page will provide you with the {this.props.coin.fullName} calculator for the {this.props.coin.fullName} exchange rate as well as the {this.props.coin.fullName} calculator to determine the profitability of mining {this.props.coin.fullName}.</p><br />
                         <h3>{this.props.coin.fullName} Calculator - Exchange Rate {this.props.coin.fullName} to USD</h3>
                         <p>This {this.props.coin.fullName} calculator will allow you to determine the {this.props.coin.fullName} exchange rate to USD, and many other currencies.</p>
                         <div id="exchangeCalcContainer">
@@ -89,6 +89,10 @@ class Calculator extends React.Component{
                         <p>This {this.props.coin.fullName} calculator will allow you to determine the mining profitability of mining {this.props.coin.fullName}.</p>
                         <div id="miningCalcContainer">
                         {this.props.coin.fullName} Mining Profitability Calculator coming soon
+                        </div>
+                        <br/><br/><br/>
+                        <div>
+                        <h4>To learn more about {this.props.coin.fullName} visit the <a href={"/about/"+this.props.symbol}>About {this.props.coin.fullName} page</a></h4>
                         </div>
                         {/*  Insert 625-728-Combo-Tag Code Here   */}
                         {/*#include virtual="/includes/625-728-Combo-Tag.shtml" */}
@@ -102,7 +106,8 @@ class Calculator extends React.Component{
                             </tr>
                           </tbody></table>
                         <br /><br /><br /><br />
-                        <div align="center"><b>Click here for more pages like this </b> <a href={"./"+this.props.symbol}><b>{this.props.coin.fullName} Calculator</b></a></div>
+                        <br /><br /><br /><br />
+                        <div align="right"><a href={"./"+this.props.symbol}><b>{this.props.coin.fullName} Calculator</b></a></div>
                         <div style={{height: '1200px'}} />
                       </div>{/* /.article__body */}
                     </article>{/* /.article */}
