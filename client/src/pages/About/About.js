@@ -93,7 +93,7 @@ class About extends React.Component {
                   <hr />
                   <hr />
                   <header className="section__head">
-                    <h1 align="left"><a href={"./"+this.props.symbol}>{this.props.coin.fullName}</a></h1>
+                    <h1 align="left"><a href={"/home/"+this.props.symbol}>{this.props.coin.fullName}</a></h1>
                     <h2 align="left">What is {this.props.coin.fullName} ?</h2>
                   </header>{/* /.section__head */}
                   <div className="section__body">
@@ -214,9 +214,9 @@ class About extends React.Component {
                             </td>
                           </tr>
                           </tbody></table>
-                          <br/>
-                          <br/>
-                        <div align="center"><b>Click here for more pages like this </b> <a href={"./"+this.props.symbol}><b>What is {this.props.coin.fullName}</b></a></div>
+                          <br /><br /><br /><br />
+                          <br /><br /><br /><br />
+                        <div align="right"><a href={"./"+this.props.symbol}><b>What is {this.props.coin.fullName}</b></a></div>
                   </div>{/* /.section__body */}
                 </section>{/* /.section */}
                 <section className="section-ads">
