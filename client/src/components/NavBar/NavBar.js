@@ -16,7 +16,7 @@ class Navbar extends React.Component{
     return(
   <nav className="navbar navbar-expand-lg fixed-top navbar-dark" id="navyBar">
     <a className="navbar-brand" id="navyBar" href="/">
-      BitCafe
+      BitcoinSama
      </a>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     	<span className="navbar-toggler-icon"></span>
