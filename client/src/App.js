@@ -67,6 +67,7 @@ class App extends Component {
 
   render() {
     if ( typeof(this.state.coin) === "undefined") {
+      {console.log("THIS IS A FALSE RENDER FIRST")}
       return <div />
     }
 
