@@ -6,6 +6,8 @@ const bodyParser = require("body-parser");
 const db = require("./models");
 const path = require("path");
 
+require('dotenv').config();
+
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
