@@ -1,5 +1,6 @@
 const express = require('express');
 const routes = require("./routes");
+const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 5000;
 const bodyParser = require("body-parser");
@@ -14,6 +15,9 @@ app.use(bodyParser.json());
 
 console.log("This is the node value "+ process.env.NODE_ENV);
 // Serve up static assets (usually on heroku)
+
+app.use(cors());
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, 'client/build')));
 }
