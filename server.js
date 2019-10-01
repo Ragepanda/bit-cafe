@@ -10,13 +10,14 @@ const path = require("path");
 require('dotenv').config();
 
 // Define middleware here
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 console.log("This is the node value "+ process.env.NODE_ENV);
 // Serve up static assets (usually on heroku)
 
-app.use(cors());
+
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, 'client/build')));
