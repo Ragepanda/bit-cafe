@@ -2,15 +2,15 @@ import axios from "axios";
 
 export default {
 	getArticles: function(){
-		return axios.get("/api/news/feed/articles");
+		return axios.get("bitcoinsama.com/api/news/feed/articles");
 	},
 
   getArticlesBySymbol: function(symbol){
-    return axios.get("/api/news/feed/articlesBySymbol", {params: {symbol: symbol}})
+    return axios.get("bitcoinsama.com/api/news/feed/articlesBySymbol", {params: {symbol: symbol}})
   },
 
 	getTweets: function(){
-		return axios.get("/api/news/twitter/aggregated");
+		return axios.get("bitcoinsama.com/api/news/twitter/aggregated");
 	},
 	//Defunct
 	// getCoins: function(){
@@ -18,23 +18,23 @@ export default {
   // },
   
   getMarketCapData: function(){
-    return axios.get("/api/tracker/dataByMarketCap");
+    return axios.get("bitcoinsama.com/api/tracker/dataByMarketCap");
   },
 
   getMarketCapDataBySymbol: function(symbol){
-    return axios.get("api/tracker/marketDataBySymbol", {params: {symbol: symbol}})
+    return axios.get("bitcoinsama.com/api/tracker/marketDataBySymbol", {params: {symbol: symbol}})
   },
 
   getHourlyHistoryBySymbol: function(symbol){
-    return axios.get("/api/tracker/hourlyHistoryBySymbol", {params: {symbol: symbol}});
+    return axios.get("bitcoinsama.com/api/tracker/hourlyHistoryBySymbol", {params: {symbol: symbol}});
   },
 
   getDailyHistoryBySymbol: function(symbol){
-    return axios.get("/api/tracker/dailyHistoryBySymbol", {params: {symbol: symbol}});
+    return axios.get("bitcoinsama.com/api/tracker/dailyHistoryBySymbol", {params: {symbol: symbol}});
   },
 
   getMinuteHistoryBySymbol: function(symbol){
-    return axios.get("/api/tracker/minuteHistoryBySymbol", {params: {symbol: symbol}});
+    return axios.get("bitcoinsama.com/api/tracker/minuteHistoryBySymbol", {params: {symbol: symbol}});
   },
 
 	// getArticleBody: function(publication, url){
