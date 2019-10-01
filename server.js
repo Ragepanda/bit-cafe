@@ -10,7 +10,7 @@ const path = require("path");
 require('dotenv').config();
 
 // Define middleware here
-app.use(cors());
+// app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
