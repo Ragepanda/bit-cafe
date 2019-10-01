@@ -15,10 +15,10 @@ class Navbar extends React.Component{
   render(){
     return(
   <nav className="navbar navbar-expand-lg fixed-top navbar-dark" id="navyBar">
+     <img src={"bitcoinlogo.png"} alt={this.props.symbol + " chart"} width="50" height="50" />
     <a className="navbar-brand" id="navyBar" href="/">
       BitcoinSama
      </a>
-     <img src={"../../bitcoinlogo.png"} alt={this.props.symbol + " chart"}/>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     	<span className="navbar-toggler-icon"></span>
   	</button>
