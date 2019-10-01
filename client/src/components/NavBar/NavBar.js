@@ -15,6 +15,7 @@ class Navbar extends React.Component{
   render(){
     return(
   <nav className="navbar navbar-expand-lg fixed-top navbar-dark" id="navyBar">
+     <img src={"bitcoinlogo.png"} alt={this.props.symbol + " chart"} width="50" height="50" />
     <a className="navbar-brand" id="navyBar" href="/">
       BitcoinSama
      </a>
