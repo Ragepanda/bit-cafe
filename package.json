@@ -7,9 +7,9 @@
     "start": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "start:prod": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd bitcoinsama.com/client && npm run start",
+    "client": "cd client && npm run start",
     "install": "cd client && yarn install",
-    "build": "concurrently \"nodemon --ignore 'client/*'\" \"cd bitcoinsama.com/client && npm run build && serve -s build\"",
+    "build": "concurrently \"nodemon --ignore 'client/*'\" \"cd client && npm run build && serve -s build\"",
     "heroku-postbuild": "npm run build"
   },
   "author": "",

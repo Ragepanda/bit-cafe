@@ -20,7 +20,7 @@ console.log("This is the node value "+ process.env.NODE_ENV);
 
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, 'bitcoinsama.com/client/build')));
+  app.use(express.static(path.join(__dirname, '/var/www/bitcoinsama.com/client/build/')));
 }
 
 app.use(routes);
