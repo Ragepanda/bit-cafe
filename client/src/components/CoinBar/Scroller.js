@@ -69,9 +69,9 @@ class Scroller extends React.Component{
     		});
     	}
     	this.props.addBarPos(this.state.barposition, this.props.offset);
-    	if(this.props.offset === 1){
+    	//console.log(this.state.barposition)
+    	if(this.props.offset == 1){
     			this.setState({barposition: this.state.barposition - this.props.checkdif()});
-    			//console.log("hey");
     	}
   	}
 

@@ -5,7 +5,7 @@ import API from "../../utils/API";
 class Coinbar extends React.Component {
 	state ={
     	coins: [],
-    	barDif: -1,
+    	barDif: 0,
     	barPos1: -1,
     	barpos2: -1
   	}
@@ -29,7 +29,7 @@ class Coinbar extends React.Component {
 	}
 
 	addBarPos = (barPos, id) =>{
-		if(id === 0){
+		if(id == 0){
 			this.setState({barPos1: barPos});
 			//console.log("bar1 "+ this.state.barPos1);
 		}
@@ -41,11 +41,12 @@ class Coinbar extends React.Component {
 	}
 	
 	checkdif = () =>{
+		//console.log("bardif: " + this.state.barDif);
 		this.setState({barDif: this.state.barPos2 - this.state.barPos1})
-		if(this.state.barDif > 3881){
+		if(this.state.barDif > 3800){
 			return 1;
 		}
-		if(this.state.barDif < 0 && this.state.barDif > -3866){
+		if(this.state.barDif < 0 && this.state.barDif > -3722){
 			return 1;
 		}
 

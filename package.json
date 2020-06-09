@@ -5,7 +5,11 @@
     "cheerio": "^1.0.0-rc.3",
     "concurrently": "^4.1.1",
     "cors": "^2.8.5",
+<<<<<<< HEAD
     "dotenv": "^8.0.0",
+=======
+    "dotenv": "^8.1.0",
+>>>>>>> f9dad2cf21a9360438a6252e62d15714577feffb
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "if-env": "^1.0.4",
@@ -18,6 +22,7 @@
     "request": "^2.88.0",
     "save": "^2.4.0",
     "sequelize": "^5.12.2",
+    "serve": "^11.2.0",
     "twitter": "^1.7.1"
   }
 }

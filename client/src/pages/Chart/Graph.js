@@ -121,41 +121,35 @@ class Graph extends React.Component{
 	}
 	
   redoChartDaily(){
-    //let lineChart = this.reference.chartInstance;
-    this.setState(prevState =>{let chartData = Object.assign({}, prevState.chartData);
-    chartData.datasets[0].data = this.state.dailyPoints;
-    chartData.labels = this.state.dayLabel;
-    return {chartData};
-    });
+    //let lineChart = this.reference.chartInstance
+      
+    this.state.chartData.labels = this.state.dayLabel;
+    if(this.state.chartData.datasets[0].data[0] != this.state.dailyPoints[0]){
+      this.state.chartData.datasets[0].data = this.state.dailyPoints;
+    }
     this.state.lineChart.update();
     document.getElementById("option1").classList.remove("active");
     document.getElementById("option2").classList.remove("active");
-    //console.log(this.state.chartData.labels);
   }
   redoChartMinutes(){
     //let lineChart = this.reference.chartInstance;
-    this.setState(prevState =>{let chartData = Object.assign({}, prevState.chartData);
-    chartData.datasets[0].data = this.state.minutePoints;
-    chartData.labels = this.state.minuteLabel;
-    return {chartData};
-    });
+    this.state.chartData.labels = this.state.minuteLabel;
+    if(this.state.chartData.datasets[0].data[0] != this.state.minutePoints[0]){
+      this.state.chartData.datasets[0].data = this.state.minutePoints;
+    }
     this.state.lineChart.update();
     document.getElementById("option2").classList.remove("active");
     document.getElementById("option3").classList.remove("active");
     
-    //console.log(this.state.chartData.labels);
   }
   redoChartHourly(){
-    //let lineChart = this.reference.chartInstance;
-    this.setState(prevState =>{let chartData = Object.assign({}, prevState.chartData);
-    chartData.datasets[0].data = this.state.hourPoints;
-    chartData.labels = this.state.hourLabel;
-    return {chartData};
-    });
+    this.state.chartData.labels = this.state.hourLabel;
+    if(this.state.chartData.datasets[0].data[0] != this.state.hourPoints[0]){
+      this.state.chartData.datasets[0].data = this.state.hourPoints;
+    }
     this.state.lineChart.update();
     document.getElementById("option1").classList.remove("active");
     document.getElementById("option3").classList.remove("active");
-    //console.log(this.state.chartData.labels);
   }
 
 
