@@ -1,5 +1,7 @@
 const axios = require("axios");
 var db = require("../../models");
+var request = require("request");
+var cheerio = require("cheerio");
 // **TODO** Obscure connection info for rapidAPI
 const RapidAPI = new require('rapidapi-connect');
 const rapid = new RapidAPI('coin-tracker-wooski', '16435b4e-7bdb-435b-a75a-3c346a294c82');
@@ -129,9 +131,20 @@ module.exports = {
     },
 
 
-
     partialData: function (req, res) {
         res.send({ test: "test of partials" });
+    },
+
+    coinDescription: function(req, res){
+        axios.get("https://www.cryptocompare.com/coins/"+req.query.coin.toLowerCase()+"/overview")
+            .then((response)=>{
+                const $ = cheerio.load(response.data);
+                console.log($(".coin-description").html());
+                var fullText = [];
+                
+                res.send({description: $(".coin-description").find("p").text()});
+            })
+        
     }
 
 }

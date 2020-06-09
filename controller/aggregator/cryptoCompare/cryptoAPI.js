@@ -11,7 +11,7 @@ module.exports = {
                 // Checks to see if DB is empty
                 if (sequelizeArticles.length > 0) {
 
-                    console.log(currentTimestamp - sequelizeArticles[0].createdAt);
+                    //console.log(currentTimestamp - sequelizeArticles[0].createdAt);
 
                     // Checks to see if 10 minutes have passed since last pull
                     if (currentTimestamp - sequelizeArticles[0].createdAt > 600) {

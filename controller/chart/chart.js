@@ -6,18 +6,17 @@ module.exports = {
     dailyHistory: function (req, res) {
         db.dailyChart.findAll({ where: {symbol: req.query.symbol}, order: [["time", "ASC"]] })
             .then(dailyData => {
-                var symbol = req.query.symbol;
                 var currentTimestamp = new Date() / 1000;
                 if (dailyData.length > 0) {
                     if (currentTimestamp - dailyData[0].createdAt >= 600) {
-                        axios.get("https://min-api.cryptocompare.com/data/histoday?fsym=" + symbol + "&tsym=USD&limit=23")
+                        axios.get("https://min-api.cryptocompare.com/data/histoday?fsym=" + req.query.symbol + "&tsym=USD&limit=23")
                             .then(response => {
                                 var dailyInfo = [];
 
                                 response.data.Data.forEach(element => {
                                     var entry = {
                                         time: element.time,
-                                        symbol: symbol,
+                                        symbol: req.query.symbol,
                                         close: element.close,
                                         high: element.high,
                                         low: element.low,
@@ -28,7 +27,7 @@ module.exports = {
                                     }
                                     dailyInfo.push(entry);
                                 });
-                                db.dailyChart.destroy({ where: {symbol: symbol} })
+                                db.dailyChart.destroy({ where: {symbol: req.query.symbol} })
                                     .then(() => {
                                         db.dailyChart.bulkCreate(dailyInfo)
                                             .then(() => {
@@ -46,14 +45,14 @@ module.exports = {
                 }
 
                 else {
-                    axios.get("https://min-api.cryptocompare.com/data/histoday?fsym=" + symbol + "&tsym=USD&limit=23")
+                    axios.get("https://min-api.cryptocompare.com/data/histoday?fsym=" + req.query.symbol + "&tsym=USD&limit=23")
                         .then(response => {
                             var dailyInfo = [];
                             response.data.Data.forEach(element => {
                                 var entry = {
                                     time: element.time,
                                     close: element.close,
-                                    symbol: symbol,
+                                    symbol: req.query.symbol,
                                     high: element.high,
                                     low: element.low,
                                     open: element.open,
@@ -79,20 +78,19 @@ module.exports = {
     hourlyHistory: function (req, res) {
         db.hourlyChart.findAll({ where: {symbol: req.query.symbol}, order: [["time", "ASC"]] })
             .then(hourlyData => {
-                var symbol = req.query.symbol;
                 var currentTimestamp = new Date() / 1000;
                 //console.log(hourlyData);
                // res.send(hourlyData);
                 if (hourlyData.length > 0) {
                     if (currentTimestamp - hourlyData[0].createdAt >= 600) {
-                        axios.get("https://min-api.cryptocompare.com/data/histohour?fsym=" + symbol + "&tsym=USD&limit=23")
+                        axios.get("https://min-api.cryptocompare.com/data/histohour?fsym=" + req.query.symbol + "&tsym=USD&limit=23")
                             .then(response => {
                                 var hourlyInfo = [];
-                                console.log(response.data.Data);
+                                //console.log(response.data.Data);
                                 response.data.Data.forEach(element => {
                                     var entry = {
                                         time: element.time,
-                                        symbol: symbol,
+                                        symbol: req.query.symbol,
                                         close: element.close,
                                         high: element.high,
                                         low: element.low,
@@ -103,7 +101,7 @@ module.exports = {
                                     }
                                     hourlyInfo.push(entry);
                                 });
-                                db.hourlyChart.destroy({ where: {symbol: symbol} })
+                                db.hourlyChart.destroy({ where: {symbol: req.query.symbol} })
                                     .then(() => {
                                         db.hourlyChart.bulkCreate(hourlyInfo)
                                             .then(() => {
@@ -122,14 +120,14 @@ module.exports = {
                 }
 
                 else {
-                    axios.get("https://min-api.cryptocompare.com/data/histohour?fsym=" + symbol + "&tsym=USD&limit=23")
+                    axios.get("https://min-api.cryptocompare.com/data/histohour?fsym=" + req.query.symbol + "&tsym=USD&limit=23")
                         .then(response => {
                             var hourlyInfo = [];
                             response.data.Data.forEach(element => {
                                 var entry = {
                                     time: element.time,
                                     close: element.close,
-                                    symbole: symbol,
+                                    symbol: req.query.symbol,
                                     high: element.high,
                                     low: element.low,
                                     open: element.open,
@@ -153,12 +151,11 @@ module.exports = {
     minuteHistory: function (req, res) {
         db.minuteChart.findAll({ where: {symbol: req.query.symbol}, order: [["time", "ASC"]] })
         .then(minuteData => {
-            var symbol = req.query.symbol;
             var currentTimestamp = new Date() / 1000;
 
             if (minuteData.length > 0) {
                 if (currentTimestamp - minuteData[0].createdAt >= 60) {
-                    axios.get("https://min-api.cryptocompare.com/data/histominute?fsym=" + symbol + "&tsym=USD&limit=23")
+                    axios.get("https://min-api.cryptocompare.com/data/histominute?fsym=" + req.query.symbol + "&tsym=USD&limit=23")
                         .then(response => {
                             var minuteInfo = [];
 
@@ -166,7 +163,7 @@ module.exports = {
                                 var entry = {
                                     time: element.time,
                                     close: element.close,
-                                    symbol: symbol,
+                                    symbol: req.query.symbol,
                                     high: element.high,
                                     low: element.low,
                                     open: element.open,
@@ -176,7 +173,7 @@ module.exports = {
                                 }
                                 minuteInfo.push(entry);
                             });
-                            db.minuteChart.destroy({ where: {symbol: symbol} })
+                            db.minuteChart.destroy({ where: {symbol: req.query.symbol} })
                                 .then(() => {
                                     db.minuteChart.bulkCreate(minuteInfo)
                                         .then(() => {
@@ -194,14 +191,15 @@ module.exports = {
             }
 
             else {
-                axios.get("https://min-api.cryptocompare.com/data/histominute?fsym=" + symbol + "&tsym=USD&limit=23")
+                axios.get("https://min-api.cryptocompare.com/data/histominute?fsym=" + req.query.symbol + "&tsym=USD&limit=23")
                     .then(response => {
+                        console.log(response.data.Data);
                         var minuteInfo = [];
                         response.data.Data.forEach(element => {
                             var entry = {
                                 time: element.time,
                                 close: element.close,
-                                symbol: symbol,
+                                symbol: req.query.symbol,
                                 high: element.high,
                                 low: element.low,
                                 open: element.open,

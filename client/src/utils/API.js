@@ -1,41 +1,46 @@
 import axios from "axios";
-
+var url = window.location.hostname;
 export default {
+  
 	getArticles: function(){
-		return axios.get("/api/news/feed/articles");
+		return axios.get("http://"+url+":5000/api/news/feed/articles");
 	},
 
   getArticlesBySymbol: function(symbol){
-    return axios.get("/api/news/feed/articlesBySymbol", {params: {symbol: symbol}})
+    return axios.get("http://"+url+":5000/api/news/feed/articlesBySymbol", {params: {symbol: symbol}})
   },
 
 	getTweets: function(){
-		return axios.get("/api/news/twitter/aggregated");
+		return axios.get("http://"+url+":5000/api/news/twitter/aggregated");
 	},
 	//Defunct
 	// getCoins: function(){
-	// 	return axios.get("/api/tracker/fulldata");
+	// 	return axios.get("http://"+url+":5000/api/tracker/fulldata");
   // },
   
   getMarketCapData: function(){
-    return axios.get("/api/tracker/dataByMarketCap");
+    return axios.get("http://"+url+":5000/api/tracker/dataByMarketCap");
   },
 
   getMarketCapDataBySymbol: function(symbol){
-    return axios.get("api/tracker/marketDataBySymbol", {params: {symbol: symbol}})
+    return axios.get("http://"+url+":5000/api/tracker/marketDataBySymbol", {params: {symbol: symbol}})
   },
 
   getHourlyHistoryBySymbol: function(symbol){
-    return axios.get("/api/tracker/hourlyHistoryBySymbol", {params: {symbol: symbol}});
+    return axios.get("http://"+url+":5000/api/tracker/hourlyHistoryBySymbol", {params: {symbol: symbol}});
   },
 
   getDailyHistoryBySymbol: function(symbol){
-    return axios.get("/api/tracker/dailyHistoryBySymbol", {params: {symbol: symbol}});
+    return axios.get("http://"+url+":5000/api/tracker/dailyHistoryBySymbol", {params: {symbol: symbol}});
   },
 
   getMinuteHistoryBySymbol: function(symbol){
-    return axios.get("/api/tracker/minuteHistoryBySymbol", {params: {symbol: symbol}});
+    return axios.get("http://"+url+":5000/api/tracker/minuteHistoryBySymbol", {params: {symbol: symbol}});
   },
+
+  getDescriptionByCoin: function(coinName){
+    return axios.get("http://"+url+":5000/api/tracker/getCoinDescription", {params: {coin: coinName}});
+  }
 
 	// getArticleBody: function(publication, url){
 	// 	switch(publication) {

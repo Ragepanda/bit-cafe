@@ -25,4 +25,9 @@ router
 .route("/minuteHistoryBySymbol")
 .get(chartService.minuteHistory);
 
+router
+.route("/getCoinDescription")
+.get(cryptoService.coinDescription)
+
+
 module.exports = router;

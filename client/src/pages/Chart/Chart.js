@@ -4,25 +4,25 @@ import Graph from "./Graph";
 import NewsContainer from "./NewsContainer";
 import Moment from "moment";
 import { Helmet } from "react-helmet";
-import'./Chart.css';
+import './Chart.css';
 
-class Chart extends React.Component{
+class Chart extends React.Component {
 
-	state ={
-    	hourlyData: [],
-      minutesData: [],
-      dailyData: [],
-      articles: []
-  	}
+  state = {
+    hourlyData: [],
+    minutesData: [],
+    dailyData: [],
+    articles: []
+  }
 
 
 
-	componentDidMount(){
-			this.getChartHourly();
-      this.getChartMinutes();
-      this.getChartDaily();
-		 
-	}	
+  componentDidMount() {
+    this.getChartHourly();
+    this.getChartMinutes();
+    this.getChartDaily();
+
+  }
 
   componentWillMount() {
     if (this.props.symbol !== this.props.match.params.symbol) {
@@ -33,130 +33,131 @@ class Chart extends React.Component{
         this.props.history.push("./" + this.props.symbol);
     }
     API.getArticlesBySymbol(this.props.symbol)
-    .then(res=>{
-      this.setState({articles: res.data});
+      .then(res => {
+        this.setState({ articles: res.data });
 
-    })
+      })
       .catch(err => console.log(err));
   }
 
 
 
-  getChartHourly(){
+  getChartHourly() {
     API.getHourlyHistoryBySymbol(this.props.symbol)
       .then(res => {
-        console.log(res.data);
+        //console.log(res.data);
         if (this.props.symbol !== this.props.match.params.symbol) {
           if (this.props.match.params.symbol !== null) {
             this.props.changeSymbol(this.props.match.params.symbol);
           }
-          if (typeof(this.props.match.params.symbol) === "undefined")
-            this.props.history.push("./"+this.props.symbol);
+          if (typeof (this.props.match.params.symbol) === "undefined")
+            this.props.history.push("./" + this.props.symbol);
         }
-    this.setState({hourlyData: res.data}, function(){
-    
-    
-    });
-    //console.log(test);
-       })
+        this.setState({ hourlyData: res.data }, function () {
+
+
+        });
+        //console.log(test);
+      })
       .catch(err => console.log(err));
   }
 
-   getChartMinutes(){
+  getChartMinutes() {
     API.getMinuteHistoryBySymbol(this.props.symbol)
       .then(res => {
-        console.log(res.data);
+        //console.log(res.data);
         if (this.props.symbol !== this.props.match.params.symbol) {
           if (this.props.match.params.symbol !== null) {
             this.props.changeSymbol(this.props.match.params.symbol);
           }
-          if (typeof(this.props.match.params.symbol) === "undefined")
-            this.props.history.push("./"+this.props.symbol);
+          if (typeof (this.props.match.params.symbol) === "undefined")
+            this.props.history.push("./" + this.props.symbol);
         }
-    this.setState({minutesData: res.data}, function(){
-    
-    
-    });
-    //console.log(test);
-       })
+        this.setState({ minutesData: res.data }, function () {
+
+
+        });
+        //console.log(test);
+      })
       .catch(err => console.log(err));
   }
 
-   getChartDaily(){
+  getChartDaily() {
     API.getDailyHistoryBySymbol(this.props.symbol)
       .then(res => {
-        console.log(res.data);
+        //console.log(res.data);
         if (this.props.symbol !== this.props.match.params.symbol) {
           if (this.props.match.params.symbol !== null) {
             this.props.changeSymbol(this.props.match.params.symbol);
           }
-          if (typeof(this.props.match.params.symbol) === "undefined")
-            this.props.history.push("./"+this.props.symbol);
+          if (typeof (this.props.match.params.symbol) === "undefined")
+            this.props.history.push("./" + this.props.symbol);
         }
-    this.setState({dailyData: res.data}, function(){
-    
-    
-    });
-    //console.log(test);
-       })
+        this.setState({ dailyData: res.data }, function () {
+
+
+        });
+        //console.log(test);
+      })
       .catch(err => console.log(err));
   }
 
-	addGraph(){
-		if(this.state.hourlyData.length > 0 && this.state.minutesData.length > 0 && this.state.dailyData.length > 0){
-  			return(<Graph 
-          symbol = {this.props.symbol}
-          data = {this.state.hourlyData}
-          minutesData = {this.state.minutesData}
-          dailyData = {this.state.dailyData}
-          hourConverter = {this.convertTimeHours}
-          minConverter = {this.convertTimeMin}
-          multiDayConverter = {this.convertTimeDay}
-          dayConverter = {this.convertTimeExactDay}
-        />)
-		}
+  addGraph() {
+    if (this.state.hourlyData.length > 0 && this.state.minutesData.length > 0 && this.state.dailyData.length > 0) {
+      return (<Graph
+        symbol={this.props.symbol}
+        data={this.state.hourlyData}
+        minutesData={this.state.minutesData}
+        dailyData={this.state.dailyData}
+        hourConverter={this.convertTimeHours}
+        minConverter={this.convertTimeMin}
+        multiDayConverter={this.convertTimeDay}
+        dayConverter={this.convertTimeExactDay}
+      />)
+    }
   }
 
-  addNews(){
-    if(this.state.articles.length > 0){
-      return(
-        <NewsContainer articles = {this.state.articles}/>
+  addNews() {
+    if (this.state.articles.length > 0) {
+      return (
+        <NewsContainer articles={this.state.articles} />
       )
     }
   }
 
 
-	  convertTimeHours(timeStamp){
-		  //console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
-      return Moment.unix(timeStamp,"x").format("HH:mm"); 
-	  }
-    convertTimeMin(timeStamp){
-      //console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
-      return Moment.unix(timeStamp,"x").format("hh:mm"); 
-    }
-    convertTimeDay(timeStamp){
-      //console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
-      return Moment.unix(timeStamp,"x").format("MM-DD"); 
-    }
-    convertTimeExactDay(timeStamp){
-      //console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
-      return Moment.unix(timeStamp,"x").format("YYYY-MM-DD"); 
-    }
+  convertTimeHours(timeStamp) {
+    //console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
+    return Moment.unix(timeStamp, "x").format("HH:mm");
+  }
+  convertTimeMin(timeStamp) {
+    //console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
+    return Moment.unix(timeStamp, "x").format("hh:mm");
+  }
+  convertTimeDay(timeStamp) {
+    //console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
+    return Moment.unix(timeStamp, "x").format("MM-DD");
+  }
+  convertTimeExactDay(timeStamp) {
+    //console.log(Moment.unix(timeStamp,"x").format("YYYY-MM-DD HH:mm:ss"));
+    return Moment.unix(timeStamp, "x").format("YYYY-MM-DD");
+  }
 
-	render(){
-    if (typeof(this.props.coin) ==="undefined") return <div></div>;
-		return(
-<div>
+  render() {
+    if (typeof (this.props.coin) === "undefined") return <div></div>;
+    else
+    return (
+      <div>
         <div className="wrapper">
-        <Helmet>
-          <title>{this.props.coin.fullName + " | "+ this.props.coin.fullName + " Price Chart"}</title>
-          <meta name="description" content={"This "+this.props.coin.fullName+" Price Chart will be helpful in determining the current "+this.props.coin.fullName+" price, as well as trends in "+this.props.coin.fullName+" price. Our "+this.props.coin.fullName+" price chart is highly customizable to help you find and analyze the trends in "+this.props.coin.fullName+" price and "+this.props.coin.fullName+" value."}/>
-          <meta name="keywords" content={"cryptocurrency,crypto,coin,"+this.props.coin.fullName+","+this.props.symbol+",price,value,usd, chart, charts, trends, trend, prices, values"} />
-          <meta name="author" content="bitcoinsama.com"/>
-          <meta http-equiv="Content-Language" content="en-US"/>
-          <meta name="rating" content="kids"/>
-          <meta http-equiv="content-type" content="text/html" charSet="utf-8" />
-        </Helmet>
+          <Helmet>
+            <title>{this.props.coin.fullName + " | " + this.props.coin.fullName + " Price Chart"}</title>
+            <meta name="description" content={"This " + this.props.coin.fullName + " Price Chart will be helpful in determining the current " + this.props.coin.fullName + " price, as well as trends in " + this.props.coin.fullName + " price. Our " + this.props.coin.fullName + " price chart is highly customizable to help you find and analyze the trends in " + this.props.coin.fullName + " price and " + this.props.coin.fullName + " value."} />
+            <meta name="keywords" content={"cryptocurrency,crypto,coin," + this.props.coin.fullName + "," + this.props.symbol + ",price,value,usd, chart, charts, trends, trend, prices, values"} />
+            <meta name="author" content="bitcoinsama.com" />
+            <meta http-equiv="Content-Language" content="en-US" />
+            <meta name="rating" content="kids" />
+            <meta http-equiv="content-type" content="text/html" charSet="utf-8" />
+          </Helmet>
           <div className="container">
             <div className="content">
               {/* SET UP Logo Top of Page */}
@@ -179,7 +180,7 @@ class Chart extends React.Component{
                     <hr />
                     <header className="section__head">
                       <div>
-                        <h1 align="left"><a href={"/home/"+this.props.symbol}>{this.props.coin.fullName}</a></h1>
+                        <h1 align="left"><a href={"/home/" + this.props.symbol}>{this.props.coin.fullName}</a></h1>
                         <h2 align="left">{this.props.coin.fullName} Price Chart Overview</h2>
                       </div></header>{/* /.section__head */}
                   </section></div>
@@ -195,11 +196,11 @@ class Chart extends React.Component{
                   <div className="col-md-7">
                     <h3>{this.props.coin.fullName} Price Chart</h3>
                     <div>
-                    {this.addGraph()}
+                      {this.addGraph()}
                     </div>
                   </div>
                   <div className="col-md-5">
-                    <h3><a href={"/news/"+this.props.symbol}>News of {this.props.coin.fullName} Price</a></h3>
+                    <h3><a href={"/news/" + this.props.symbol}>News of {this.props.coin.fullName} Price</a></h3>
                     <div id="scroller">
                       {this.addNews()}
                     </div>
@@ -207,8 +208,8 @@ class Chart extends React.Component{
                 </div>
                 {/* row */}
                 <br />
-                <br/>
-                <h3 align="center"><a href={"/exchange/"+this.props.symbol}>Exchanges to Track {this.props.coin.fullName} Price</a></h3>
+                <br />
+                <h3 align="center"><a href={"/exchange/" + this.props.symbol}>Exchanges to Track {this.props.coin.fullName} Price</a></h3>
                 <div id="exchanges"></div>
                 {/*  Insert 625-728-Combo-Tag Code Here   */}
                 {/*#include virtual="/includes/625-728-Combo-Tag.shtml" */}
@@ -216,15 +217,15 @@ class Chart extends React.Component{
                 <br /><br />
                 <table border={0} width="100%" cellPadding={0} cellSpacing={0}>
                   <tbody><tr>
-                      <td align="center">
-                        {/*#include virtual="/includes/300x250-Content.shtml" */}
-                      </td>
-                    </tr>
+                    <td align="center">
+                      {/*#include virtual="/includes/300x250-Content.shtml" */}
+                    </td>
+                  </tr>
                   </tbody></table>
                 <br /><br /><br /><br />
                 <br /><br /><br /><br />
-                <div align="right"> <a href={"./"+this.props.symbol}><b>{this.props.coin.fullName} Price Chart</b></a></div>
-                <div style={{height: '1200px'}} />
+                <div align="right"> </div>
+                <div style={{ height: '1200px' }} />
               </div>{/* /.article__body */}
               {/* /.article */}
             </div>{/* /.section__body */}
@@ -275,18 +276,19 @@ class Chart extends React.Component{
             {/*#include virtual="/includes/footer.shtml" */}
             {/* END Footer */}
             <div className="footer__site-map">
-              <a href={"./"+this.props.symbol}>{this.props.coin.fullName} Price Chart</a>
+              <a href={"./" + this.props.symbol}>{this.props.coin.fullName} Price Chart</a>
             </div>{/* /.footer__site-map */}
           </div>{/* /.footer__content */}
           {/* /.footer */}
-        {/* /.wrapper */}
-        {/*  SET UP Addthis & Pinterest Pin Function  */}
-        {/*#include virtual="/includes/addthis_pinterest.shtml" */}
-        {/*  End of Addthis & Pinterest Pin Function  */}
+          {/* /.wrapper */}
+          {/*  SET UP Addthis & Pinterest Pin Function  */}
+          {/*#include virtual="/includes/addthis_pinterest.shtml" */}
+          {/*  End of Addthis & Pinterest Pin Function  */}
         </footer>
       </div>
-	
-	)}
+
+    )
+  }
 }
 
 export default Chart;

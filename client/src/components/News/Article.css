@@ -1,0 +1,7 @@
+.card-title{
+    color: white;
+}
+
+.card-title:hover{
+    text-decoration: underline;
+}

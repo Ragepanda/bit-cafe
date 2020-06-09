@@ -1,4 +1,5 @@
 import React from "react"
+import './Article.css';
 // import ReactDOM from "react-dom"
 // import API from "../../utils/API"
 // import ModalFiller from "./ModalFiller"
@@ -33,14 +34,14 @@ class Article extends React.Component {
 
 		return (
 			<div className="card border-0 col-md-5 m-1 justify-content-left">
-				<a href={this.props.article.articleUrl}><div className="card-body">
-					<h5 className="card-title">{this.props.article.title}</h5>
+				<div className="card-body">
+				<a href={this.props.article.articleUrl} target="_blank"><h5 className="card-title">{this.props.article.title}</h5></a>
 					<h6 className="card-subtitle mb-2 text-muted"> Source: {this.props.article.source}</h6>
-					<a href={this.props.article.articleUrl}><img className="news-image" alt ="" src={this.props.article.imageUrl}></img></a>
+					<a href={this.props.article.articleUrl} target="_blank"><img className="news-image" alt ="" src={this.props.article.imageUrl}></img></a>
 					<p className="card-text mt-3">{this.props.article.body}</p>
 					{/* <button onClick={this.retriveBody} className="btn btn-dark" role="button" data-toggle="modal" data-target={"#article-modal-" + this.props.article.id}>Read More</button> */}
 
-				</div></a>
+				</div>
 
 				{/* <div className="modal fade" id={"article-modal-" + this.props.article.id} tabIndex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 					<div className="modal-dialog modal-lg" role="document">
