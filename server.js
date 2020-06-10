@@ -6,7 +6,7 @@ const port = process.env.PORT || 5000;
 const bodyParser = require("body-parser");
 const db = require("./models");
 const path = require("path");
-const cors = require("cors");
+
 
 app.use(cors({
   origin:["http://localhost:3000","http://localhost:45678", "http://bitcoinsama.com"],
