@@ -15,4 +15,5 @@ Our app also maintains a RESTful interface, a MVC architecture, responsiveness a
 
 Check out our live website here: http://bitcoinsama.com/
 
-Check out a video demonstration and explanation of our features here: https://www.youtube.com/watch?v=NSLUzStpLTk
+Check out a video demonstration and explanation of our features [here:](https://www.youtube.com/watch?v=NSLUzStpLTk
+) 
