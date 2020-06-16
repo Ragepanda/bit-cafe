@@ -1,6 +1,6 @@
-# Bitcoinsama - The hub for your crypto needs
+# Bitcoinsama
 
-Bitcoinsama is a responsive and mobile friendly React/Node/MySQL/Express application that displays market information about the top 20 cryptocurrencies in circulation, financial charts for them, aggregated news for each individual currency and a conversion calculator. 
+Bitcoinsama is a responsive and mobile friendly React/Node/MySQL/Express application that displays market information about the top 20 cryptocurrencies in circulation, financial charts for them, aggregated news for each individual currency and a conversion calculator.  
 
 ***
 
