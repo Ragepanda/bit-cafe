@@ -10,6 +10,8 @@ Bitcoinsama is a responsive and mobile friendly React/Node/MySQL/Express applica
 * React-Helmet (node) for specifying SEO metadata
 * react-snap (node) for doing a prerendering for SEO and google crawling
 * chart.js (node) for visualizing our market data. 
+
+***
  
 **See It In Action**
 
