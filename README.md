@@ -15,7 +15,7 @@ Bitcoinsama is a responsive and mobile friendly React/Node/MySQL/Express applica
  
 **See It In Action**
 
- * Check out our live website here: http://bitcoinsama.com/
+ * ~~Check out our live website here: http://bitcoinsama.com/~~ Live site was discontinued in 2021
 
  * Check out this [video demonstration](https://www.youtube.com/watch?v=NSLUzStpLTk) and explanation of our features 
 
